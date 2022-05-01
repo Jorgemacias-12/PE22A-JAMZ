@@ -50,6 +50,11 @@ namespace PE22A_JAMZ
 
             CbxFormatoImagen.SelectedIndex = 0; // 0 -> PNG
 
+            #region Configuración práctica 6
+            Directory.SetCurrentDirectory("..\\..\\..\\");
+            LoadEnv();
+            #endregion
+
         }
 
         // ===========================================================================
@@ -1367,6 +1372,29 @@ namespace PE22A_JAMZ
         }
 
         // +-------------------------------------------------------------------------+
+        // |       Carga el archivo .env que contiene la API_KEY de google maps      |
+        // +-------------------------------------------------------------------------+
+
+        private void LoadEnv()
+        {
+            string ENV_PATH = Directory.GetCurrentDirectory() + "\\.env";
+
+            foreach (var line in File.ReadAllLines(ENV_PATH))
+            {
+                var parts = line.Split('=', StringSplitOptions.RemoveEmptyEntries);
+
+                if (parts.Length != 2)
+                {
+                    continue;
+                }
+
+                Environment.SetEnvironmentVariable(parts[0], parts[1]);
+
+            }
+
+        }
+
+        // +-------------------------------------------------------------------------+
         // | Obtiene coordenadas geograficas de un lugar a partir de los servicios   |
         // | De Google Maps.                                                         |
         // +-------------------------------------------------------------------------+
@@ -1388,7 +1416,7 @@ namespace PE22A_JAMZ
             string Status;
 
             // Prepara datos de trabajo
-            Llave = "";
+            Llave = Environment.GetEnvironmentVariable("GM_KEY");
             Lugar = TxtLugar.Text;
 
             // Consulta la API de geolocalización de google maps.
