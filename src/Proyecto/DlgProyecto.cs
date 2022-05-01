@@ -30,17 +30,56 @@ namespace PE22A_JAMZ
             InitializeComponent();
         }
 
+        #region UI_STYLES
+
+        private void StyleTabControl(object sender, DrawItemEventArgs e)
+        {
+            Brush BBrush = new SolidBrush(ApplyHexColor("#303030"));
+            Brush TBrush = new SolidBrush(ApplyHexColor("#fff"));
+
+            StringFormat SF = new StringFormat();
+            SF.LineAlignment = StringAlignment.Center;
+            SF.Alignment = StringAlignment.Center;
+
+            TabPage Page = TabPrincipal.TabPages[e.Index];
+
+            Rectangle Rect = e.Bounds;
+            e.Graphics.FillRectangle(BBrush, Rect);
+            e.Graphics.DrawString(
+                        Page.Text,
+                        Page.Font,
+                        TBrush,
+                        Rect,
+                        SF
+                    );
+            e.DrawFocusRectangle();
+
+            Page.BorderStyle = BorderStyle.None;
+
+        }
+
+        #endregion
+
         // +------------------------------------------------------------+
         // |        Carga los aspectos visuales de la aplicación.       |
         // +------------------------------------------------------------+
 
         private void DlgProyecto_Load(object sender, EventArgs e)
         {
+
+            // Cambiar aspecto visual del datagrid view 
+            DgvP3FlujosNetos.EnableHeadersVisualStyles = false;
+
+            // Sobreescribir la vista gráfica de TabPrincipal
+            TabPrincipal.DrawMode = TabDrawMode.OwnerDrawFixed;
+            TabPrincipal.Appearance = TabAppearance.FlatButtons;
+            TabPrincipal.DrawItem += StyleTabControl;
+
             // Cambiar el color de fondo de PnlP5Derecho
-            PnlP5Derecho.BackColor = ApplyHexColor("#fff");
+            // PnlP5Derecho.BackColor = ApplyHexColor("#fff");
 
             // Cambiar el color de fondo de PnlP5Lienzo
-            PnlP5Lienzo.BackColor = ApplyHexColor("#eee");
+            // PnlP5Lienzo.BackColor = ApplyHexColor("#eee");
 
             // Cambiar el color de la fila cuando es par
 
@@ -51,6 +90,7 @@ namespace PE22A_JAMZ
             CbxFormatoImagen.SelectedIndex = 0; // 0 -> PNG
 
             #region Configuración práctica 6
+            if (Environment.CurrentDirectory.Contains("debug")) MessageBox.Show("Hola");
             Directory.SetCurrentDirectory("..\\..\\..\\");
             LoadEnv();
             #endregion
@@ -554,9 +594,9 @@ namespace PE22A_JAMZ
 
             if (VPN > 0)
             {
-                TbxResultado.BackColor = ApplyHexColor("#f8f9fa");
+                TbxResultado.BackColor = ApplyHexColor("#303030");
                 TbxResultado.ForeColor = ApplyHexColor("#1ed760");
-                TbxDecision.BackColor = ApplyHexColor("#f8f9fa");
+                TbxDecision.BackColor = ApplyHexColor("#303030");
                 TbxDecision.ForeColor = ApplyHexColor("#1ed760");
                 TbxDecision.Text = "Factible";
             }
