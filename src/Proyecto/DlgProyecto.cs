@@ -41,7 +41,7 @@ namespace PE22A_JAMZ
             SF.LineAlignment = StringAlignment.Center;
             SF.Alignment = StringAlignment.Center;
 
-            TabPage Page = TabPrincipal.TabPages[e.Index];
+            TabPage Page = TbcPrincipal.TabPages[e.Index];
 
             Rectangle Rect = e.Bounds;
             e.Graphics.FillRectangle(BBrush, Rect);
@@ -71,9 +71,9 @@ namespace PE22A_JAMZ
             DgvP3FlujosNetos.EnableHeadersVisualStyles = false;
 
             // Sobreescribir la vista gráfica de TabPrincipal
-            TabPrincipal.DrawMode = TabDrawMode.OwnerDrawFixed;
-            TabPrincipal.Appearance = TabAppearance.FlatButtons;
-            TabPrincipal.DrawItem += StyleTabControl;
+            TbcPrincipal.DrawMode = TabDrawMode.OwnerDrawFixed;
+            TbcPrincipal.Appearance = TabAppearance.FlatButtons;
+            TbcPrincipal.DrawItem += StyleTabControl;
 
             // Cambiar el color de fondo de PnlP5Derecho
             // PnlP5Derecho.BackColor = ApplyHexColor("#fff");
@@ -932,7 +932,7 @@ namespace PE22A_JAMZ
 
             if (e.KeyCode == Keys.Oemplus &&
                 e.Modifiers == Keys.Control &&
-                TabPrincipal.SelectedTab == TabPrincipal.TabPages["TpgPractica5"]
+                TbcPrincipal.SelectedTab == TbcPrincipal.TabPages["TpgPractica5"]
                 && ComponentCanvas != null)
             {
 
@@ -945,7 +945,7 @@ namespace PE22A_JAMZ
 
             if (e.KeyCode == Keys.OemMinus &&
                 e.Modifiers == Keys.Control &&
-                TabPrincipal.SelectedTab == TabPrincipal.TabPages["TpgPractica5"]
+                TbcPrincipal.SelectedTab == TbcPrincipal.TabPages["TpgPractica5"]
                 && ComponentCanvas != null)
             {
 
@@ -958,7 +958,7 @@ namespace PE22A_JAMZ
 
             if (e.KeyCode == Keys.G &&
                 e.Modifiers == Keys.Control &&
-                TabPrincipal.SelectedTab == TabPrincipal.TabPages["TpgPractica5"]&&
+                TbcPrincipal.SelectedTab == TbcPrincipal.TabPages["TpgPractica5"]&&
                 ComponentCanvas != null)
             {
                 GuardarImagen();
