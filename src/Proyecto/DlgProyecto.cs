@@ -1505,6 +1505,69 @@ namespace PE22A_JAMZ
 
         }
 
+        // +--------------------------------------------------------------------------+
+        // | Genera un archivo de texto en formato KML con las coordenadas calculadas |
+        // +--------------------------------------------------------------------------+
+        private void BtnGenerarKML_Click(object sender, EventArgs e)
+        {
+            // Variables
+            string Ruta;
+            string Nombre;
+            string Contenido;
+            bool Exito;
+
+            // Inicializa datos de 
+            Ruta = @"C:\Users\Jorge\Desktop\";
+            Nombre = $"{TxtLugar.Text}.KML";
+
+            Contenido =
+                "<?xml version = \"1.0\" encoding = \"UTF-8\" ?>\n" +
+                "<kml xmlns = \"http://www.opengis.net/kml/2.2\" >\n" +
+                "  <Placemark>\n" +
+                "    <name>\n" +
+                "     " + TxtLugar.Text + "\n" +
+                "    </name>\n" +
+                "    <description>\n" +
+                "     " + TxtDescripcion.Text + "\n" +
+                "    </description>\n" +
+                "    <Point>\n" +
+                "      <coordinates>\n" +
+                "       " + TxtLongitud.Text + "," + TxtLatitud.Text + "," + "0\n" +
+                "      </coordinates>\n" +
+                "   </Point>\n" +
+                " </Placemark>\n" +
+                "</kml>\n";
+
+
+            // Crea el archivo de texto con formato KML
+
+            try
+            {
+                using (StreamWriter Escritor = File.CreateText(Ruta + Nombre))
+                {
+                    Escritor.WriteLine(Contenido);
+                }
+
+                Exito = true;
+            }
+            catch (Exception ex)
+            {
+                Exito = false;
+            }
+
+            // Maneja el posible error
+
+            if(Exito)
+            {
+                MessageBox.Show("El archivo ha KML se generó con éxito");
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error al intentar generar el archivo");
+            }
+
+        }
+
         #endregion
 
         // ===========================================================================
