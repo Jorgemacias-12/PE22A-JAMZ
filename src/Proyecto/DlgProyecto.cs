@@ -1406,6 +1406,8 @@ namespace PE22A_JAMZ
                 return;
             }
 
+            RtbxContenidoKML.Clear();
+
             // Obtiene coordenadas del API de google maps.
             await GetCoordenadas();
 
@@ -1559,6 +1561,8 @@ namespace PE22A_JAMZ
 
             if(Exito)
             {
+                RtbxContenidoKML.Clear();
+                RtbxContenidoKML.Text = Contenido;
                 MessageBox.Show("El archivo ha KML se generó con éxito");
             }
             else
@@ -1566,6 +1570,80 @@ namespace PE22A_JAMZ
                 MessageBox.Show("Ocurrió un error al intentar generar el archivo");
             }
 
+        }
+
+        private async void BtnBuscarLugares_ClickAsync(object sender, EventArgs e)
+        {
+            // Validación
+
+            if (TxtP7Buscar.Text.Equals(""))
+            {
+                return;
+            }
+
+            RtbxContenidoKML.Clear();
+
+            // Obtiene coordenadas del API de google maps.
+            await GetLugares();
+        }
+
+
+        public async Task GetLugares()
+        {
+            // Declaración de variables
+            HttpClient clienteHttp;
+            Uri direccion;
+            HttpResponseMessage respuestaHttp;
+            XmlDocument documentoXML;
+            XmlNodeList elemList;
+            XmlElement bookElement;
+            string contenidoHttp;
+            string Llave;
+            string Nombre;
+            string Buscar;
+            string Descripcion;
+            string Longitud;
+            string Latitud;
+
+            // Inicializar datos de trabajo
+            Llave = Environment.GetEnvironmentVariable("GM_KEY");
+            Latitud = TxtP7Latitud.Text;
+            Longitud = TxtP7Longitud.Text;
+            Buscar = TxtP7Buscar.Text;
+
+            // Consulta la api de geolocalización
+
+            // Consulta la API de geolocalización de google maps.
+            clienteHttp = new HttpClient();
+            direccion = new Uri("https://maps.googleapis.com/maps/api/place/nearbysearch/");
+            clienteHttp.BaseAddress = direccion;
+
+            respuestaHttp = await clienteHttp.GetAsync("xml?location=" + Latitud + "," + Longitud + "&radius=1000&type=" + Buscar + "&key=" + Llave);
+            contenidoHttp = await respuestaHttp.Content.ReadAsStringAsync();
+
+            // Obtiene y muestra la lista de lugares
+
+            documentoXML = new XmlDocument();
+            documentoXML.LoadXml(contenidoHttp);
+
+            elemList = documentoXML.GetElementsByTagName("result");
+
+            MessageBox.Show("Se encontraron " + elemList.Count + " lugares.");
+        
+            for (int i = 0; i < elemList.Count; i++)
+            {
+                bookElement = (XmlElement)elemList[i];
+                Nombre = bookElement["name"].InnerText;
+                MessageBox.Show(Nombre);
+            }
+
+        }
+
+
+        private void BtnP7Coordenadas_Click(object sender, EventArgs e)
+        {
+            TxtP7Latitud.Text = TxtLatitud.Text;
+            TxtP7Longitud.Text = TxtLongitud.Text;
         }
 
         #endregion
