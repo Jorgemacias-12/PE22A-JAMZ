@@ -1773,23 +1773,12 @@ namespace PE22A_JAMZ
             BusinessCoord = new string[PlacesFounded];
             BusinessRaiting = new string[PlacesFounded];
 
-            
-
-            // Iterar a través del elemento result y obtener una imagen
-            // del lugar/establecimiento
-
-            ElementList = Document.GetElementsByTagName("photo");
-
+            // Obtener valores de la respuesta API
 
             for (int i = 0; i < PlacesFounded; i++)
             {
-                BookElement = (XmlElement) ElementList[i];
-
-                if (BookElement == null) return;
-               
-                PhotoReference[i] = BookElement["photo_reference"].InnerText;
+                BusinessName[i] = XmlUtils.GetXmlValue(Document, "name", "", i);
             }
-
             
         }
 
