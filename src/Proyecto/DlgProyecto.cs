@@ -1582,7 +1582,7 @@ namespace PE22A_JAMZ
         {
             // Validación
 
-            if (TxtP7Buscar.Text.Equals(""))
+            if (CbxP7Lugares.SelectedIndex == -1)
             {
                 return;
             }
@@ -1606,15 +1606,18 @@ namespace PE22A_JAMZ
             string contenidoHttp;
             string Llave;
             string Nombre;
+            string Domicilio;
             string Buscar;
             string Longitud;
             string Latitud;
+            int Radio;
 
             // Inicializar datos de trabajo
             Llave = Environment.GetEnvironmentVariable("GM_KEY");
             Latitud = TxtP7Latitud.Text;
             Longitud = TxtP7Longitud.Text;
-            Buscar = TxtP7Buscar.Text;
+            Buscar = CbxP7Lugares.Text;
+            Radio = Int32.Parse(TxtP7Radio.Text);
 
             // Consulta la api de geolocalización
 
@@ -1623,11 +1626,8 @@ namespace PE22A_JAMZ
             direccion = new Uri("https://maps.googleapis.com/maps/api/place/nearbysearch/");
             clienteHttp.BaseAddress = direccion;
 
-            respuestaHttp = await clienteHttp.GetAsync("xml?location=" + Latitud + "," + Longitud + "&radius=1000&type=" + Buscar + "&key=" + Llave);
+            respuestaHttp = await clienteHttp.GetAsync("xml?location=" + Latitud + "," + Longitud + "&radius=" + Radio + "&type=" + Buscar + "&key=" + Llave);
             contenidoHttp = await respuestaHttp.Content.ReadAsStringAsync();
-
-            // Insertar xml en Rtbx
-            RtbxP7ContenidoKML.Text = contenidoHttp;
 
             // Obtiene y muestra la lista de lugares
 
@@ -1636,13 +1636,25 @@ namespace PE22A_JAMZ
 
             elemList = documentoXML.GetElementsByTagName("result");
 
-            MessageBox.Show("Se encontraron " + elemList.Count + " lugares.");
+            MessageBox.Show("Se encontraron " + elemList.Count + " lugares a " + Radio + " Metros a la redonda.");
+            DgvP7Datos.Rows.Clear();
 
             for (int i = 0; i < elemList.Count; i++)
             {
                 bookElement = (XmlElement)elemList[i];
                 Nombre = bookElement["name"].InnerText;
-                MessageBox.Show(Nombre);
+                Domicilio = bookElement["vicinity"].InnerText;
+                Latitud = bookElement["geometry"].ChildNodes[0].ChildNodes[0].InnerText;
+                Longitud = bookElement["geometry"].ChildNodes[0].ChildNodes[1].InnerText; ;
+
+                // Agregar datos al datagridview
+                DgvP7Datos.Rows.Add();
+                DgvP7Datos.Rows[i].Cells[0].Value = i + 1; // Indice
+                DgvP7Datos.Rows[i].Cells[1].Value = Nombre;
+                DgvP7Datos.Rows[i].Cells[2].Value = Domicilio;
+                DgvP7Datos.Rows[i].Cells[3].Value = Latitud;  // lat
+                DgvP7Datos.Rows[i].Cells[4].Value = Longitud; // lng
+
             }
 
         }
@@ -1872,6 +1884,7 @@ namespace PE22A_JAMZ
             await GetPlacePreview(FlpPlacesContainer);
 
         }
+
 
         #endregion
 
