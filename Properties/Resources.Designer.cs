@@ -73,6 +73,16 @@ namespace PE22A_JAMZ.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap antes {
+            get {
+                object obj = ResourceManager.GetObject("antes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap blackhole {
             get {
                 object obj = ResourceManager.GetObject("blackhole", resourceCulture);
@@ -86,6 +96,16 @@ namespace PE22A_JAMZ.Properties {
         internal static System.Drawing.Bitmap cryo {
             get {
                 object obj = ResourceManager.GetObject("cryo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap despues {
+            get {
+                object obj = ResourceManager.GetObject("despues", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
