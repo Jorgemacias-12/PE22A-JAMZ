@@ -1,3 +1,4 @@
+using PE22A_JAMZ.src.TabRenderer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace PE22A_JAMZ
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DlgProyecto());
+            Application.Run(new ResizeImage());
         }
     }
 }
