@@ -129,5 +129,15 @@ namespace PE22A_JAMZ.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Semiverseno {
+            get {
+                object obj = ResourceManager.GetObject("Semiverseno", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
