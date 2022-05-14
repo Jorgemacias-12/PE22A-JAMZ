@@ -17,7 +17,7 @@ namespace PE22A_JAMZ.src.TabRenderer
             InitializeComponent();
         }
 
-        bool IsAspectRatio;
+        bool IsAspectRatioEnabled;
         private int ImageWidth;
         private int ImageHeight;
         private int QuantityOfImages;
@@ -133,7 +133,7 @@ namespace PE22A_JAMZ.src.TabRenderer
                 return;
             }
 
-            IsAspectRatio = CbxAspectRatio.Checked;
+            IsAspectRatioEnabled = CbxAspectRatio.Checked;
             ImageWidth = Int32.Parse(TxtWidth.Text);
             ImageHeight = Int32.Parse(TxtHeight.Text);
             ImageFormat = CbxFormat.Text.ToLower();
@@ -148,10 +148,50 @@ namespace PE22A_JAMZ.src.TabRenderer
             ValidateInput();    
         }
 
-        private void Validation_KeyPress(object sender, KeyPressEventArgs e)
+        private void CalculateAspecRatio(string Target)
         {
 
-            TextBox Field = sender as TextBox;
+            if (!IsAspectRatioEnabled) return;
+
+            if (TxtHeight.Text.Equals("") && Target == "width") return;
+            if (TxtWidth.Text.Equals("") && Target == "height") return;
+
+            double Ratio;
+
+            double Width;
+            double Height;
+
+            int NewWidth;
+            int NewHeight;
+
+            switch(Target)
+            {
+                case "width":
+                    
+                    Ratio = 16.0f / 9.0f;
+                    Height = Double.Parse(TxtHeight.Text);
+
+                    NewWidth = (int)Math.Round(Ratio * Height, 1);
+
+                    TxtWidth.Text = NewWidth.ToString();
+
+                    break;
+                case "height":
+                    
+                    Ratio = 9.0f / 16.0f;
+                    Width = Double.Parse(TxtWidth.Text);
+
+                    NewHeight = (int)Math.Round(Ratio * Width, 1);
+
+                    TxtHeight.Text = NewHeight.ToString();
+
+                    break;
+            }
+
+        }
+
+        private void ValidateField(KeyPressEventArgs e)
+        {
 
             if (!char.IsControl(e.KeyChar) &&
                 !char.IsDigit(e.KeyChar))
@@ -159,18 +199,33 @@ namespace PE22A_JAMZ.src.TabRenderer
                 e.Handled = true;
             }
 
-            if (e.KeyChar == '.' && 
-                (Field.Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-            }
+        }
 
-            if (Field.Text.Length > 4)
-            {
-                e.Handled = true;
-            }
+        private void TxtWidth_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateField(e);
+            
+        }
 
+        private void TxtHeight_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidateField(e);
+            
+        }
 
+        private void CbxAspectRatio_Click(object sender, EventArgs e)
+        {
+            IsAspectRatioEnabled = CbxAspectRatio.Checked;
+        }
+
+        private void TxtWidth_KeyUp(object sender, KeyEventArgs e)
+        {
+            CalculateAspecRatio("height");
+        }
+
+        private void TxtHeight_KeyUp(object sender, KeyEventArgs e)
+        {
+            CalculateAspecRatio("width");
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.PnlContainer = new System.Windows.Forms.Panel();
+            this.ScpResizer = new System.Windows.Forms.SplitContainer();
             this.PnlSideBar = new System.Windows.Forms.Panel();
             this.LblHeight = new System.Windows.Forms.Label();
             this.LblWidth = new System.Windows.Forms.Label();
@@ -42,19 +43,42 @@
             this.FlpImages = new System.Windows.Forms.FlowLayoutPanel();
             this.LblInfo = new System.Windows.Forms.Label();
             this.PnlContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ScpResizer)).BeginInit();
+            this.ScpResizer.Panel1.SuspendLayout();
+            this.ScpResizer.Panel2.SuspendLayout();
+            this.ScpResizer.SuspendLayout();
             this.PnlSideBar.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlContainer
             // 
-            this.PnlContainer.Controls.Add(this.PnlSideBar);
-            this.PnlContainer.Controls.Add(this.FlpImages);
+            this.PnlContainer.Controls.Add(this.ScpResizer);
             this.PnlContainer.Controls.Add(this.LblInfo);
             this.PnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlContainer.Location = new System.Drawing.Point(0, 0);
             this.PnlContainer.Name = "PnlContainer";
             this.PnlContainer.Size = new System.Drawing.Size(1671, 763);
             this.PnlContainer.TabIndex = 0;
+            // 
+            // ScpResizer
+            // 
+            this.ScpResizer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ScpResizer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ScpResizer.Location = new System.Drawing.Point(0, 39);
+            this.ScpResizer.Name = "ScpResizer";
+            // 
+            // ScpResizer.Panel1
+            // 
+            this.ScpResizer.Panel1.Controls.Add(this.PnlSideBar);
+            this.ScpResizer.Panel1MinSize = 300;
+            // 
+            // ScpResizer.Panel2
+            // 
+            this.ScpResizer.Panel2.Controls.Add(this.FlpImages);
+            this.ScpResizer.Panel2MinSize = 1200;
+            this.ScpResizer.Size = new System.Drawing.Size(1671, 724);
+            this.ScpResizer.SplitterDistance = 300;
+            this.ScpResizer.TabIndex = 12;
             // 
             // PnlSideBar
             // 
@@ -67,10 +91,10 @@
             this.PnlSideBar.Controls.Add(this.LblFormat);
             this.PnlSideBar.Controls.Add(this.CbxFormat);
             this.PnlSideBar.Controls.Add(this.TxtWidth);
-            this.PnlSideBar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PnlSideBar.Location = new System.Drawing.Point(0, 39);
+            this.PnlSideBar.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PnlSideBar.Location = new System.Drawing.Point(0, 0);
             this.PnlSideBar.Name = "PnlSideBar";
-            this.PnlSideBar.Size = new System.Drawing.Size(273, 724);
+            this.PnlSideBar.Size = new System.Drawing.Size(296, 720);
             this.PnlSideBar.TabIndex = 11;
             // 
             // LblHeight
@@ -100,7 +124,8 @@
             this.TxtHeight.Name = "TxtHeight";
             this.TxtHeight.Size = new System.Drawing.Size(201, 29);
             this.TxtHeight.TabIndex = 4;
-            this.TxtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Validation_KeyPress);
+            this.TxtHeight.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtHeight_KeyPress);
+            this.TxtHeight.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtHeight_KeyUp);
             // 
             // LblQuantity
             // 
@@ -135,6 +160,7 @@
             this.CbxAspectRatio.Text = "Mantener relación de aspecto";
             this.CbxAspectRatio.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CbxAspectRatio.UseVisualStyleBackColor = true;
+            this.CbxAspectRatio.Click += new System.EventHandler(this.CbxAspectRatio_Click);
             // 
             // LblFormat
             // 
@@ -165,7 +191,8 @@
             this.TxtWidth.Name = "TxtWidth";
             this.TxtWidth.Size = new System.Drawing.Size(184, 29);
             this.TxtWidth.TabIndex = 3;
-            this.TxtWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Validation_KeyPress);
+            this.TxtWidth.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtWidth_KeyPress);
+            this.TxtWidth.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtWidth_KeyUp);
             // 
             // FlpImages
             // 
@@ -174,10 +201,10 @@
             this.FlpImages.BackColor = System.Drawing.Color.White;
             this.FlpImages.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FlpImages.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.FlpImages.Location = new System.Drawing.Point(0, 39);
+            this.FlpImages.Location = new System.Drawing.Point(0, 0);
             this.FlpImages.Name = "FlpImages";
             this.FlpImages.Padding = new System.Windows.Forms.Padding(0, 10, 30, 0);
-            this.FlpImages.Size = new System.Drawing.Size(1671, 724);
+            this.FlpImages.Size = new System.Drawing.Size(1363, 720);
             this.FlpImages.TabIndex = 0;
             // 
             // LblInfo
@@ -200,6 +227,10 @@
             this.Name = "ResizeImage";
             this.Text = "ResizeImage";
             this.PnlContainer.ResumeLayout(false);
+            this.ScpResizer.Panel1.ResumeLayout(false);
+            this.ScpResizer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ScpResizer)).EndInit();
+            this.ScpResizer.ResumeLayout(false);
             this.PnlSideBar.ResumeLayout(false);
             this.PnlSideBar.PerformLayout();
             this.ResumeLayout(false);
@@ -221,5 +252,6 @@
         private System.Windows.Forms.FlowLayoutPanel FlpImages;
         private System.Windows.Forms.Label LblQuantity;
         private System.Windows.Forms.Panel PnlSideBar;
+        private System.Windows.Forms.SplitContainer ScpResizer;
     }
 }
