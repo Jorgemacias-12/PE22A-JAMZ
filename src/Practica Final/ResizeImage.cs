@@ -1,8 +1,13 @@
-﻿using System;
+﻿using PE22A_JAMZ.src.Utils;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,8 +33,21 @@ namespace PE22A_JAMZ.src.TabRenderer
         private SaveFileDialog SaveDialog;
         private DialogResult Result;
 
+        private double[] AspectRatioX = new double[]
+        {
+            16f,
+            4f,
+            1f
+        };
 
-        private async void SelectImages()
+        private double[] AspectRatioY = new double[]
+        {
+            9f,
+            3f,
+            1f
+        };
+
+        private async Task SelectImages()
         {
             OpenDialog = new OpenFileDialog();
 
@@ -81,9 +99,12 @@ namespace PE22A_JAMZ.src.TabRenderer
             {
                 SelectedImage = new PictureBox();
                 SelectedImage.Size = new Size(400, 300);
-                SelectedImage.BackColor = Color.Black;
+                SelectedImage.BackColor = Color.Transparent;
                 SelectedImage.BackgroundImage = Image.FromFile(FileNames[i]);
+                SelectedImage.MouseEnter += UiUtils.PaintBorder;
+                SelectedImage.MouseLeave += UiUtils.RemoveBorder;
                 SelectedImage.BackgroundImageLayout = ImageLayout.Stretch;
+                SelectedImage.Cursor = Cursors.Hand;
                 SelectedImage.Margin = new Padding(10, 10, 10, 10);
                 SelectedImage.Update();
 
@@ -101,8 +122,9 @@ namespace PE22A_JAMZ.src.TabRenderer
             LblQuantity.Text = "Imagen(es) seleccionada(s):";
         }
 
-        private void ValidateInput()
+        private async Task ValidateInput()
         {
+            IsAspectRatioEnabled = CbxAspectRatio.Checked;
 
             if (TxtWidth.Text.Equals(""))
             {
@@ -133,19 +155,27 @@ namespace PE22A_JAMZ.src.TabRenderer
                 return;
             }
 
-            IsAspectRatioEnabled = CbxAspectRatio.Checked;
+            if (IsAspectRatioEnabled && CmbAspectRatio.SelectedIndex == -1)
+            {
+                MessageBox.Show("Escoge una relación de aspecto",
+                                "¡Atención!",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+                return;
+            }
+            
             ImageWidth = Int32.Parse(TxtWidth.Text);
             ImageHeight = Int32.Parse(TxtHeight.Text);
             ImageFormat = CbxFormat.Text.ToLower();
 
-            SelectImages();
+            await SelectImages();
             
         }
 
         private async void BtnSelectImages_Click(object sender, EventArgs e)
         {
             ResetUi();
-            ValidateInput();    
+            await ValidateInput();    
         }
 
         private void CalculateAspecRatio(string Target)
@@ -168,7 +198,7 @@ namespace PE22A_JAMZ.src.TabRenderer
             {
                 case "width":
                     
-                    Ratio = 16.0f / 9.0f;
+                    Ratio = AspectRatioX[CmbAspectRatio.SelectedIndex] / AspectRatioY[CmbAspectRatio.SelectedIndex];
                     Height = Double.Parse(TxtHeight.Text);
 
                     NewWidth = (int)Math.Round(Ratio * Height, 1);
@@ -178,7 +208,7 @@ namespace PE22A_JAMZ.src.TabRenderer
                     break;
                 case "height":
                     
-                    Ratio = 9.0f / 16.0f;
+                    Ratio = AspectRatioY[CmbAspectRatio.SelectedIndex] / AspectRatioX[CmbAspectRatio.SelectedIndex];
                     Width = Double.Parse(TxtWidth.Text);
 
                     NewHeight = (int)Math.Round(Ratio * Width, 1);
@@ -200,6 +230,8 @@ namespace PE22A_JAMZ.src.TabRenderer
             }
 
         }
+
+        #region EVENTOS
 
         private void TxtWidth_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -227,5 +259,114 @@ namespace PE22A_JAMZ.src.TabRenderer
         {
             CalculateAspecRatio("width");
         }
+
+        private void SaveFiles()
+        {
+            SaveDialog = new SaveFileDialog();
+
+            SaveDialog.Title = "Guardar imagen(es)";
+            SaveDialog.InitialDirectory = Application.StartupPath;
+            SaveDialog.RestoreDirectory = true;
+
+            if (ImageFormat == "jpg") SaveDialog.Filter = "JPG Image(.jpg)|*.jpg";
+            if (ImageFormat == "png") SaveDialog.Filter = "Png Image(.png)|*.png";
+
+            Result = SaveDialog.ShowDialog();
+
+            if (Result == DialogResult.Cancel ||
+                Result == DialogResult.None ||
+                Result == DialogResult.No ||
+                Result == DialogResult.Abort)
+            {
+                return;
+            }
+
+            if (Result == DialogResult.OK)
+            {
+
+                SaveDialog.FileName = SaveDialog.FileName.Replace($".{ImageFormat}", "");
+
+                for (int i = 0; i < FileNames.Length; i++)
+                {
+                    ResizeImg(FileNames[i], ImageWidth, ImageHeight).Save($"{SaveDialog.FileName} {i + 1}.{ImageFormat}");
+                }
+
+                if (FileNames.Length > 1)
+                {
+                    MessageBox.Show("¡Imagenes generadas correctamente!", 
+                                    "¡Exito!", 
+                                    MessageBoxButtons.OK, 
+                                    MessageBoxIcon.Information);
+                }
+
+                if (FileNames.Length == 1)
+                {
+                    MessageBox.Show("¡Imagen generada correctamente!",
+                                    "¡Exito!",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+
+                }
+
+                DialogResult DResult = MessageBox.Show("¿Desea abrir la carpeta donde están las imagenes?", 
+                                                       "Pregunta", 
+                                                       MessageBoxButtons.YesNo, 
+                                                       MessageBoxIcon.Information);
+
+                if (DResult == DialogResult.Yes)
+                {
+                    Process.Start("explorer.exe", Path.GetDirectoryName(SaveDialog.FileName));
+                }
+
+
+            }
+
+        }
+
+        private Bitmap ResizeImg(string FileName, int Width, int Height)
+        {
+
+            Image IImage = Image.FromFile(FileName);
+
+            Rectangle DestRectangle = new Rectangle(0, 0, Width, Height);
+            Bitmap DistImage = new Bitmap(Width, Height);
+
+            DistImage.SetResolution(IImage.HorizontalResolution, IImage.VerticalResolution);
+
+            using (Graphics graphics = Graphics.FromImage(DistImage))
+            {
+                graphics.CompositingMode = CompositingMode.SourceCopy;
+                graphics.CompositingQuality = CompositingQuality.HighQuality;
+                graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                graphics.SmoothingMode = SmoothingMode.AntiAlias;
+                graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
+
+                using (var wrapMode = new ImageAttributes())
+                {
+                    wrapMode.SetWrapMode(WrapMode.TileFlipXY);
+                    graphics.DrawImage(IImage,
+                                       DestRectangle,
+                                       0,
+                                       0,
+                                       IImage.Width,
+                                       IImage.Height,
+                                       GraphicsUnit.Pixel,
+                                       wrapMode);
+                }
+
+            }
+
+            return DistImage;
+
+        }
+
+        private void BtnSaveImages_Click(object sender, EventArgs e)
+        {
+            SaveFiles();
+        }
+
+        #endregion
+
+
     }
 }
