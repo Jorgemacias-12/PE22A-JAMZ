@@ -27,7 +27,10 @@ namespace PE22A_JAMZ.src.TabRenderer
         private int ImageHeight;
         private int QuantityOfImages;
         private string[] FileNames;
+        private string[] ImageToolTip;
         private string ImageFormat;
+        private FileInfo[] FilesInfo;
+        private ToolTip ImgToolTip;
 
         private OpenFileDialog OpenDialog;
         private SaveFileDialog SaveDialog;
@@ -75,17 +78,52 @@ namespace PE22A_JAMZ.src.TabRenderer
                 QuantityOfImages = OpenDialog.FileNames.Length;
 
                 FileNames = new string[QuantityOfImages];
+                ImageToolTip = new string[QuantityOfImages];
+                FilesInfo = new FileInfo[QuantityOfImages];
 
                 for (int i = 0; i < QuantityOfImages; i++)
                 {
                     FileNames[i] = OpenDialog.FileNames[i];
+                    FilesInfo[i] = new FileInfo(FileNames[i]);
                 }
+
+                ShowFilesInfo();
 
             }
 
             LblQuantity.Text += $" {QuantityOfImages}";
 
             await ImagePreview();
+        }
+
+        private void ShowFilesInfo()
+        {
+
+            RtbFilesInfo.AppendText("Información acerca de las imagenes: " + Environment.NewLine);
+
+            for (int i = 0; i < FilesInfo.Length; i++)
+            {
+
+                ImageToolTip[i] = $"Archivo: {FilesInfo[i].Name}, Tamaño: {FilesInfo[i].Length}Bytes, Fecha de cración: {FilesInfo[i].CreationTime} {Environment.NewLine}";
+
+                RtbFilesInfo.AppendText(
+                    $"Archivo: {FilesInfo[i].Name}, Tamaño: {FilesInfo[i].Length}Bytes, Fecha de creación: {FilesInfo[i].CreationTime} {Environment.NewLine} {Environment.NewLine}"
+                    );
+            }
+
+        }
+
+        private void Hover(object sender, EventArgs e)
+        {
+
+            PictureBox currentComponent = sender as PictureBox;
+
+            ImgToolTip = new ToolTip();
+
+            int index = Int32.Parse(currentComponent.Name);
+
+            ImgToolTip.SetToolTip(currentComponent, ImageToolTip[index]);
+            
         }
 
         private Task ImagePreview()
@@ -98,10 +136,12 @@ namespace PE22A_JAMZ.src.TabRenderer
             for (int i = 0; i < QuantityOfImages; i++)
             {
                 SelectedImage = new PictureBox();
+                SelectedImage.Name = $"{i}";
                 SelectedImage.Size = new Size(400, 300);
                 SelectedImage.BackColor = Color.Transparent;
                 SelectedImage.BackgroundImage = Image.FromFile(FileNames[i]);
                 SelectedImage.MouseEnter += UiUtils.PaintBorder;
+                SelectedImage.MouseHover += Hover;
                 SelectedImage.MouseLeave += UiUtils.RemoveBorder;
                 SelectedImage.BackgroundImageLayout = ImageLayout.Stretch;
                 SelectedImage.Cursor = Cursors.Hand;
@@ -168,6 +208,8 @@ namespace PE22A_JAMZ.src.TabRenderer
             ImageHeight = Int32.Parse(TxtHeight.Text);
             ImageFormat = CbxFormat.Text.ToLower();
 
+            BtnSaveImages.Enabled = true;
+
             await SelectImages();
             
         }
@@ -175,13 +217,24 @@ namespace PE22A_JAMZ.src.TabRenderer
         private async void BtnSelectImages_Click(object sender, EventArgs e)
         {
             ResetUi();
-            await ValidateInput();    
+            await ValidateInput();
         }
 
         private void CalculateAspecRatio(string Target)
         {
 
             if (!IsAspectRatioEnabled) return;
+
+            if (CmbAspectRatio.SelectedIndex == -1)
+            {
+                MessageBox.Show("Escoge una relación de aspecto",
+                                "¡Atención!",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Warning);
+
+                CmbAspectRatio.Focus();
+                return;
+            }
 
             if (TxtHeight.Text.Equals("") && Target == "width") return;
             if (TxtWidth.Text.Equals("") && Target == "height") return;
