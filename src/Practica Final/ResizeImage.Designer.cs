@@ -31,7 +31,7 @@
             this.PnlContainer = new System.Windows.Forms.Panel();
             this.ScpResizer = new System.Windows.Forms.SplitContainer();
             this.PnlSideBar = new System.Windows.Forms.Panel();
-            this.RtbFilesInfo = new System.Windows.Forms.RichTextBox();
+            this.LbFIlesInfo = new System.Windows.Forms.ListBox();
             this.LblAspectRatio = new System.Windows.Forms.Label();
             this.LblWidth = new System.Windows.Forms.Label();
             this.BtnSaveImages = new System.Windows.Forms.Button();
@@ -46,7 +46,7 @@
             this.TxtHeight = new System.Windows.Forms.TextBox();
             this.FlpImages = new System.Windows.Forms.FlowLayoutPanel();
             this.LblInfo = new System.Windows.Forms.Label();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MsApp = new System.Windows.Forms.MenuStrip();
             this.SmiTheme = new System.Windows.Forms.ToolStripMenuItem();
             this.TsCmbTheme = new System.Windows.Forms.ToolStripComboBox();
             this.PnlContainer.SuspendLayout();
@@ -55,7 +55,7 @@
             this.ScpResizer.Panel2.SuspendLayout();
             this.ScpResizer.SuspendLayout();
             this.PnlSideBar.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.MsApp.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlContainer
@@ -92,7 +92,7 @@
             // PnlSideBar
             // 
             this.PnlSideBar.BackColor = System.Drawing.Color.White;
-            this.PnlSideBar.Controls.Add(this.RtbFilesInfo);
+            this.PnlSideBar.Controls.Add(this.LbFIlesInfo);
             this.PnlSideBar.Controls.Add(this.LblAspectRatio);
             this.PnlSideBar.Controls.Add(this.LblWidth);
             this.PnlSideBar.Controls.Add(this.BtnSaveImages);
@@ -111,16 +111,18 @@
             this.PnlSideBar.Size = new System.Drawing.Size(300, 664);
             this.PnlSideBar.TabIndex = 11;
             // 
-            // RtbFilesInfo
+            // LbFIlesInfo
             // 
-            this.RtbFilesInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.RtbFilesInfo.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.RtbFilesInfo.Location = new System.Drawing.Point(13, 324);
-            this.RtbFilesInfo.Name = "RtbFilesInfo";
-            this.RtbFilesInfo.ReadOnly = true;
-            this.RtbFilesInfo.Size = new System.Drawing.Size(277, 284);
-            this.RtbFilesInfo.TabIndex = 14;
-            this.RtbFilesInfo.Text = "";
+            this.LbFIlesInfo.FormattingEnabled = true;
+            this.LbFIlesInfo.HorizontalScrollbar = true;
+            this.LbFIlesInfo.ItemHeight = 15;
+            this.LbFIlesInfo.Items.AddRange(new object[] {
+            ""});
+            this.LbFIlesInfo.Location = new System.Drawing.Point(13, 379);
+            this.LbFIlesInfo.Name = "LbFIlesInfo";
+            this.LbFIlesInfo.ScrollAlwaysVisible = true;
+            this.LbFIlesInfo.Size = new System.Drawing.Size(277, 229);
+            this.LbFIlesInfo.TabIndex = 15;
             // 
             // LblAspectRatio
             // 
@@ -196,12 +198,13 @@
             this.CbxFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxFormat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CbxFormat.FormattingEnabled = true;
+            this.CbxFormat.ItemHeight = 20;
             this.CbxFormat.Items.AddRange(new object[] {
             "PNG",
             "JPG"});
             this.CbxFormat.Location = new System.Drawing.Point(89, 202);
             this.CbxFormat.Name = "CbxFormat";
-            this.CbxFormat.Size = new System.Drawing.Size(201, 30);
+            this.CbxFormat.Size = new System.Drawing.Size(201, 26);
             this.CbxFormat.TabIndex = 7;
             this.CbxFormat.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.CbxFormat_DrawItem);
             // 
@@ -212,13 +215,14 @@
             this.CmbAspectRatio.Enabled = false;
             this.CmbAspectRatio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CmbAspectRatio.FormattingEnabled = true;
+            this.CmbAspectRatio.ItemHeight = 20;
             this.CmbAspectRatio.Items.AddRange(new object[] {
             "16:9",
             "4:3",
             "1:1"});
             this.CmbAspectRatio.Location = new System.Drawing.Point(10, 158);
             this.CmbAspectRatio.Name = "CmbAspectRatio";
-            this.CmbAspectRatio.Size = new System.Drawing.Size(280, 30);
+            this.CmbAspectRatio.Size = new System.Drawing.Size(280, 26);
             this.CmbAspectRatio.TabIndex = 12;
             this.CmbAspectRatio.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.CbxFormat_DrawItem);
             // 
@@ -292,16 +296,16 @@
             this.LblInfo.Text = "Redimensionar imagen(es)";
             this.LblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // menuStrip1
+            // MsApp
             // 
-            this.menuStrip1.BackColor = System.Drawing.Color.White;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MsApp.BackColor = System.Drawing.Color.White;
+            this.MsApp.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.SmiTheme});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
+            this.MsApp.Location = new System.Drawing.Point(0, 0);
+            this.MsApp.Name = "MsApp";
+            this.MsApp.Size = new System.Drawing.Size(1264, 24);
+            this.MsApp.TabIndex = 1;
+            this.MsApp.Text = "menuStrip1";
             // 
             // SmiTheme
             // 
@@ -328,8 +332,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 729);
             this.Controls.Add(this.PnlContainer);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.MsApp);
+            this.MainMenuStrip = this.MsApp;
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "ResizeImage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -341,8 +345,8 @@
             this.ScpResizer.ResumeLayout(false);
             this.PnlSideBar.ResumeLayout(false);
             this.PnlSideBar.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.MsApp.ResumeLayout(false);
+            this.MsApp.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,9 +371,9 @@
         private System.Windows.Forms.ComboBox CbxFormat;
         private System.Windows.Forms.Label LblAspectRatio;
         private System.Windows.Forms.Button BtnSaveImages;
-        private System.Windows.Forms.RichTextBox RtbFilesInfo;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip MsApp;
         private System.Windows.Forms.ToolStripMenuItem SmiTheme;
         private System.Windows.Forms.ToolStripComboBox TsCmbTheme;
+        private System.Windows.Forms.ListBox LbFIlesInfo;
     }
 }

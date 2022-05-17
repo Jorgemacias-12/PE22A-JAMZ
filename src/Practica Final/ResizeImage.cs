@@ -101,21 +101,17 @@ namespace PE22A_JAMZ.src.TabRenderer
         private void ShowFilesInfo()
         {
 
-            RtbFilesInfo.AppendText("Información acerca de las imagenes: " + Environment.NewLine + Environment.NewLine);
-
             for (int i = 0; i < FilesInfo.Length; i++)
             {
 
-                ImageToolTip[i] = $"Archivo: {FilesInfo[i].Name}, Tamaño: {FilesInfo[i].Length}Bytes, Fecha de cración: {FilesInfo[i].CreationTime} {Environment.NewLine}";
+                ImageToolTip[i] = $"{i + 1} | {FilesInfo[i].Name} | {FileUtils.CalculateSize(FilesInfo[i].Length)} | {FilesInfo[i].CreationTime} {Environment.NewLine}";
 
                 ImagesLength += FilesInfo[i].Length;
 
-                RtbFilesInfo.AppendText(
-                    $"Archivo: {FilesInfo[i].Name}, Tamaño: {FilesInfo[i].Length}Bytes, Fecha de creación: {FilesInfo[i].CreationTime} {Environment.NewLine} {Environment.NewLine}"
-                    );
+                LbFIlesInfo.Items.Add(ImageToolTip[i]);
             }
 
-            RtbFilesInfo.AppendText($"Tamaño final de imagen(es) selecciona(s): {ImagesLength}");
+            LbFIlesInfo.Items.Add($"Tamaño total: {FileUtils.CalculateSize(ImagesLength)}");
 
         }
 
@@ -166,6 +162,7 @@ namespace PE22A_JAMZ.src.TabRenderer
         private void ResetUi()
         {
             LblQuantity.Text = "Imagen(es) seleccionada(s):";
+            LbFIlesInfo.Items.Clear();
         }
 
         private async Task ValidateInput()
@@ -198,6 +195,7 @@ namespace PE22A_JAMZ.src.TabRenderer
                                 "¡Atención!", 
                                 MessageBoxButtons.OK, 
                                 MessageBoxIcon.Warning);
+                CbxFormat.Focus();
                 return;
             }
 
@@ -448,6 +446,9 @@ namespace PE22A_JAMZ.src.TabRenderer
             {
                 case 0:
 
+                    MsApp.BackColor = UiUtils.GetColor("#151515");
+                    MsApp.ForeColor = UiUtils.GetColor("#FFF");
+
                     UiUtils.StyleLabel(DARK_FIRST_BG, DARK_FG, LblInfo);
 
                     ScpResizer.BackColor = UiUtils.GetColor("#303030");
@@ -457,6 +458,9 @@ namespace PE22A_JAMZ.src.TabRenderer
 
                     break;
                 case 1:
+
+                    MsApp.BackColor = UiUtils.GetColor("#FFF");
+                    MsApp.ForeColor = UiUtils.GetColor("#000");
 
                     UiUtils.StyleLabel(LIGHT_FIRST_BG, LIGHT_FG, LblInfo);
 
