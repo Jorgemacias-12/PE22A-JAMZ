@@ -201,6 +201,7 @@
             // CmbAspectRatio
             // 
             this.CmbAspectRatio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CmbAspectRatio.Enabled = false;
             this.CmbAspectRatio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CmbAspectRatio.FormattingEnabled = true;
             this.CmbAspectRatio.Items.AddRange(new object[] {
@@ -235,6 +236,7 @@
             // BtnSelectImages
             // 
             this.BtnSelectImages.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(215)))), ((int)(((byte)(96)))));
+            this.BtnSelectImages.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnSelectImages.FlatAppearance.BorderSize = 0;
             this.BtnSelectImages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSelectImages.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -287,6 +289,7 @@
             this.Controls.Add(this.PnlContainer);
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "ResizeImage";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ResizeImage";
             this.PnlContainer.ResumeLayout(false);
             this.ScpResizer.Panel1.ResumeLayout(false);

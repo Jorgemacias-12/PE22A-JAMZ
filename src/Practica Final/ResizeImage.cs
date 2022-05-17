@@ -28,9 +28,10 @@ namespace PE22A_JAMZ.src.TabRenderer
         private int QuantityOfImages;
         private string[] FileNames;
         private string[] ImageToolTip;
-        private string ImageFormat;
+        private string FileFormat;
         private FileInfo[] FilesInfo;
         private ToolTip ImgToolTip;
+        private long ImagesLength;
 
         private OpenFileDialog OpenDialog;
         private SaveFileDialog SaveDialog;
@@ -56,11 +57,9 @@ namespace PE22A_JAMZ.src.TabRenderer
 
             OpenDialog.InitialDirectory = @"C:\";
             OpenDialog.Title = "Escoge imagen(es) a redimensionar";
+            OpenDialog.Filter = "JPG Image(.jpg)|*.jpg|PNG Image(.png)|*.png";
             OpenDialog.RestoreDirectory = true;
             OpenDialog.Multiselect = true;
-
-            if (ImageFormat == "jpg") OpenDialog.Filter = "JPG Image(.jpg)|*.jpg";
-            if (ImageFormat == "png") OpenDialog.Filter = "Png Image(.png)|*.png";
 
             Result = OpenDialog.ShowDialog();
 
@@ -99,17 +98,21 @@ namespace PE22A_JAMZ.src.TabRenderer
         private void ShowFilesInfo()
         {
 
-            RtbFilesInfo.AppendText("Información acerca de las imagenes: " + Environment.NewLine);
+            RtbFilesInfo.AppendText("Información acerca de las imagenes: " + Environment.NewLine + Environment.NewLine);
 
             for (int i = 0; i < FilesInfo.Length; i++)
             {
 
                 ImageToolTip[i] = $"Archivo: {FilesInfo[i].Name}, Tamaño: {FilesInfo[i].Length}Bytes, Fecha de cración: {FilesInfo[i].CreationTime} {Environment.NewLine}";
 
+                ImagesLength += FilesInfo[i].Length;
+
                 RtbFilesInfo.AppendText(
                     $"Archivo: {FilesInfo[i].Name}, Tamaño: {FilesInfo[i].Length}Bytes, Fecha de creación: {FilesInfo[i].CreationTime} {Environment.NewLine} {Environment.NewLine}"
                     );
             }
+
+            RtbFilesInfo.AppendText($"Tamaño final de imagen(es) selecciona(s): {ImagesLength}");
 
         }
 
@@ -137,7 +140,7 @@ namespace PE22A_JAMZ.src.TabRenderer
             {
                 SelectedImage = new PictureBox();
                 SelectedImage.Name = $"{i}";
-                SelectedImage.Size = new Size(400, 300);
+                SelectedImage.Size = new Size(170, 170);
                 SelectedImage.BackColor = Color.Transparent;
                 SelectedImage.BackgroundImage = Image.FromFile(FileNames[i]);
                 SelectedImage.MouseEnter += UiUtils.PaintBorder;
@@ -206,7 +209,7 @@ namespace PE22A_JAMZ.src.TabRenderer
             
             ImageWidth = Int32.Parse(TxtWidth.Text);
             ImageHeight = Int32.Parse(TxtHeight.Text);
-            ImageFormat = CbxFormat.Text.ToLower();
+            FileFormat = CbxFormat.Text.ToLower();
 
             BtnSaveImages.Enabled = true;
 
@@ -301,6 +304,9 @@ namespace PE22A_JAMZ.src.TabRenderer
         private void CbxAspectRatio_Click(object sender, EventArgs e)
         {
             IsAspectRatioEnabled = CbxAspectRatio.Checked;
+
+            CmbAspectRatio.Enabled = CbxAspectRatio.Checked;
+
         }
 
         private void TxtWidth_KeyUp(object sender, KeyEventArgs e)
@@ -321,8 +327,8 @@ namespace PE22A_JAMZ.src.TabRenderer
             SaveDialog.InitialDirectory = Application.StartupPath;
             SaveDialog.RestoreDirectory = true;
 
-            if (ImageFormat == "jpg") SaveDialog.Filter = "JPG Image(.jpg)|*.jpg";
-            if (ImageFormat == "png") SaveDialog.Filter = "Png Image(.png)|*.png";
+            if (FileFormat == "jpg") SaveDialog.Filter = "JPG Image(.jpg)|*.jpg";
+            if (FileFormat == "png") SaveDialog.Filter = "Png Image(.png)|*.png";
 
             Result = SaveDialog.ShowDialog();
 
@@ -337,11 +343,12 @@ namespace PE22A_JAMZ.src.TabRenderer
             if (Result == DialogResult.OK)
             {
 
-                SaveDialog.FileName = SaveDialog.FileName.Replace($".{ImageFormat}", "");
+                SaveDialog.FileName = SaveDialog.FileName.Replace($".{FileFormat}", "");
 
                 for (int i = 0; i < FileNames.Length; i++)
                 {
-                    ResizeImg(FileNames[i], ImageWidth, ImageHeight).Save($"{SaveDialog.FileName} {i + 1}.{ImageFormat}");
+                    if (FileFormat == "png") ResizeImg(FileNames[i], ImageWidth, ImageHeight).Save($"{SaveDialog.FileName} {i + 1}.{FileFormat}", ImageFormat.Png);
+                    if (FileFormat == "jpg") ResizeImg(FileNames[i], ImageWidth, ImageHeight).Save($"{SaveDialog.FileName} {i + 1}.{FileFormat}", ImageFormat.Jpeg);
                 }
 
                 if (FileNames.Length > 1)
