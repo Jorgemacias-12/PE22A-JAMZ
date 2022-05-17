@@ -46,12 +46,16 @@
             this.TxtHeight = new System.Windows.Forms.TextBox();
             this.FlpImages = new System.Windows.Forms.FlowLayoutPanel();
             this.LblInfo = new System.Windows.Forms.Label();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.SmiTheme = new System.Windows.Forms.ToolStripMenuItem();
+            this.TsCmbTheme = new System.Windows.Forms.ToolStripComboBox();
             this.PnlContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ScpResizer)).BeginInit();
             this.ScpResizer.Panel1.SuspendLayout();
             this.ScpResizer.Panel2.SuspendLayout();
             this.ScpResizer.SuspendLayout();
             this.PnlSideBar.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PnlContainer
@@ -59,14 +63,14 @@
             this.PnlContainer.Controls.Add(this.ScpResizer);
             this.PnlContainer.Controls.Add(this.LblInfo);
             this.PnlContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PnlContainer.Location = new System.Drawing.Point(0, 0);
+            this.PnlContainer.Location = new System.Drawing.Point(0, 24);
             this.PnlContainer.Name = "PnlContainer";
-            this.PnlContainer.Size = new System.Drawing.Size(1264, 729);
+            this.PnlContainer.Size = new System.Drawing.Size(1264, 705);
             this.PnlContainer.TabIndex = 0;
             // 
             // ScpResizer
             // 
-            this.ScpResizer.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.ScpResizer.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ScpResizer.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ScpResizer.Location = new System.Drawing.Point(0, 39);
             this.ScpResizer.Name = "ScpResizer";
@@ -80,13 +84,14 @@
             // 
             this.ScpResizer.Panel2.Controls.Add(this.FlpImages);
             this.ScpResizer.Panel2MinSize = 900;
-            this.ScpResizer.Size = new System.Drawing.Size(1264, 690);
-            this.ScpResizer.SplitterDistance = 300;
+            this.ScpResizer.Size = new System.Drawing.Size(1264, 666);
+            this.ScpResizer.SplitterDistance = 302;
+            this.ScpResizer.SplitterWidth = 10;
             this.ScpResizer.TabIndex = 12;
             // 
             // PnlSideBar
             // 
-            this.PnlSideBar.AutoScroll = true;
+            this.PnlSideBar.BackColor = System.Drawing.Color.White;
             this.PnlSideBar.Controls.Add(this.RtbFilesInfo);
             this.PnlSideBar.Controls.Add(this.LblAspectRatio);
             this.PnlSideBar.Controls.Add(this.LblWidth);
@@ -103,17 +108,17 @@
             this.PnlSideBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlSideBar.Location = new System.Drawing.Point(0, 0);
             this.PnlSideBar.Name = "PnlSideBar";
-            this.PnlSideBar.Size = new System.Drawing.Size(296, 686);
+            this.PnlSideBar.Size = new System.Drawing.Size(300, 664);
             this.PnlSideBar.TabIndex = 11;
             // 
             // RtbFilesInfo
             // 
-            this.RtbFilesInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.RtbFilesInfo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.RtbFilesInfo.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.RtbFilesInfo.Location = new System.Drawing.Point(13, 324);
             this.RtbFilesInfo.Name = "RtbFilesInfo";
             this.RtbFilesInfo.ReadOnly = true;
-            this.RtbFilesInfo.Size = new System.Drawing.Size(277, 308);
+            this.RtbFilesInfo.Size = new System.Drawing.Size(277, 284);
             this.RtbFilesInfo.TabIndex = 14;
             this.RtbFilesInfo.Text = "";
             // 
@@ -145,9 +150,9 @@
             this.BtnSaveImages.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSaveImages.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.BtnSaveImages.ForeColor = System.Drawing.Color.White;
-            this.BtnSaveImages.Location = new System.Drawing.Point(16, 638);
+            this.BtnSaveImages.Location = new System.Drawing.Point(13, 614);
             this.BtnSaveImages.Name = "BtnSaveImages";
-            this.BtnSaveImages.Size = new System.Drawing.Size(274, 38);
+            this.BtnSaveImages.Size = new System.Drawing.Size(277, 38);
             this.BtnSaveImages.TabIndex = 13;
             this.BtnSaveImages.Text = "Redimensionar imagen(es)";
             this.BtnSaveImages.UseVisualStyleBackColor = false;
@@ -187,6 +192,7 @@
             // 
             // CbxFormat
             // 
+            this.CbxFormat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CbxFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbxFormat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CbxFormat.FormattingEnabled = true;
@@ -195,11 +201,13 @@
             "JPG"});
             this.CbxFormat.Location = new System.Drawing.Point(89, 202);
             this.CbxFormat.Name = "CbxFormat";
-            this.CbxFormat.Size = new System.Drawing.Size(201, 29);
+            this.CbxFormat.Size = new System.Drawing.Size(201, 30);
             this.CbxFormat.TabIndex = 7;
+            this.CbxFormat.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.CbxFormat_DrawItem);
             // 
             // CmbAspectRatio
             // 
+            this.CmbAspectRatio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CmbAspectRatio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbAspectRatio.Enabled = false;
             this.CmbAspectRatio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
@@ -210,11 +218,13 @@
             "1:1"});
             this.CmbAspectRatio.Location = new System.Drawing.Point(10, 158);
             this.CmbAspectRatio.Name = "CmbAspectRatio";
-            this.CmbAspectRatio.Size = new System.Drawing.Size(280, 29);
+            this.CmbAspectRatio.Size = new System.Drawing.Size(280, 30);
             this.CmbAspectRatio.TabIndex = 12;
+            this.CmbAspectRatio.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.CbxFormat_DrawItem);
             // 
             // TxtWidth
             // 
+            this.TxtWidth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtWidth.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtWidth.Location = new System.Drawing.Point(71, 10);
             this.TxtWidth.Name = "TxtWidth";
@@ -250,6 +260,7 @@
             // 
             // TxtHeight
             // 
+            this.TxtHeight.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TxtHeight.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtHeight.Location = new System.Drawing.Point(57, 46);
             this.TxtHeight.Name = "TxtHeight";
@@ -262,16 +273,16 @@
             // 
             this.FlpImages.AutoScroll = true;
             this.FlpImages.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.FlpImages.BackColor = System.Drawing.Color.White;
+            this.FlpImages.BackColor = System.Drawing.SystemColors.Control;
             this.FlpImages.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FlpImages.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.FlpImages.Location = new System.Drawing.Point(0, 0);
             this.FlpImages.Name = "FlpImages";
-            this.FlpImages.Size = new System.Drawing.Size(956, 686);
+            this.FlpImages.Size = new System.Drawing.Size(950, 664);
             this.FlpImages.TabIndex = 0;
             // 
             // LblInfo
             // 
+            this.LblInfo.BackColor = System.Drawing.Color.White;
             this.LblInfo.Dock = System.Windows.Forms.DockStyle.Top;
             this.LblInfo.Font = new System.Drawing.Font("Roboto", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.LblInfo.Location = new System.Drawing.Point(0, 0);
@@ -281,16 +292,48 @@
             this.LblInfo.Text = "Redimensionar imagen(es)";
             this.LblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackColor = System.Drawing.Color.White;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SmiTheme});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // SmiTheme
+            // 
+            this.SmiTheme.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.TsCmbTheme});
+            this.SmiTheme.Name = "SmiTheme";
+            this.SmiTheme.Size = new System.Drawing.Size(47, 20);
+            this.SmiTheme.Text = "Tema";
+            // 
+            // TsCmbTheme
+            // 
+            this.TsCmbTheme.BackColor = System.Drawing.SystemColors.Control;
+            this.TsCmbTheme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TsCmbTheme.Items.AddRange(new object[] {
+            "Oscuro",
+            "Claro"});
+            this.TsCmbTheme.Name = "TsCmbTheme";
+            this.TsCmbTheme.Size = new System.Drawing.Size(121, 23);
+            this.TsCmbTheme.SelectedIndexChanged += new System.EventHandler(this.TsCmbTheme_SelectedIndexChanged);
+            // 
             // ResizeImage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1264, 729);
             this.Controls.Add(this.PnlContainer);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(800, 600);
             this.Name = "ResizeImage";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ResizeImage";
+            this.Text = "Redimensionador de imagenes - JAMZ";
             this.PnlContainer.ResumeLayout(false);
             this.ScpResizer.Panel1.ResumeLayout(false);
             this.ScpResizer.Panel2.ResumeLayout(false);
@@ -298,7 +341,10 @@
             this.ScpResizer.ResumeLayout(false);
             this.PnlSideBar.ResumeLayout(false);
             this.PnlSideBar.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -322,5 +368,8 @@
         private System.Windows.Forms.Label LblAspectRatio;
         private System.Windows.Forms.Button BtnSaveImages;
         private System.Windows.Forms.RichTextBox RtbFilesInfo;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem SmiTheme;
+        private System.Windows.Forms.ToolStripComboBox TsCmbTheme;
     }
 }

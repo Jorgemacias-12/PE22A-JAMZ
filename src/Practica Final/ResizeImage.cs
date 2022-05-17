@@ -20,6 +20,9 @@ namespace PE22A_JAMZ.src.TabRenderer
         public ResizeImage()
         {
             InitializeComponent();
+
+            BtnSaveImages.ForeColor = Color.White;
+
         }
 
         bool IsAspectRatioEnabled;
@@ -140,7 +143,7 @@ namespace PE22A_JAMZ.src.TabRenderer
             {
                 SelectedImage = new PictureBox();
                 SelectedImage.Name = $"{i}";
-                SelectedImage.Size = new Size(170, 170);
+                SelectedImage.Size = new Size(300, 225);
                 SelectedImage.BackColor = Color.Transparent;
                 SelectedImage.BackgroundImage = Image.FromFile(FileNames[i]);
                 SelectedImage.MouseEnter += UiUtils.PaintBorder;
@@ -425,8 +428,68 @@ namespace PE22A_JAMZ.src.TabRenderer
             SaveFiles();
         }
 
+
         #endregion
 
+        private void TsCmbTheme_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+            int SelectedTheme = TsCmbTheme.SelectedIndex;
+
+            // CASE 0 == CASE DARK
+            // CASE 1 == CASE LIGHT
+
+            string DARK_FIRST_BG = "#151515";
+            string LIGHT_FIRST_BG = "#FFFFFF";
+            string DARK_FG = "#FFFFFF";
+            string LIGHT_FG = "#000000";
+
+            switch (SelectedTheme)
+            {
+                case 0:
+
+                    UiUtils.StyleLabel(DARK_FIRST_BG, DARK_FG, LblInfo);
+
+                    ScpResizer.BackColor = UiUtils.GetColor("#303030");
+
+                    UiUtils.StyleContainer(DARK_FIRST_BG, DARK_FG, PnlSideBar);
+                    UiUtils.StyleContainer(DARK_FIRST_BG, DARK_FG, FlpImages);
+
+                    break;
+                case 1:
+
+                    UiUtils.StyleLabel(LIGHT_FIRST_BG, LIGHT_FG, LblInfo);
+
+                    ScpResizer.BackColor = UiUtils.GetColor("#FFF");
+
+                    UiUtils.StyleContainer(LIGHT_FIRST_BG, LIGHT_FG, PnlSideBar);
+                    UiUtils.StyleContainer(LIGHT_FIRST_BG, LIGHT_FG, FlpImages);
+
+                    break;
+            }
+        }
+
+        private void CbxFormat_DrawItem(object sender, DrawItemEventArgs e)
+        {
+
+            int Index = TsCmbTheme.SelectedIndex;
+
+            switch(Index)
+            {
+
+                case -1:
+                    UiUtils.DrawItem(sender, e, Index);
+                    break;
+
+                case 0:
+                    UiUtils.DrawItem(sender, e, Index);
+                    break;
+                case 1:
+                    UiUtils.DrawItem(sender, e, Index);
+                    break;
+            }
+
+
+        }
     }
 }
