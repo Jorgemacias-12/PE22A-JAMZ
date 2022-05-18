@@ -103,8 +103,18 @@ namespace PE22A_JAMZ.src.Utils
 
             ItemBrush = new SolidBrush(Color.Black); // Fallback
 
-            if (SelectedTheme == 0) ItemBrush = new SolidBrush(Color.White);
-            if (SelectedTheme == 1) ItemBrush = new SolidBrush(Color.Black);
+
+            if (SelectedTheme == 0)
+            {
+                ItemBrush = new SolidBrush(Color.White);
+                comboBox.BackColor = GetColor("#303030");
+            }
+            
+            if (SelectedTheme == 1)
+            {
+                ItemBrush = new SolidBrush(Color.Black);
+                comboBox.BackColor = GetColor("#F5F5F5");
+            }
 
             e.DrawBackground();
             

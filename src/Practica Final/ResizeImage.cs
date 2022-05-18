@@ -462,6 +462,8 @@ namespace PE22A_JAMZ.src.TabRenderer
                     TxtWidth.BackColor = UiUtils.GetColor("#303030");
                     TxtWidth.ForeColor = UiUtils.GetColor("#FFF");
 
+                    BtnSelectImages.ForeColor = Color.Black;
+
                     TxtHeight.BackColor = UiUtils.GetColor("#303030");
                     TxtHeight.ForeColor = UiUtils.GetColor("#FFF");
 
