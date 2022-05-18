@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -192,8 +191,18 @@
             this.PbcAntes = new System.Windows.Forms.PictureBox();
             this.LblAntes = new System.Windows.Forms.Label();
             this.TpgPractica10 = new System.Windows.Forms.TabPage();
-            this.BtnOpen = new System.Windows.Forms.Button();
-            this.LblInfo = new System.Windows.Forms.Label();
+            this.FlpPlacesContainer = new System.Windows.Forms.FlowLayoutPanel();
+            this.PnlControls = new System.Windows.Forms.Panel();
+            this.LblFindedPlaces = new System.Windows.Forms.Label();
+            this.LblPlace = new System.Windows.Forms.Label();
+            this.BtnGetPlaces = new System.Windows.Forms.Button();
+            this.LblLong = new System.Windows.Forms.Label();
+            this.LblLat = new System.Windows.Forms.Label();
+            this.TxtLong = new System.Windows.Forms.TextBox();
+            this.CbxPlaces = new System.Windows.Forms.ComboBox();
+            this.TxtLat = new System.Windows.Forms.TextBox();
+            this.TxtPlace = new System.Windows.Forms.TextBox();
+            this.LblPOI = new System.Windows.Forms.Label();
             this.ColVector = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCoordenadaX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -233,6 +242,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbcDespues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbcAntes)).BeginInit();
             this.TpgPractica10.SuspendLayout();
+            this.PnlControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuStrip
@@ -498,7 +508,7 @@
             this.TpgPractica2.Controls.Add(this.LblCarrito);
             this.TpgPractica2.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica2.Name = "TpgPractica2";
-            this.TpgPractica2.Size = new System.Drawing.Size(1106, 585);
+            this.TpgPractica2.Size = new System.Drawing.Size(1266, 801);
             this.TpgPractica2.TabIndex = 3;
             this.TpgPractica2.Text = "Práctica 2";
             // 
@@ -803,7 +813,7 @@
             this.TpgPractica3.Controls.Add(this.PnlP3Izq);
             this.TpgPractica3.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica3.Name = "TpgPractica3";
-            this.TpgPractica3.Size = new System.Drawing.Size(1106, 585);
+            this.TpgPractica3.Size = new System.Drawing.Size(1266, 801);
             this.TpgPractica3.TabIndex = 4;
             this.TpgPractica3.Text = "Práctica 3";
             this.TpgPractica3.UseVisualStyleBackColor = true;
@@ -857,7 +867,7 @@
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             this.DgvP3FlujosNetos.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.DgvP3FlujosNetos.RowTemplate.Height = 29;
-            this.DgvP3FlujosNetos.Size = new System.Drawing.Size(788, 585);
+            this.DgvP3FlujosNetos.Size = new System.Drawing.Size(903, 801);
             this.DgvP3FlujosNetos.TabIndex = 1;
             // 
             // ColAño
@@ -890,7 +900,7 @@
             this.PnlP3Izq.Dock = System.Windows.Forms.DockStyle.Left;
             this.PnlP3Izq.Location = new System.Drawing.Point(0, 0);
             this.PnlP3Izq.Name = "PnlP3Izq";
-            this.PnlP3Izq.Size = new System.Drawing.Size(318, 585);
+            this.PnlP3Izq.Size = new System.Drawing.Size(363, 801);
             this.PnlP3Izq.TabIndex = 0;
             // 
             // BtnLlenarP3
@@ -1009,7 +1019,7 @@
             this.TpgPractica4.Controls.Add(this.PnlP4Derecho);
             this.TpgPractica4.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica4.Name = "TpgPractica4";
-            this.TpgPractica4.Size = new System.Drawing.Size(1106, 585);
+            this.TpgPractica4.Size = new System.Drawing.Size(1266, 801);
             this.TpgPractica4.TabIndex = 5;
             this.TpgPractica4.Text = "Práctica 4";
             this.TpgPractica4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TpgPractica4_MouseClick);
@@ -1019,10 +1029,9 @@
             this.PnlP4Interior.BackColor = System.Drawing.Color.Turquoise;
             this.PnlP4Interior.Controls.Add(this.DgvP4DatosEspaciales);
             this.PnlP4Interior.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlP4Interior.Location = new System.Drawing.Point(0, 426);
-            this.PnlP4Interior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PnlP4Interior.Location = new System.Drawing.Point(0, 589);
             this.PnlP4Interior.Name = "PnlP4Interior";
-            this.PnlP4Interior.Size = new System.Drawing.Size(868, 159);
+            this.PnlP4Interior.Size = new System.Drawing.Size(994, 212);
             this.PnlP4Interior.TabIndex = 1;
             // 
             // DgvP4DatosEspaciales
@@ -1039,7 +1048,7 @@
             this.DgvP4DatosEspaciales.Name = "DgvP4DatosEspaciales";
             this.DgvP4DatosEspaciales.RowHeadersWidth = 51;
             this.DgvP4DatosEspaciales.RowTemplate.Height = 29;
-            this.DgvP4DatosEspaciales.Size = new System.Drawing.Size(868, 159);
+            this.DgvP4DatosEspaciales.Size = new System.Drawing.Size(994, 212);
             this.DgvP4DatosEspaciales.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn3
@@ -1071,10 +1080,9 @@
             this.PnlP4Derecho.Controls.Add(this.BtnP4Limpiar);
             this.PnlP4Derecho.Controls.Add(this.CbxP4Terrenos);
             this.PnlP4Derecho.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnlP4Derecho.Location = new System.Drawing.Point(868, 0);
-            this.PnlP4Derecho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PnlP4Derecho.Location = new System.Drawing.Point(994, 0);
             this.PnlP4Derecho.Name = "PnlP4Derecho";
-            this.PnlP4Derecho.Size = new System.Drawing.Size(238, 585);
+            this.PnlP4Derecho.Size = new System.Drawing.Size(272, 801);
             this.PnlP4Derecho.TabIndex = 0;
             // 
             // NudZoom
@@ -1148,7 +1156,7 @@
             this.TpgPractica5.Controls.Add(this.ScpPractica5);
             this.TpgPractica5.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica5.Name = "TpgPractica5";
-            this.TpgPractica5.Size = new System.Drawing.Size(1106, 585);
+            this.TpgPractica5.Size = new System.Drawing.Size(1266, 801);
             this.TpgPractica5.TabIndex = 6;
             this.TpgPractica5.Text = "Práctica 5";
             this.TpgPractica5.UseVisualStyleBackColor = true;
@@ -1172,9 +1180,9 @@
             // 
             this.ScpPractica5.Panel2.Controls.Add(this.DgvP5DatosEspaciales);
             this.ScpPractica5.Panel2MinSize = 150;
-            this.ScpPractica5.Size = new System.Drawing.Size(1106, 585);
-            this.ScpPractica5.SplitterDistance = 429;
-            this.ScpPractica5.SplitterWidth = 2;
+            this.ScpPractica5.Size = new System.Drawing.Size(1266, 801);
+            this.ScpPractica5.SplitterDistance = 586;
+            this.ScpPractica5.SplitterWidth = 3;
             this.ScpPractica5.TabIndex = 0;
             // 
             // PnlP5Lienzo
@@ -1184,7 +1192,7 @@
             this.PnlP5Lienzo.Location = new System.Drawing.Point(0, 0);
             this.PnlP5Lienzo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PnlP5Lienzo.Name = "PnlP5Lienzo";
-            this.PnlP5Lienzo.Size = new System.Drawing.Size(833, 429);
+            this.PnlP5Lienzo.Size = new System.Drawing.Size(954, 586);
             this.PnlP5Lienzo.TabIndex = 1;
             this.PnlP5Lienzo.Resize += new System.EventHandler(this.PnlP5Lienzo_Resize);
             // 
@@ -1203,9 +1211,10 @@
             this.PnlP5Derecho.Controls.Add(this.BtnP5Limpiar);
             this.PnlP5Derecho.Controls.Add(this.BtnP5Cargar);
             this.PnlP5Derecho.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnlP5Derecho.Location = new System.Drawing.Point(833, 0);
+            this.PnlP5Derecho.Location = new System.Drawing.Point(954, 0);
+            this.PnlP5Derecho.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.PnlP5Derecho.Name = "PnlP5Derecho";
-            this.PnlP5Derecho.Size = new System.Drawing.Size(273, 429);
+            this.PnlP5Derecho.Size = new System.Drawing.Size(312, 586);
             this.PnlP5Derecho.TabIndex = 0;
             // 
             // LblP5Ancho
@@ -1372,17 +1381,9 @@
             this.DgvP5DatosEspaciales.Location = new System.Drawing.Point(0, 0);
             this.DgvP5DatosEspaciales.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.DgvP5DatosEspaciales.Name = "DgvP5DatosEspaciales";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvP5DatosEspaciales.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DgvP5DatosEspaciales.RowHeadersWidth = 45;
             this.DgvP5DatosEspaciales.RowTemplate.Height = 25;
-            this.DgvP5DatosEspaciales.Size = new System.Drawing.Size(1106, 154);
+            this.DgvP5DatosEspaciales.Size = new System.Drawing.Size(1266, 212);
             this.DgvP5DatosEspaciales.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn5
@@ -1423,8 +1424,8 @@
             this.TpgPractica6.ForeColor = System.Drawing.Color.White;
             this.TpgPractica6.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica6.Name = "TpgPractica6";
-            this.TpgPractica6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TpgPractica6.Size = new System.Drawing.Size(1106, 585);
+            this.TpgPractica6.Padding = new System.Windows.Forms.Padding(3);
+            this.TpgPractica6.Size = new System.Drawing.Size(1266, 801);
             this.TpgPractica6.TabIndex = 7;
             this.TpgPractica6.Text = "Práctica 6";
             // 
@@ -1575,8 +1576,8 @@
             this.CbxLugares.Location = new System.Drawing.Point(4, 44);
             this.CbxLugares.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CbxLugares.Name = "CbxLugares";
-            this.CbxLugares.Padding = new System.Windows.Forms.Padding(3);
-            this.CbxLugares.Size = new System.Drawing.Size(1106, 585);
+            this.CbxLugares.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CbxLugares.Size = new System.Drawing.Size(1266, 801);
             this.CbxLugares.TabIndex = 8;
             this.CbxLugares.Text = "Práctica 7";
             // 
@@ -1610,12 +1611,11 @@
             this.ColLongitud,
             this.ColLatitud});
             this.DgvP7Datos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.DgvP7Datos.Location = new System.Drawing.Point(3, 108);
-            this.DgvP7Datos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DgvP7Datos.Location = new System.Drawing.Point(3, 165);
             this.DgvP7Datos.Name = "DgvP7Datos";
             this.DgvP7Datos.RowHeadersWidth = 51;
             this.DgvP7Datos.RowTemplate.Height = 29;
-            this.DgvP7Datos.Size = new System.Drawing.Size(1100, 474);
+            this.DgvP7Datos.Size = new System.Drawing.Size(1260, 632);
             this.DgvP7Datos.TabIndex = 10;
             // 
             // ColNo
@@ -2057,18 +2057,15 @@
             this.TpgPractica9.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TpgPractica9.Name = "TpgPractica9";
-            this.TpgPractica9.Padding = new System.Windows.Forms.Padding(3);
-            this.TpgPractica9.Size = new System.Drawing.Size(1106, 585);
+            this.TpgPractica9.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TpgPractica9.Size = new System.Drawing.Size(1266, 801);
             this.TpgPractica9.TabIndex = 10;
             this.TpgPractica9.Text = "Práctica 9";
             this.TpgPractica9.UseVisualStyleBackColor = true;
             // 
             // PbcDespues
             // 
-            this.PbcDespues.BackgroundImage = global::PE22A_JAMZ.Properties.Resources.despues;
-            this.PbcDespues.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PbcDespues.Location = new System.Drawing.Point(532, 40);
-            this.PbcDespues.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PbcDespues.Location = new System.Drawing.Point(608, 53);
             this.PbcDespues.Name = "PbcDespues";
             this.PbcDespues.Size = new System.Drawing.Size(632, 397);
             this.PbcDespues.TabIndex = 3;
@@ -2105,42 +2102,265 @@
             // TpgPractica10
             // 
             this.TpgPractica10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.TpgPractica10.Controls.Add(this.BtnOpen);
-            this.TpgPractica10.Controls.Add(this.LblInfo);
+            this.TpgPractica10.Controls.Add(this.FlpPlacesContainer);
+            this.TpgPractica10.Controls.Add(this.PnlControls);
             this.TpgPractica10.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.TpgPractica10.Name = "TpgPractica10";
-            this.TpgPractica10.Padding = new System.Windows.Forms.Padding(3);
-            this.TpgPractica10.Size = new System.Drawing.Size(1106, 585);
+            this.TpgPractica10.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TpgPractica10.Size = new System.Drawing.Size(1266, 801);
             this.TpgPractica10.TabIndex = 11;
             this.TpgPractica10.Text = "Práctica 10";
             // 
-            // BtnOpen
+            // FlpPlacesContainer
             // 
-            this.BtnOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.BtnOpen.FlatAppearance.BorderSize = 0;
-            this.BtnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnOpen.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnOpen.ForeColor = System.Drawing.Color.White;
-            this.BtnOpen.Location = new System.Drawing.Point(27, 64);
-            this.BtnOpen.Name = "BtnOpen";
-            this.BtnOpen.Size = new System.Drawing.Size(149, 35);
-            this.BtnOpen.TabIndex = 1;
-            this.BtnOpen.Text = "Abrir";
-            this.BtnOpen.UseVisualStyleBackColor = false;
-            this.BtnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
+            this.FlpPlacesContainer.AutoScroll = true;
+            this.FlpPlacesContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.FlpPlacesContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.FlpPlacesContainer.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.FlpPlacesContainer.Location = new System.Drawing.Point(358, 4);
+            this.FlpPlacesContainer.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.FlpPlacesContainer.Name = "FlpPlacesContainer";
+            this.FlpPlacesContainer.Padding = new System.Windows.Forms.Padding(0, 0, 11, 0);
+            this.FlpPlacesContainer.Size = new System.Drawing.Size(905, 793);
+            this.FlpPlacesContainer.TabIndex = 11;
             // 
-            // LblInfo
+            // PnlControls
             // 
-            this.LblInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LblInfo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblInfo.ForeColor = System.Drawing.Color.White;
-            this.LblInfo.Location = new System.Drawing.Point(3, 3);
-            this.LblInfo.Name = "LblInfo";
-            this.LblInfo.Size = new System.Drawing.Size(1100, 58);
-            this.LblInfo.TabIndex = 0;
-            this.LblInfo.Text = "Redimensionador de imagenes:";
-            this.LblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.PnlControls.Controls.Add(this.LblFindedPlaces);
+            this.PnlControls.Controls.Add(this.LblPlace);
+            this.PnlControls.Controls.Add(this.BtnGetPlaces);
+            this.PnlControls.Controls.Add(this.LblLong);
+            this.PnlControls.Controls.Add(this.LblLat);
+            this.PnlControls.Controls.Add(this.TxtLong);
+            this.PnlControls.Controls.Add(this.CbxPlaces);
+            this.PnlControls.Controls.Add(this.TxtLat);
+            this.PnlControls.Controls.Add(this.TxtPlace);
+            this.PnlControls.Controls.Add(this.LblPOI);
+            this.PnlControls.Dock = System.Windows.Forms.DockStyle.Left;
+            this.PnlControls.Location = new System.Drawing.Point(3, 4);
+            this.PnlControls.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PnlControls.Name = "PnlControls";
+            this.PnlControls.Size = new System.Drawing.Size(355, 793);
+            this.PnlControls.TabIndex = 10;
+            // 
+            // LblFindedPlaces
+            // 
+            this.LblFindedPlaces.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblFindedPlaces.ForeColor = System.Drawing.Color.White;
+            this.LblFindedPlaces.Location = new System.Drawing.Point(15, 380);
+            this.LblFindedPlaces.Name = "LblFindedPlaces";
+            this.LblFindedPlaces.Size = new System.Drawing.Size(322, 41);
+            this.LblFindedPlaces.TabIndex = 9;
+            this.LblFindedPlaces.Text = "Lugares encontrados:";
+            this.LblFindedPlaces.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LblPlace
+            // 
+            this.LblPlace.AutoSize = true;
+            this.LblPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblPlace.ForeColor = System.Drawing.Color.White;
+            this.LblPlace.Location = new System.Drawing.Point(15, 13);
+            this.LblPlace.Name = "LblPlace";
+            this.LblPlace.Size = new System.Drawing.Size(68, 25);
+            this.LblPlace.TabIndex = 0;
+            this.LblPlace.Text = "Lugar:";
+            // 
+            // BtnGetPlaces
+            // 
+            this.BtnGetPlaces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.BtnGetPlaces.FlatAppearance.BorderSize = 0;
+            this.BtnGetPlaces.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGetPlaces.ForeColor = System.Drawing.Color.White;
+            this.BtnGetPlaces.Location = new System.Drawing.Point(15, 293);
+            this.BtnGetPlaces.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.BtnGetPlaces.Name = "BtnGetPlaces";
+            this.BtnGetPlaces.Size = new System.Drawing.Size(322, 53);
+            this.BtnGetPlaces.TabIndex = 8;
+            this.BtnGetPlaces.Text = "Encontrar lugares de interés";
+            this.BtnGetPlaces.UseVisualStyleBackColor = false;
+            this.BtnGetPlaces.Click += new System.EventHandler(this.BtnGetPlaces_Click);
+            // 
+            // LblLong
+            // 
+            this.LblLong.AutoSize = true;
+            this.LblLong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblLong.ForeColor = System.Drawing.Color.White;
+            this.LblLong.Location = new System.Drawing.Point(179, 100);
+            this.LblLong.Name = "LblLong";
+            this.LblLong.Size = new System.Drawing.Size(93, 25);
+            this.LblLong.TabIndex = 4;
+            this.LblLong.Text = "Longitud:";
+            // 
+            // LblLat
+            // 
+            this.LblLat.AutoSize = true;
+            this.LblLat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblLat.ForeColor = System.Drawing.Color.White;
+            this.LblLat.Location = new System.Drawing.Point(15, 100);
+            this.LblLat.Name = "LblLat";
+            this.LblLat.Size = new System.Drawing.Size(76, 25);
+            this.LblLat.TabIndex = 1;
+            this.LblLat.Text = "Latitud:";
+            // 
+            // TxtLong
+            // 
+            this.TxtLong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.TxtLong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtLong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtLong.ForeColor = System.Drawing.Color.White;
+            this.TxtLong.Location = new System.Drawing.Point(179, 129);
+            this.TxtLong.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtLong.Name = "TxtLong";
+            this.TxtLong.ReadOnly = true;
+            this.TxtLong.Size = new System.Drawing.Size(157, 26);
+            this.TxtLong.TabIndex = 5;
+            // 
+            // CbxPlaces
+            // 
+            this.CbxPlaces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.CbxPlaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxPlaces.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CbxPlaces.ForeColor = System.Drawing.Color.White;
+            this.CbxPlaces.FormattingEnabled = true;
+            this.CbxPlaces.Items.AddRange(new object[] {
+            "accounting",
+            "airport",
+            "amusement_park",
+            "aquarium",
+            "art_gallery",
+            "atm",
+            "bakery",
+            "bank",
+            "bar",
+            "beauty_salon",
+            "bicycle_store",
+            "book_store",
+            "bowling_alley",
+            "bus_station",
+            "cafe",
+            "campground",
+            "car_dealer",
+            "car_rental",
+            "car_repair",
+            "car_wash",
+            "casino",
+            "cemetery",
+            "church",
+            "city_hall",
+            "clothing_store",
+            "convenience_store",
+            "courthouse",
+            "dentist",
+            "department_store",
+            "doctor",
+            "drugstore",
+            "electrician",
+            "electronics_store",
+            "embassy",
+            "fire_station",
+            "florist",
+            "funeral_home",
+            "furniture_store",
+            "gas_station",
+            "gym",
+            "hair_care",
+            "hardware_store",
+            "hindu_temple",
+            "home_goods_store",
+            "hospital",
+            "insurance_agency",
+            "jewelry_store",
+            "laundry",
+            "lawyer",
+            "library",
+            "light_rail_station",
+            "liquor_store",
+            "local_government_office",
+            "locksmith",
+            "lodging",
+            "meal_delivery",
+            "meal_takeaway",
+            "mosque",
+            "movie_rental",
+            "movie_theater",
+            "moving_company",
+            "museum",
+            "night_club",
+            "painter",
+            "park",
+            "parking",
+            "pet_store",
+            "pharmacy",
+            "physiotherapist",
+            "plumber",
+            "police",
+            "post_office",
+            "primary_school",
+            "real_estate_agency",
+            "restaurant",
+            "roofing_contractor",
+            "rv_park",
+            "school",
+            "secondary_school",
+            "shoe_store",
+            "shopping_mall",
+            "spa",
+            "stadium",
+            "storage",
+            "store",
+            "subway_station",
+            "supermarket",
+            "synagogue",
+            "taxi_stand",
+            "tourist_attraction",
+            "train_station",
+            "transit_station",
+            "travel_agency",
+            "university",
+            "veterinary_care",
+            "zoo"});
+            this.CbxPlaces.Location = new System.Drawing.Point(15, 239);
+            this.CbxPlaces.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.CbxPlaces.Name = "CbxPlaces";
+            this.CbxPlaces.Size = new System.Drawing.Size(322, 28);
+            this.CbxPlaces.TabIndex = 7;
+            // 
+            // TxtLat
+            // 
+            this.TxtLat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.TxtLat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtLat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtLat.ForeColor = System.Drawing.Color.White;
+            this.TxtLat.Location = new System.Drawing.Point(15, 129);
+            this.TxtLat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtLat.Name = "TxtLat";
+            this.TxtLat.ReadOnly = true;
+            this.TxtLat.Size = new System.Drawing.Size(144, 26);
+            this.TxtLat.TabIndex = 3;
+            // 
+            // TxtPlace
+            // 
+            this.TxtPlace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.TxtPlace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.TxtPlace.ForeColor = System.Drawing.Color.White;
+            this.TxtPlace.Location = new System.Drawing.Point(15, 47);
+            this.TxtPlace.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.TxtPlace.Name = "TxtPlace";
+            this.TxtPlace.Size = new System.Drawing.Size(322, 26);
+            this.TxtPlace.TabIndex = 2;
+            // 
+            // LblPOI
+            // 
+            this.LblPOI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblPOI.ForeColor = System.Drawing.Color.White;
+            this.LblPOI.Location = new System.Drawing.Point(15, 184);
+            this.LblPOI.Name = "LblPOI";
+            this.LblPOI.Size = new System.Drawing.Size(322, 35);
+            this.LblPOI.TabIndex = 6;
+            this.LblPOI.Text = "Lugar de interés:";
+            this.LblPOI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ColVector
             // 
@@ -2235,6 +2455,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbcDespues)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbcAntes)).EndInit();
             this.TpgPractica10.ResumeLayout(false);
+            this.PnlControls.ResumeLayout(false);
+            this.PnlControls.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2367,6 +2589,18 @@
         private System.Windows.Forms.Button BtnP7Coordenadas;
         private System.Windows.Forms.TextBox TxtP7Longitud;
         private System.Windows.Forms.TextBox TxtP7Latitud;
+        private System.Windows.Forms.Label LblPlace;
+        private System.Windows.Forms.TextBox TxtPlace;
+        private System.Windows.Forms.Label LblLat;
+        private System.Windows.Forms.TextBox TxtLat;
+        private System.Windows.Forms.Label LblLong;
+        private System.Windows.Forms.TextBox TxtLong;
+        private System.Windows.Forms.Label LblPOI;
+        private System.Windows.Forms.ComboBox CbxPlaces;
+        private System.Windows.Forms.Button BtnGetPlaces;
+        private System.Windows.Forms.Panel PnlControls;
+        private System.Windows.Forms.FlowLayoutPanel FlpPlacesContainer;
+        private System.Windows.Forms.Label LblFindedPlaces;
         private System.Windows.Forms.Label LblAntes;
         private System.Windows.Forms.PictureBox PbcAntes;
         private System.Windows.Forms.PictureBox PbcDespues;
@@ -2381,8 +2615,26 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColDomicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColLongitud;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColLatitud;
-        private System.Windows.Forms.Label LblInfo;
-        private System.Windows.Forms.Button BtnOpen;
-      
+        private System.Windows.Forms.Button BtnCopiarCOrigen;
+        private System.Windows.Forms.GroupBox GbxOrigen;
+        private System.Windows.Forms.Label LblP8LatitudO;
+        private System.Windows.Forms.TextBox TxtLatitudOrigen;
+        private System.Windows.Forms.TextBox TxtLongitudOrigen;
+        private System.Windows.Forms.Label LblLongitudOrigen;
+        private System.Windows.Forms.TextBox TxtLugarOrigen;
+        private System.Windows.Forms.Label LblLugarOrigen;
+        private System.Windows.Forms.GroupBox GbxDestino;
+        private System.Windows.Forms.TextBox TxtLugarDestino;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TxtLongitudDestino;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TxtLatitudDestino;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button BtnCopiarCDestino;
+        private System.Windows.Forms.PictureBox PbxVistaPrevia;
+        private System.Windows.Forms.Label LblResultadoP8;
+        private System.Windows.Forms.TextBox TxtResultadoP8;
+        private System.Windows.Forms.Button BtnCalcularDistanciaP8;
+        private System.Windows.Forms.Label LblSemiversenoInfo;
     }
 }
