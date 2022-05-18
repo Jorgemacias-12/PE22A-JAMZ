@@ -11,12 +11,16 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Forms;
 
 namespace PE22A_JAMZ.src.TabRenderer
 {
     public partial class ResizeImage : Form
     {
+
+        #region CLASS CONSTRUCTOR
+
         public ResizeImage()
         {
             InitializeComponent();
@@ -25,6 +29,9 @@ namespace PE22A_JAMZ.src.TabRenderer
 
         }
 
+        #endregion
+
+        #region GLOBAL VARAIABLES
         bool IsAspectRatioEnabled;
         private int ImageWidth;
         private int ImageHeight;
@@ -53,6 +60,10 @@ namespace PE22A_JAMZ.src.TabRenderer
             3f,
             1f
         };
+
+        #endregion
+
+        #region REDIMENSIONAR IMAGENES
 
         private async Task SelectImages()
         {
@@ -218,11 +229,7 @@ namespace PE22A_JAMZ.src.TabRenderer
             
         }
 
-        private async void BtnSelectImages_Click(object sender, EventArgs e)
-        {
-            ResetUi();
-            await ValidateInput();
-        }
+
 
         private void CalculateAspecRatio(string Target)
         {
@@ -277,6 +284,16 @@ namespace PE22A_JAMZ.src.TabRenderer
 
         }
 
+        #endregion
+
+        #region EVENTOS
+
+        private async void BtnSelectImages_Click(object sender, EventArgs e)
+        {
+            ResetUi();
+            await ValidateInput();
+        }
+
         private void ValidateField(KeyPressEventArgs e)
         {
 
@@ -287,8 +304,6 @@ namespace PE22A_JAMZ.src.TabRenderer
             }
 
         }
-
-        #region EVENTOS
 
         private void TxtWidth_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -426,9 +441,6 @@ namespace PE22A_JAMZ.src.TabRenderer
             SaveFiles();
         }
 
-
-        #endregion
-
         private void TsCmbTheme_SelectedIndexChanged(object sender, EventArgs e)
         {
             
@@ -519,5 +531,13 @@ namespace PE22A_JAMZ.src.TabRenderer
 
 
         }
+
+        private void CmbAspectRatio_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CalculateAspecRatio("height");
+        }
+
+        #endregion
+
     }
 }

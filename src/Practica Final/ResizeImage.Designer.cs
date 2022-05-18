@@ -231,6 +231,7 @@
             this.CmbAspectRatio.Size = new System.Drawing.Size(280, 26);
             this.CmbAspectRatio.TabIndex = 12;
             this.CmbAspectRatio.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.CbxFormat_DrawItem);
+            this.CmbAspectRatio.SelectedIndexChanged += new System.EventHandler(this.CmbAspectRatio_SelectedIndexChanged);
             // 
             // TxtWidth
             // 
