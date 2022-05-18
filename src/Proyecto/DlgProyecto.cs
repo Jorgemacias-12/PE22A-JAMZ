@@ -16,6 +16,7 @@ using System.Net.Http;
 using System.Xml;
 using System.Net;
 using PE22A_JAMZ.src.Utils;
+using PE22A_JAMZ.src.TabRenderer;
 
 namespace PE22A_JAMZ
 {
@@ -1554,7 +1555,7 @@ namespace PE22A_JAMZ
 
                 Exito = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 Exito = false;
             }
@@ -1668,227 +1669,15 @@ namespace PE22A_JAMZ
 
         #endregion
 
-        #region PRACTICA FINAL
+        #region PRACTICA FINAL 
 
-        #region VARIABLES DE PRACTICA
-        HttpClient Client;
-        Uri Direction;
-        HttpResponseMessage Response;
-        XmlDocument Document;
-        XmlNodeList ElementList;
-        XmlElement BookElement;
-        string HttpContent;
-        string PlaceStr;
-        string API_KEY;
-        string Long;
-        string Lat;
-        string[] PhotoReference;
-        string[] BusinessName;
-        string[] BusinessAddr;
-        string[] BusinessType;
-        string[] BusinessCoord;
-        string[] BusinessRaiting;
-
-        int PlacesFounded;
-        #endregion
-
-
-        public async Task<Image> GetPlaceImage(int currentIndex)
+        private void BtnOpen_Click(object sender, EventArgs e)
         {
-            // Declaración de variables
-            Stream WStream;
-
-            Client = null;
-            
-            // Declarar la url de la API
-            string API_URL = $"https://via.placeholder.com/200x300?text={BusinessName[currentIndex]}";
-
-            Client = new HttpClient();
-            Client.BaseAddress = new Uri(API_URL);
-
-            // Obtiene los datos de la imagen de forma asincrona
-            WStream = await Client.GetStreamAsync(API_URL);
-
-            // Retorna la imagen
-            return Image.FromStream(WStream);
+            ResizeImage program = new ResizeImage();
+            program.ShowDialog();
         }
-
-        // +-------------------------------------------------------------------------+
-        // |   Genera una previsualización (componente) de los lugares encontrados   |
-        // |   en un lugar.                                                          |
-        // +-------------------------------------------------------------------------+
-        private async Task GetPlacePreview(FlowLayoutPanel Container)
-        {
-            // Declaración
-            PictureBox Preview;
-
-            Preview = null;
-
-            // Crear pre visualización (dependiendo de la cantidad de lugares encontrados
-            for (int i = 0; i < PlacesFounded; i++)
-            {
-
-                // Inicializar PictureBox
-                Preview = new PictureBox();
-
-                // Propiedades del componente
-                Preview.Size = new Size(200, 300);
-                Preview.Name = $"view-{i}";
-                Preview.Image = await GetPlaceImage(i);
-                Preview.Margin = new Padding(10, 10, 10, 10);
-                Preview.Anchor = AnchorStyles.None;
-                Preview.MouseEnter += UiUtils.PaintBorder;
-                Preview.MouseLeave += UiUtils.RemoveBorder;
-                Preview.Cursor = Cursors.Hand;
-                Preview.Update();
-
-                Container.Controls.Add(Preview);
-                Container.Update();
-
-            }
-
-        }
-
-        // +-------------------------------------------------------------------------+
-        // |  Obtener los lugares disponibles de un cierto tipo especifico           |
-        // |  al rededor de la localización dada utilizando nearbysearch.            |
-        // +-------------------------------------------------------------------------+
-        private async Task GetPlaces()
-        {
-            // Inicializar valores
-            Client = new HttpClient();
-            Document = new XmlDocument();
-            Direction = new Uri("https://maps.googleapis.com/maps/api/place/nearbysearch/");
-            API_KEY = Environment.GetEnvironmentVariable("GM_KEY");
-            PlacesFounded = 0;
-
-            // Asignar valores
-            Client.BaseAddress = Direction;
-            Response = await Client.GetAsync($"xml?location={Lat},{Long}&radius=2000&type={PlaceStr}&key={API_KEY}");
-            HttpContent = await Response.Content.ReadAsStringAsync();
-
-            // Cargar documento XML
-            Document.LoadXml(HttpContent);
-
-            // Obtener lo(s) resultado(s)
-            ElementList = Document.GetElementsByTagName("result");
-            // Mostrar la cantidad de lugares encontrados
-            PlacesFounded = ElementList.Count;
-            LblFindedPlaces.Text += $" {PlacesFounded}";
-            
-            // Incializar espacios para almacenar las propiedades
-            // de los lugares/establecimientos obtenidos
-            PhotoReference = new string[PlacesFounded];
-            BusinessName = new string[PlacesFounded];
-            BusinessAddr = new string[PlacesFounded];
-            BusinessType = new string[PlacesFounded];
-            BusinessCoord = new string[PlacesFounded];
-            BusinessRaiting = new string[PlacesFounded];
-
-            // Obtener valores de la respuesta API
-
-            for (int i = 0; i < PlacesFounded; i++)
-            {
-                BusinessName[i] = XmlUtils.GetXmlValue(Document, "name", "", i);
-            }
-            
-        }
-
-        // +-------------------------------------------------------------------------+
-        // |   Obtiene las coordenadas de un lugar, a partir de una dirección        |
-        // +-------------------------------------------------------------------------+
-        private async Task GetPlace(string PlaceValue)
-        {
-            // Declaración de variables (locales)
-            string API_RESPONSE_STATUS;
-            string Place;
-
-            // Inicializar valores
-            Place = PlaceValue;
-            API_KEY = Environment.GetEnvironmentVariable("GM_KEY");
-            Direction = new Uri("https://maps.googleapis.com/maps/api/geocode/");
-            Client = new HttpClient();
-            Client.BaseAddress = Direction;
-            Document = new XmlDocument();
-
-            // Hacer la request enviando el lugar, junto con la llave de la API
-            Response = await Client.GetAsync($"xml?address={Place}&key={API_KEY}");
-            // Guardar la respuesta en HttpContent
-            HttpContent = await Response.Content.ReadAsStringAsync();
-
-            // Cargar XML de respuesta
-            Document.LoadXml(HttpContent);
-
-            // Obtener el elemento status desde XML para validar el estado de la petición
-            ElementList = Document.GetElementsByTagName("status");
-            // Obtiene el priomer elemento de la lista
-            BookElement = (XmlElement)ElementList.Item(0);
-            // Obtiene el texto del elemento
-            API_RESPONSE_STATUS = BookElement.InnerText;
-
-            // Comprobar si el estado de la respuesta es válida
-
-            if (API_RESPONSE_STATUS == "ZERO_RESULTS")
-            {
-                TxtLat.Text = "Lugar no encontrado.";
-                TxtLong.Text = "Lugar no encontrado.";
-                return;
-            }
-
-            // Obtener las coordenadas del lugar requerido
-            ElementList = Document.GetElementsByTagName("location");
-            BookElement = (XmlElement)ElementList.Item(0);
-            Lat = BookElement["lat"].InnerText;
-            Long = BookElement["lng"].InnerText;
-
-            // Mostrar coordenadas en la UI
-            TxtLat.Text = Lat;
-            TxtLong.Text = Long;
-
-        }
-
-        // +-------------------------------------------------------------------------+
-        // |   Obtiene los valores requeridos para crear la petición, y obtener      |
-        // |   los lugares de interés cercas del lugar indicado.                     |
-        // +-------------------------------------------------------------------------+
-        private async void BtnGetPlaces_Click(object sender, EventArgs e)
-        {
-            // Reiniciar vista
-
-            FlpPlacesContainer.Controls.Clear();
-            LblFindedPlaces.Text = "Lugares encontrados: ";
-
-            // Variables
-            string Place;
-
-            // Asignación de valores
-            Place = TxtPlace.Text;
-            PlaceStr = CbxPlaces.Text;
-
-            // Validar obtención de lugar
-
-            if (Place.Equals(""))
-            {
-                MessageBox.Show("Campo vació, por favor introduce un lugar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            if (CbxPlaces.SelectedIndex == -1)
-            {
-                MessageBox.Show("Escoge un lugar de interés", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            await GetPlace(Place);
-            await GetPlaces();
-            await GetPlacePreview(FlpPlacesContainer);
-
-        }
-
 
         #endregion
-
-
 
         // ===========================================================================
 

@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -171,18 +171,8 @@
             this.PbcAntes = new System.Windows.Forms.PictureBox();
             this.LblAntes = new System.Windows.Forms.Label();
             this.TpgPractica10 = new System.Windows.Forms.TabPage();
-            this.FlpPlacesContainer = new System.Windows.Forms.FlowLayoutPanel();
-            this.PnlControls = new System.Windows.Forms.Panel();
-            this.LblFindedPlaces = new System.Windows.Forms.Label();
-            this.LblPlace = new System.Windows.Forms.Label();
-            this.BtnGetPlaces = new System.Windows.Forms.Button();
-            this.LblLong = new System.Windows.Forms.Label();
-            this.LblLat = new System.Windows.Forms.Label();
-            this.TxtLong = new System.Windows.Forms.TextBox();
-            this.CbxPlaces = new System.Windows.Forms.ComboBox();
-            this.TxtLat = new System.Windows.Forms.TextBox();
-            this.TxtPlace = new System.Windows.Forms.TextBox();
-            this.LblPOI = new System.Windows.Forms.Label();
+            this.BtnOpen = new System.Windows.Forms.Button();
+            this.LblInfo = new System.Windows.Forms.Label();
             this.ColVector = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCoordenadaX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -218,7 +208,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbcDespues)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbcAntes)).BeginInit();
             this.TpgPractica10.SuspendLayout();
-            this.PnlControls.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuStrip
@@ -491,7 +480,7 @@
             this.TpgPractica2.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TpgPractica2.Name = "TpgPractica2";
-            this.TpgPractica2.Size = new System.Drawing.Size(1107, 589);
+            this.TpgPractica2.Size = new System.Drawing.Size(1106, 585);
             this.TpgPractica2.TabIndex = 3;
             this.TpgPractica2.Text = "Práctica 2";
             // 
@@ -810,62 +799,62 @@
             this.TpgPractica3.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TpgPractica3.Name = "TpgPractica3";
-            this.TpgPractica3.Size = new System.Drawing.Size(1107, 589);
+            this.TpgPractica3.Size = new System.Drawing.Size(1106, 585);
             this.TpgPractica3.TabIndex = 4;
             this.TpgPractica3.Text = "Práctica 3";
             this.TpgPractica3.UseVisualStyleBackColor = true;
             // 
             // DgvP3FlujosNetos
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvP3FlujosNetos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvP3FlujosNetos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvP3FlujosNetos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.DgvP3FlujosNetos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvP3FlujosNetos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvP3FlujosNetos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DgvP3FlujosNetos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvP3FlujosNetos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColAño,
             this.ColFNE});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvP3FlujosNetos.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvP3FlujosNetos.DefaultCellStyle = dataGridViewCellStyle3;
             this.DgvP3FlujosNetos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvP3FlujosNetos.Location = new System.Drawing.Point(318, 0);
             this.DgvP3FlujosNetos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvP3FlujosNetos.Name = "DgvP3FlujosNetos";
             this.DgvP3FlujosNetos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvP3FlujosNetos.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvP3FlujosNetos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvP3FlujosNetos.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.DgvP3FlujosNetos.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.DgvP3FlujosNetos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvP3FlujosNetos.RowTemplate.Height = 29;
-            this.DgvP3FlujosNetos.Size = new System.Drawing.Size(789, 589);
+            this.DgvP3FlujosNetos.Size = new System.Drawing.Size(788, 585);
             this.DgvP3FlujosNetos.TabIndex = 1;
             // 
             // ColAño
@@ -899,7 +888,7 @@
             this.PnlP3Izq.Location = new System.Drawing.Point(0, 0);
             this.PnlP3Izq.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PnlP3Izq.Name = "PnlP3Izq";
-            this.PnlP3Izq.Size = new System.Drawing.Size(318, 589);
+            this.PnlP3Izq.Size = new System.Drawing.Size(318, 585);
             this.PnlP3Izq.TabIndex = 0;
             // 
             // BtnLlenarP3
@@ -1025,7 +1014,7 @@
             this.TpgPractica4.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TpgPractica4.Name = "TpgPractica4";
-            this.TpgPractica4.Size = new System.Drawing.Size(1107, 589);
+            this.TpgPractica4.Size = new System.Drawing.Size(1106, 585);
             this.TpgPractica4.TabIndex = 5;
             this.TpgPractica4.Text = "Práctica 4";
             this.TpgPractica4.MouseClick += new System.Windows.Forms.MouseEventHandler(this.TpgPractica4_MouseClick);
@@ -1035,10 +1024,10 @@
             this.PnlP4Interior.BackColor = System.Drawing.Color.Turquoise;
             this.PnlP4Interior.Controls.Add(this.DgvP4DatosEspaciales);
             this.PnlP4Interior.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlP4Interior.Location = new System.Drawing.Point(0, 430);
+            this.PnlP4Interior.Location = new System.Drawing.Point(0, 426);
             this.PnlP4Interior.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PnlP4Interior.Name = "PnlP4Interior";
-            this.PnlP4Interior.Size = new System.Drawing.Size(869, 159);
+            this.PnlP4Interior.Size = new System.Drawing.Size(868, 159);
             this.PnlP4Interior.TabIndex = 1;
             // 
             // DgvP4DatosEspaciales
@@ -1056,7 +1045,7 @@
             this.DgvP4DatosEspaciales.Name = "DgvP4DatosEspaciales";
             this.DgvP4DatosEspaciales.RowHeadersWidth = 51;
             this.DgvP4DatosEspaciales.RowTemplate.Height = 29;
-            this.DgvP4DatosEspaciales.Size = new System.Drawing.Size(869, 159);
+            this.DgvP4DatosEspaciales.Size = new System.Drawing.Size(868, 159);
             this.DgvP4DatosEspaciales.TabIndex = 2;
             // 
             // dataGridViewTextBoxColumn3
@@ -1088,10 +1077,10 @@
             this.PnlP4Derecho.Controls.Add(this.BtnP4Limpiar);
             this.PnlP4Derecho.Controls.Add(this.CbxP4Terrenos);
             this.PnlP4Derecho.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnlP4Derecho.Location = new System.Drawing.Point(869, 0);
+            this.PnlP4Derecho.Location = new System.Drawing.Point(868, 0);
             this.PnlP4Derecho.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PnlP4Derecho.Name = "PnlP4Derecho";
-            this.PnlP4Derecho.Size = new System.Drawing.Size(238, 589);
+            this.PnlP4Derecho.Size = new System.Drawing.Size(238, 585);
             this.PnlP4Derecho.TabIndex = 0;
             // 
             // NudZoom
@@ -1170,7 +1159,7 @@
             this.TpgPractica5.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TpgPractica5.Name = "TpgPractica5";
-            this.TpgPractica5.Size = new System.Drawing.Size(1107, 589);
+            this.TpgPractica5.Size = new System.Drawing.Size(1106, 585);
             this.TpgPractica5.TabIndex = 6;
             this.TpgPractica5.Text = "Práctica 5";
             this.TpgPractica5.UseVisualStyleBackColor = true;
@@ -1193,8 +1182,8 @@
             // 
             this.ScpPractica5.Panel2.Controls.Add(this.DgvP5DatosEspaciales);
             this.ScpPractica5.Panel2MinSize = 150;
-            this.ScpPractica5.Size = new System.Drawing.Size(1107, 589);
-            this.ScpPractica5.SplitterDistance = 432;
+            this.ScpPractica5.Size = new System.Drawing.Size(1106, 585);
+            this.ScpPractica5.SplitterDistance = 429;
             this.ScpPractica5.SplitterWidth = 2;
             this.ScpPractica5.TabIndex = 0;
             // 
@@ -1204,7 +1193,7 @@
             this.PnlP5Lienzo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlP5Lienzo.Location = new System.Drawing.Point(0, 0);
             this.PnlP5Lienzo.Name = "PnlP5Lienzo";
-            this.PnlP5Lienzo.Size = new System.Drawing.Size(834, 432);
+            this.PnlP5Lienzo.Size = new System.Drawing.Size(833, 429);
             this.PnlP5Lienzo.TabIndex = 1;
             this.PnlP5Lienzo.Resize += new System.EventHandler(this.PnlP5Lienzo_Resize);
             // 
@@ -1223,9 +1212,9 @@
             this.PnlP5Derecho.Controls.Add(this.BtnP5Limpiar);
             this.PnlP5Derecho.Controls.Add(this.BtnP5Cargar);
             this.PnlP5Derecho.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PnlP5Derecho.Location = new System.Drawing.Point(834, 0);
+            this.PnlP5Derecho.Location = new System.Drawing.Point(833, 0);
             this.PnlP5Derecho.Name = "PnlP5Derecho";
-            this.PnlP5Derecho.Size = new System.Drawing.Size(273, 432);
+            this.PnlP5Derecho.Size = new System.Drawing.Size(273, 429);
             this.PnlP5Derecho.TabIndex = 0;
             // 
             // LblP5Ancho
@@ -1359,42 +1348,42 @@
             // DgvP5DatosEspaciales
             // 
             this.DgvP5DatosEspaciales.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvP5DatosEspaciales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvP5DatosEspaciales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DgvP5DatosEspaciales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvP5DatosEspaciales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.ColCoordX,
             this.ColCoordY});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvP5DatosEspaciales.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvP5DatosEspaciales.DefaultCellStyle = dataGridViewCellStyle7;
             this.DgvP5DatosEspaciales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvP5DatosEspaciales.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DgvP5DatosEspaciales.Location = new System.Drawing.Point(0, 0);
             this.DgvP5DatosEspaciales.Name = "DgvP5DatosEspaciales";
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvP5DatosEspaciales.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvP5DatosEspaciales.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.DgvP5DatosEspaciales.RowHeadersWidth = 45;
             this.DgvP5DatosEspaciales.RowTemplate.Height = 25;
-            this.DgvP5DatosEspaciales.Size = new System.Drawing.Size(1107, 155);
+            this.DgvP5DatosEspaciales.Size = new System.Drawing.Size(1106, 154);
             this.DgvP5DatosEspaciales.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn5
@@ -1437,7 +1426,7 @@
             this.TpgPractica6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TpgPractica6.Name = "TpgPractica6";
             this.TpgPractica6.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.TpgPractica6.Size = new System.Drawing.Size(1107, 589);
+            this.TpgPractica6.Size = new System.Drawing.Size(1106, 585);
             this.TpgPractica6.TabIndex = 7;
             this.TpgPractica6.Text = "Práctica 6";
             // 
@@ -1594,8 +1583,8 @@
             this.CbxLugares.Controls.Add(this.LblP7Latitud);
             this.CbxLugares.Location = new System.Drawing.Point(4, 44);
             this.CbxLugares.Name = "CbxLugares";
-            this.CbxLugares.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.CbxLugares.Size = new System.Drawing.Size(1107, 589);
+            this.CbxLugares.Padding = new System.Windows.Forms.Padding(3);
+            this.CbxLugares.Size = new System.Drawing.Size(1106, 585);
             this.CbxLugares.TabIndex = 8;
             this.CbxLugares.Text = "Práctica 7";
             // 
@@ -1630,12 +1619,12 @@
             this.ColLongitud,
             this.ColLatitud});
             this.DgvP7Datos.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.DgvP7Datos.Location = new System.Drawing.Point(3, 112);
+            this.DgvP7Datos.Location = new System.Drawing.Point(3, 108);
             this.DgvP7Datos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvP7Datos.Name = "DgvP7Datos";
             this.DgvP7Datos.RowHeadersWidth = 51;
             this.DgvP7Datos.RowTemplate.Height = 29;
-            this.DgvP7Datos.Size = new System.Drawing.Size(1101, 474);
+            this.DgvP7Datos.Size = new System.Drawing.Size(1100, 474);
             this.DgvP7Datos.TabIndex = 10;
             // 
             // ColNo
@@ -1866,7 +1855,7 @@
             // 
             this.TpgPractica8.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica8.Name = "TpgPractica8";
-            this.TpgPractica8.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TpgPractica8.Padding = new System.Windows.Forms.Padding(3);
             this.TpgPractica8.Size = new System.Drawing.Size(1106, 585);
             this.TpgPractica8.TabIndex = 9;
             this.TpgPractica8.Text = "Práctica 8";
@@ -1880,7 +1869,7 @@
             this.TpgPractica9.Controls.Add(this.LblAntes);
             this.TpgPractica9.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica9.Name = "TpgPractica9";
-            this.TpgPractica9.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TpgPractica9.Padding = new System.Windows.Forms.Padding(3);
             this.TpgPractica9.Size = new System.Drawing.Size(1106, 585);
             this.TpgPractica9.TabIndex = 10;
             this.TpgPractica9.Text = "Práctica 9";
@@ -1929,257 +1918,41 @@
             // TpgPractica10
             // 
             this.TpgPractica10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.TpgPractica10.Controls.Add(this.FlpPlacesContainer);
-            this.TpgPractica10.Controls.Add(this.PnlControls);
+            this.TpgPractica10.Controls.Add(this.BtnOpen);
+            this.TpgPractica10.Controls.Add(this.LblInfo);
             this.TpgPractica10.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica10.Name = "TpgPractica10";
-            this.TpgPractica10.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.TpgPractica10.Size = new System.Drawing.Size(1107, 589);
+            this.TpgPractica10.Padding = new System.Windows.Forms.Padding(3);
+            this.TpgPractica10.Size = new System.Drawing.Size(1106, 585);
             this.TpgPractica10.TabIndex = 11;
             this.TpgPractica10.Text = "Práctica 10";
             // 
-            // FlpPlacesContainer
+            // BtnOpen
             // 
-            this.FlpPlacesContainer.AutoScroll = true;
-            this.FlpPlacesContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.FlpPlacesContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.FlpPlacesContainer.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.FlpPlacesContainer.Location = new System.Drawing.Point(314, 3);
-            this.FlpPlacesContainer.Name = "FlpPlacesContainer";
-            this.FlpPlacesContainer.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
-            this.FlpPlacesContainer.Size = new System.Drawing.Size(790, 583);
-            this.FlpPlacesContainer.TabIndex = 11;
+            this.BtnOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.BtnOpen.FlatAppearance.BorderSize = 0;
+            this.BtnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOpen.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnOpen.ForeColor = System.Drawing.Color.White;
+            this.BtnOpen.Location = new System.Drawing.Point(27, 64);
+            this.BtnOpen.Name = "BtnOpen";
+            this.BtnOpen.Size = new System.Drawing.Size(149, 35);
+            this.BtnOpen.TabIndex = 1;
+            this.BtnOpen.Text = "Abrir";
+            this.BtnOpen.UseVisualStyleBackColor = false;
+            this.BtnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
             // 
-            // PnlControls
+            // LblInfo
             // 
-            this.PnlControls.Controls.Add(this.LblFindedPlaces);
-            this.PnlControls.Controls.Add(this.LblPlace);
-            this.PnlControls.Controls.Add(this.BtnGetPlaces);
-            this.PnlControls.Controls.Add(this.LblLong);
-            this.PnlControls.Controls.Add(this.LblLat);
-            this.PnlControls.Controls.Add(this.TxtLong);
-            this.PnlControls.Controls.Add(this.CbxPlaces);
-            this.PnlControls.Controls.Add(this.TxtLat);
-            this.PnlControls.Controls.Add(this.TxtPlace);
-            this.PnlControls.Controls.Add(this.LblPOI);
-            this.PnlControls.Dock = System.Windows.Forms.DockStyle.Left;
-            this.PnlControls.Location = new System.Drawing.Point(3, 3);
-            this.PnlControls.Name = "PnlControls";
-            this.PnlControls.Size = new System.Drawing.Size(311, 583);
-            this.PnlControls.TabIndex = 10;
-            // 
-            // LblFindedPlaces
-            // 
-            this.LblFindedPlaces.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblFindedPlaces.ForeColor = System.Drawing.Color.White;
-            this.LblFindedPlaces.Location = new System.Drawing.Point(13, 285);
-            this.LblFindedPlaces.Name = "LblFindedPlaces";
-            this.LblFindedPlaces.Size = new System.Drawing.Size(282, 31);
-            this.LblFindedPlaces.TabIndex = 9;
-            this.LblFindedPlaces.Text = "Lugares encontrados:";
-            this.LblFindedPlaces.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LblPlace
-            // 
-            this.LblPlace.AutoSize = true;
-            this.LblPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblPlace.ForeColor = System.Drawing.Color.White;
-            this.LblPlace.Location = new System.Drawing.Point(13, 10);
-            this.LblPlace.Name = "LblPlace";
-            this.LblPlace.Size = new System.Drawing.Size(54, 20);
-            this.LblPlace.TabIndex = 0;
-            this.LblPlace.Text = "Lugar:";
-            // 
-            // BtnGetPlaces
-            // 
-            this.BtnGetPlaces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.BtnGetPlaces.FlatAppearance.BorderSize = 0;
-            this.BtnGetPlaces.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGetPlaces.ForeColor = System.Drawing.Color.White;
-            this.BtnGetPlaces.Location = new System.Drawing.Point(13, 220);
-            this.BtnGetPlaces.Name = "BtnGetPlaces";
-            this.BtnGetPlaces.Size = new System.Drawing.Size(282, 40);
-            this.BtnGetPlaces.TabIndex = 8;
-            this.BtnGetPlaces.Text = "Encontrar lugares de interés";
-            this.BtnGetPlaces.UseVisualStyleBackColor = false;
-            this.BtnGetPlaces.Click += new System.EventHandler(this.BtnGetPlaces_Click);
-            // 
-            // LblLong
-            // 
-            this.LblLong.AutoSize = true;
-            this.LblLong.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblLong.ForeColor = System.Drawing.Color.White;
-            this.LblLong.Location = new System.Drawing.Point(157, 75);
-            this.LblLong.Name = "LblLong";
-            this.LblLong.Size = new System.Drawing.Size(75, 20);
-            this.LblLong.TabIndex = 4;
-            this.LblLong.Text = "Longitud:";
-            // 
-            // LblLat
-            // 
-            this.LblLat.AutoSize = true;
-            this.LblLat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblLat.ForeColor = System.Drawing.Color.White;
-            this.LblLat.Location = new System.Drawing.Point(13, 75);
-            this.LblLat.Name = "LblLat";
-            this.LblLat.Size = new System.Drawing.Size(62, 20);
-            this.LblLat.TabIndex = 1;
-            this.LblLat.Text = "Latitud:";
-            // 
-            // TxtLong
-            // 
-            this.TxtLong.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.TxtLong.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtLong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtLong.ForeColor = System.Drawing.Color.White;
-            this.TxtLong.Location = new System.Drawing.Point(157, 97);
-            this.TxtLong.Name = "TxtLong";
-            this.TxtLong.ReadOnly = true;
-            this.TxtLong.Size = new System.Drawing.Size(138, 23);
-            this.TxtLong.TabIndex = 5;
-            // 
-            // CbxPlaces
-            // 
-            this.CbxPlaces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.CbxPlaces.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbxPlaces.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CbxPlaces.ForeColor = System.Drawing.Color.White;
-            this.CbxPlaces.FormattingEnabled = true;
-            this.CbxPlaces.Items.AddRange(new object[] {
-            "accounting",
-            "airport",
-            "amusement_park",
-            "aquarium",
-            "art_gallery",
-            "atm",
-            "bakery",
-            "bank",
-            "bar",
-            "beauty_salon",
-            "bicycle_store",
-            "book_store",
-            "bowling_alley",
-            "bus_station",
-            "cafe",
-            "campground",
-            "car_dealer",
-            "car_rental",
-            "car_repair",
-            "car_wash",
-            "casino",
-            "cemetery",
-            "church",
-            "city_hall",
-            "clothing_store",
-            "convenience_store",
-            "courthouse",
-            "dentist",
-            "department_store",
-            "doctor",
-            "drugstore",
-            "electrician",
-            "electronics_store",
-            "embassy",
-            "fire_station",
-            "florist",
-            "funeral_home",
-            "furniture_store",
-            "gas_station",
-            "gym",
-            "hair_care",
-            "hardware_store",
-            "hindu_temple",
-            "home_goods_store",
-            "hospital",
-            "insurance_agency",
-            "jewelry_store",
-            "laundry",
-            "lawyer",
-            "library",
-            "light_rail_station",
-            "liquor_store",
-            "local_government_office",
-            "locksmith",
-            "lodging",
-            "meal_delivery",
-            "meal_takeaway",
-            "mosque",
-            "movie_rental",
-            "movie_theater",
-            "moving_company",
-            "museum",
-            "night_club",
-            "painter",
-            "park",
-            "parking",
-            "pet_store",
-            "pharmacy",
-            "physiotherapist",
-            "plumber",
-            "police",
-            "post_office",
-            "primary_school",
-            "real_estate_agency",
-            "restaurant",
-            "roofing_contractor",
-            "rv_park",
-            "school",
-            "secondary_school",
-            "shoe_store",
-            "shopping_mall",
-            "spa",
-            "stadium",
-            "storage",
-            "store",
-            "subway_station",
-            "supermarket",
-            "synagogue",
-            "taxi_stand",
-            "tourist_attraction",
-            "train_station",
-            "transit_station",
-            "travel_agency",
-            "university",
-            "veterinary_care",
-            "zoo"});
-            this.CbxPlaces.Location = new System.Drawing.Point(13, 179);
-            this.CbxPlaces.Name = "CbxPlaces";
-            this.CbxPlaces.Size = new System.Drawing.Size(282, 23);
-            this.CbxPlaces.TabIndex = 7;
-            // 
-            // TxtLat
-            // 
-            this.TxtLat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.TxtLat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtLat.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtLat.ForeColor = System.Drawing.Color.White;
-            this.TxtLat.Location = new System.Drawing.Point(13, 97);
-            this.TxtLat.Name = "TxtLat";
-            this.TxtLat.ReadOnly = true;
-            this.TxtLat.Size = new System.Drawing.Size(126, 23);
-            this.TxtLat.TabIndex = 3;
-            // 
-            // TxtPlace
-            // 
-            this.TxtPlace.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            this.TxtPlace.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.TxtPlace.ForeColor = System.Drawing.Color.White;
-            this.TxtPlace.Location = new System.Drawing.Point(13, 35);
-            this.TxtPlace.Name = "TxtPlace";
-            this.TxtPlace.Size = new System.Drawing.Size(282, 23);
-            this.TxtPlace.TabIndex = 2;
-            // 
-            // LblPOI
-            // 
-            this.LblPOI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblPOI.ForeColor = System.Drawing.Color.White;
-            this.LblPOI.Location = new System.Drawing.Point(13, 138);
-            this.LblPOI.Name = "LblPOI";
-            this.LblPOI.Size = new System.Drawing.Size(282, 26);
-            this.LblPOI.TabIndex = 6;
-            this.LblPOI.Text = "Lugar de interés:";
-            this.LblPOI.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LblInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LblInfo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblInfo.ForeColor = System.Drawing.Color.White;
+            this.LblInfo.Location = new System.Drawing.Point(3, 3);
+            this.LblInfo.Name = "LblInfo";
+            this.LblInfo.Size = new System.Drawing.Size(1100, 58);
+            this.LblInfo.TabIndex = 0;
+            this.LblInfo.Text = "Redimensionador de imagenes:";
+            this.LblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ColVector
             // 
@@ -2268,8 +2041,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.PbcDespues)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PbcAntes)).EndInit();
             this.TpgPractica10.ResumeLayout(false);
-            this.PnlControls.ResumeLayout(false);
-            this.PnlControls.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2402,18 +2173,6 @@
         private System.Windows.Forms.Button BtnP7Coordenadas;
         private System.Windows.Forms.TextBox TxtP7Longitud;
         private System.Windows.Forms.TextBox TxtP7Latitud;
-        private System.Windows.Forms.Label LblPlace;
-        private System.Windows.Forms.TextBox TxtPlace;
-        private System.Windows.Forms.Label LblLat;
-        private System.Windows.Forms.TextBox TxtLat;
-        private System.Windows.Forms.Label LblLong;
-        private System.Windows.Forms.TextBox TxtLong;
-        private System.Windows.Forms.Label LblPOI;
-        private System.Windows.Forms.ComboBox CbxPlaces;
-        private System.Windows.Forms.Button BtnGetPlaces;
-        private System.Windows.Forms.Panel PnlControls;
-        private System.Windows.Forms.FlowLayoutPanel FlpPlacesContainer;
-        private System.Windows.Forms.Label LblFindedPlaces;
         private System.Windows.Forms.Label LblAntes;
         private System.Windows.Forms.PictureBox PbcAntes;
         private System.Windows.Forms.PictureBox PbcDespues;
@@ -2428,5 +2187,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColDomicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColLongitud;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColLatitud;
+        private System.Windows.Forms.Label LblInfo;
+        private System.Windows.Forms.Button BtnOpen;
     }
 }

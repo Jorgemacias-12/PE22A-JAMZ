@@ -18,7 +18,7 @@ namespace PE22A_JAMZ
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ResizeImage());
+            Application.Run(new DlgProyecto());
         }
     }
 }
