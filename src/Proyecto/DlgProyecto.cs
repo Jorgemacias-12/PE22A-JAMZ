@@ -14,6 +14,9 @@ using System.Drawing.Imaging;
 using System.Diagnostics;
 using System.Net.Http;
 using System.Xml;
+using System.Net;
+using PE22A_JAMZ.src.Utils;
+using PE22A_JAMZ.src.TabRenderer;
 
 namespace PE22A_JAMZ
 {
@@ -865,7 +868,7 @@ namespace PE22A_JAMZ
         static Panel drawingPane;
         int mouseX;
         int mouseY;
-        
+
         // ================================ FIN ======================================
 
         // +-------------------------------------------------------------------------+
@@ -882,8 +885,8 @@ namespace PE22A_JAMZ
 
             for (int i = 0; i < cantidadPuntos; i++)
             {
-                PuntosVectoriales[i].X = (float) CoordenadasX[i] * escalaX;
-                PuntosVectoriales[i].Y = (float) CoordenadasY[i] * escalaY;
+                PuntosVectoriales[i].X = (float)CoordenadasX[i] * escalaX;
+                PuntosVectoriales[i].Y = (float)CoordenadasY[i] * escalaY;
             }
 
             // Inicializar herramientas de dibujo gráficas
@@ -909,7 +912,7 @@ namespace PE22A_JAMZ
             ComponentCanvas.FillPolygon(poligonoContenido, PuntosVectoriales);
 
             // Dibujar puntos vectoriales
-            foreach(PointF point in PuntosVectoriales)
+            foreach (PointF point in PuntosVectoriales)
             {
                 ComponentCanvas.FillEllipse(poligonoPuntos, point.X - 2.0f, point.Y - 2, 6, 6);
             }
@@ -958,7 +961,7 @@ namespace PE22A_JAMZ
 
             if (e.KeyCode == Keys.G &&
                 e.Modifiers == Keys.Control &&
-                TbcPrincipal.SelectedTab == TbcPrincipal.TabPages["TpgPractica5"]&&
+                TbcPrincipal.SelectedTab == TbcPrincipal.TabPages["TpgPractica5"] &&
                 ComponentCanvas != null)
             {
                 GuardarImagen();
@@ -982,7 +985,7 @@ namespace PE22A_JAMZ
         // +-------------------------------------------------------------------------+
         private void iniciarLienzo()
         {
-           
+
             // Comprobar si el componente ya existe, y lo elimina
 
             if (PnlP5Lienzo.Controls.Count > 0)
@@ -1052,7 +1055,7 @@ namespace PE22A_JAMZ
             {
                 Reader = new StreamReader(fileName);
             }
-            catch(Exception)
+            catch (Exception)
             {
                 MessageBox.Show("El archivo se encuentra en uso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 falloAlCargar = true;
@@ -1108,7 +1111,7 @@ namespace PE22A_JAMZ
         // +-------------------------------------------------------------------------+
         private void BtnP5Cargar_Click(object sender, EventArgs e)
         {
-            
+
             // Limpiar Datagridview
 
             DgvP5DatosEspaciales.Rows.Clear();
@@ -1117,7 +1120,7 @@ namespace PE22A_JAMZ
 
             OpenFileDialog FileDialog;
             DialogResult FileDialogResult;
-            
+
 
             // Asignación 
 
@@ -1258,13 +1261,13 @@ namespace PE22A_JAMZ
 
                 // Comprobar limite de resolución
 
-                if (AnchoImagen == 0 || 
+                if (AnchoImagen == 0 ||
                     AnchoImagen < 0)
                 {
                     AnchoImagen = 500;
                 }
 
-                if (AltoImagen == 0 || 
+                if (AltoImagen == 0 ||
                     AnchoImagen < 0)
                 {
                     AltoImagen = 500;
@@ -1380,7 +1383,7 @@ namespace PE22A_JAMZ
         // +-------------------------------------------------------------------------+
         private void PnlP5Lienzo_Resize(object sender, EventArgs e)
         {
-            
+
             // Validar si el component canvas esta inicializado y re dibujar el polígono
 
             if (ComponentCanvas != null)
@@ -1405,6 +1408,8 @@ namespace PE22A_JAMZ
             {
                 return;
             }
+
+            RtbxContenidoKML.Clear();
 
             // Obtiene coordenadas del API de google maps.
             await GetCoordenadas();
@@ -1505,8 +1510,259 @@ namespace PE22A_JAMZ
 
         }
 
+        // +--------------------------------------------------------------------------+
+        // | Genera un archivo de texto en formato KML con las coordenadas calculadas |
+        // +--------------------------------------------------------------------------+
+        private void BtnGenerarKML_Click(object sender, EventArgs e)
+        {
+            // Variables
+            string Ruta;
+            string Nombre;
+            string Contenido;
+            bool Exito;
+
+            // Inicializa datos de 
+            Ruta = @"C:\Users\Jorge\Desktop\";
+            Nombre = $"{TxtLugar.Text}.KML";
+
+            Contenido =
+                "<?xml version = \"1.0\" encoding = \"UTF-8\" ?>\n" +
+                "<kml xmlns = \"http://www.opengis.net/kml/2.2\" >\n" +
+                "  <Placemark>\n" +
+                "    <name>\n" +
+                "     " + TxtLugar.Text + "\n" +
+                "    </name>\n" +
+                "    <description>\n" +
+                "     " + TxtDescripcion.Text + "\n" +
+                "    </description>\n" +
+                "    <Point>\n" +
+                "      <coordinates>\n" +
+                "       " + TxtLongitud.Text + "," + TxtLatitud.Text + "," + "0\n" +
+                "      </coordinates>\n" +
+                "   </Point>\n" +
+                " </Placemark>\n" +
+                "</kml>\n";
+
+
+            // Crea el archivo de texto con formato KML
+
+            try
+            {
+                using (StreamWriter Escritor = File.CreateText(Ruta + Nombre))
+                {
+                    Escritor.WriteLine(Contenido);
+                }
+
+                Exito = true;
+            }
+            catch (Exception ex)
+            {
+                Exito = false;
+            }
+
+            // Maneja el posible error
+
+            if (Exito)
+            {
+                RtbxContenidoKML.Clear();
+                RtbxContenidoKML.Text = Contenido;
+                MessageBox.Show("El archivo ha KML se generó con éxito");
+            }
+            else
+            {
+                MessageBox.Show("Ocurrió un error al intentar generar el archivo");
+            }
+
+        }
+
         #endregion
 
+        #region PRACTICA 7
+
+        private async void BtnBuscarLugares_ClickAsync(object sender, EventArgs e)
+        {
+            // Validación
+
+            if (CbxP7Lugares.SelectedIndex == -1)
+            {
+                return;
+            }
+
+            RtbxContenidoKML.Clear();
+
+            // Obtiene coordenadas del API de google maps.
+            await GetLugares();
+        }
+
+
+        public async Task GetLugares()
+        {
+            // Declaración de variables
+            HttpClient clienteHttp;
+            Uri direccion;
+            HttpResponseMessage respuestaHttp;
+            XmlDocument documentoXML;
+            XmlNodeList elemList;
+            XmlElement bookElement;
+            string contenidoHttp;
+            string Llave;
+            string Nombre;
+            string Domicilio;
+            string Buscar;
+            string Longitud;
+            string Latitud;
+            int Radio;
+
+            // Inicializar datos de trabajo
+            Llave = Environment.GetEnvironmentVariable("GM_KEY");
+            Latitud = TxtP7Latitud.Text;
+            Longitud = TxtP7Longitud.Text;
+            Buscar = CbxP7Lugares.Text;
+            Radio = Int32.Parse(TxtP7Radio.Text);
+
+            // Consulta la api de geolocalización
+
+            // Consulta la API de geolocalización de google maps.
+            clienteHttp = new HttpClient();
+            direccion = new Uri("https://maps.googleapis.com/maps/api/place/nearbysearch/");
+            clienteHttp.BaseAddress = direccion;
+
+            respuestaHttp = await clienteHttp.GetAsync("xml?location=" + Latitud + "," + Longitud + "&radius=" + Radio + "&type=" + Buscar + "&key=" + Llave);
+            contenidoHttp = await respuestaHttp.Content.ReadAsStringAsync();
+
+            // Obtiene y muestra la lista de lugares
+
+            documentoXML = new XmlDocument();
+            documentoXML.LoadXml(contenidoHttp);
+
+            elemList = documentoXML.GetElementsByTagName("result");
+
+            MessageBox.Show("Se encontraron " + elemList.Count + " lugares a " + Radio + " Metros a la redonda.");
+            DgvP7Datos.Rows.Clear();
+
+            for (int i = 0; i < elemList.Count; i++)
+            {
+                bookElement = (XmlElement)elemList[i];
+                Nombre = bookElement["name"].InnerText;
+                Domicilio = bookElement["vicinity"].InnerText;
+                Latitud = bookElement["geometry"].ChildNodes[0].ChildNodes[0].InnerText;
+                Longitud = bookElement["geometry"].ChildNodes[0].ChildNodes[1].InnerText; ;
+
+                // Agregar datos al datagridview
+                DgvP7Datos.Rows.Add();
+                DgvP7Datos.Rows[i].Cells[0].Value = i + 1; // Indice
+                DgvP7Datos.Rows[i].Cells[1].Value = Nombre;
+                DgvP7Datos.Rows[i].Cells[2].Value = Domicilio;
+                DgvP7Datos.Rows[i].Cells[3].Value = Latitud;  // lat
+                DgvP7Datos.Rows[i].Cells[4].Value = Longitud; // lng
+
+            }
+
+        }
+
+        // +-------------------------------------------------------------------------+
+        // |                       Copia coordenadas de origen                       |
+        // +-------------------------------------------------------------------------+
+        private void BtnP7Coordenadas_Click(object sender, EventArgs e)
+        {
+            TxtP7Latitud.Text = TxtLatitud.Text;
+            TxtP7Longitud.Text = TxtLongitud.Text;
+        }
+
+        #endregion
+
+        #region PRACTICA 8
+
+        // +--------------------------------------------------------------------------+
+        // |                    Convertir grados decimales a radianes                 |
+        // +--------------------------------------------------------------------------+
+        private float EnRadianes(float GradosDecimales)
+        {
+            return (float)(Math.PI / 180) * GradosDecimales; 
+        }
+
+        // +--------------------------------------------------------------------------+
+        // |   Calcula la distancia entre dos coordenaadas con base en la formula     |
+        // |   de semiverseno                                                         |
+        // +--------------------------------------------------------------------------+
+        private float CalcularDistancia(float PosOrigenLatitud,
+                                        float PosDestinoLatitud,
+                                        float PosOrigenLongitud,
+                                        float PosDestinoLongitud)
+        {
+            var DifLatitud = EnRadianes(PosDestinoLatitud - PosOrigenLatitud);
+            var DifLongitud = EnRadianes(PosDestinoLongitud - PosOrigenLongitud);
+
+            var a = Math.Pow(Math.Sin(DifLatitud / 2), 2) +
+                Math.Cos(EnRadianes(PosOrigenLatitud)) *
+                Math.Cos(EnRadianes(PosDestinoLatitud)) *
+                Math.Pow(Math.Sin(DifLongitud / 2), 2);
+
+            var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+
+            return 6378.0F * Convert.ToSingle(c);
+
+        }
+
+
+        private void BtnCalcularP8_Click(object sender, EventArgs e)
+        {
+            // Declaración de variables
+            float PosOrigenLatitud;
+            float PosOrigenLongitud;
+            float PosDestinoLatitud;
+            float PosDestinoLongitud;
+
+            float Resultado;
+
+            // Inicialización de datos de trabajo
+            PosOrigenLatitud = (float)Convert.ToDouble(TxtLatitudOrigen.Text);
+            PosOrigenLongitud = (float)Convert.ToDouble(TxtLongitudOrigen.Text);
+            PosDestinoLatitud = (float)Convert.ToDouble(TxtLatitudDestino.Text);
+            PosDestinoLongitud = (float)Convert.ToDouble(TxtLongitudDestino.Text);
+
+            // Calcula la distancia en kilómetros
+            Resultado = CalcularDistancia(PosOrigenLatitud,
+                                          PosDestinoLatitud,
+                                          PosOrigenLongitud,
+                                          PosDestinoLongitud);
+
+            // Mostrar Resultado
+
+            TxtResultadoP8.Text = Resultado.ToString() + "Kms";
+        }
+
+        // +-------------------------------------------------------------------------+
+        // |                       Copia coordenadas de origen                       |
+        // +-------------------------------------------------------------------------+
+        private void BtnCopiarCOrigen_Click(object sender, EventArgs e)
+        {
+            TxtLatitudOrigen.Text = TxtLatitud.Text;
+            TxtLongitudOrigen.Text = TxtLongitud.Text;
+            TxtLugarOrigen.Text = TxtLugar.Text;
+        }
+
+        // +-------------------------------------------------------------------------+
+        // |                        Copia coordenadas de destino                     |
+        // +-------------------------------------------------------------------------+
+        private void BtnCopiarCDestino_Click(object sender, EventArgs e)
+        {
+            TxtLatitudDestino.Text = TxtLatitud.Text;
+            TxtLongitudDestino.Text = TxtLongitud.Text;
+            TxtLugarDestino.Text = TxtLugar.Text;
+        }
+
+        private void BtnOpen_Click(object sender, EventArgs e)
+        {
+            ResizeImage ImageResizer = new ResizeImage();
+            ImageResizer.ShowDialog();
+        }
+
+        #endregion
+
+        #region PRACTICA FINAL
+
+        #endregion
         // ===========================================================================
 
     }

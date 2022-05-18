@@ -35,6 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DlgProyecto));
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -135,6 +136,7 @@
             this.ColCoordX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCoordY = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TpgPractica6 = new System.Windows.Forms.TabPage();
+            this.RtbxContenidoKML = new System.Windows.Forms.RichTextBox();
             this.BtnObtenerCoordenadas = new System.Windows.Forms.Button();
             this.BtnGenerarKML = new System.Windows.Forms.Button();
             this.TxtLongitud = new System.Windows.Forms.TextBox();
@@ -145,14 +147,58 @@
             this.LblDescripcion = new System.Windows.Forms.Label();
             this.TxtLugar = new System.Windows.Forms.TextBox();
             this.LblLugar = new System.Windows.Forms.Label();
-            this.TpgPractica7 = new System.Windows.Forms.TabPage();
+            this.CbxLugares = new System.Windows.Forms.TabPage();
+            this.TxtP7Radio = new System.Windows.Forms.TextBox();
+            this.LblP7Radio = new System.Windows.Forms.Label();
+            this.DgvP7Datos = new System.Windows.Forms.DataGridView();
+            this.ColNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColDomicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColLongitud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColLatitud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.LblP7Buscar = new System.Windows.Forms.Label();
+            this.CbxP7Lugares = new System.Windows.Forms.ComboBox();
+            this.TxtP7Longitud = new System.Windows.Forms.TextBox();
+            this.TxtP7Latitud = new System.Windows.Forms.TextBox();
+            this.BtnBuscarLugares = new System.Windows.Forms.Button();
+            this.BtnP7Coordenadas = new System.Windows.Forms.Button();
+            this.LblP7Longitud = new System.Windows.Forms.Label();
+            this.LblP7Latitud = new System.Windows.Forms.Label();
             this.TpgPractica8 = new System.Windows.Forms.TabPage();
+            this.LblSemiversenoInfo = new System.Windows.Forms.Label();
+            this.BtnCalcularDistanciaP8 = new System.Windows.Forms.Button();
+            this.TxtResultadoP8 = new System.Windows.Forms.TextBox();
+            this.LblResultadoP8 = new System.Windows.Forms.Label();
+            this.PbxVistaPrevia = new System.Windows.Forms.PictureBox();
+            this.GbxDestino = new System.Windows.Forms.GroupBox();
+            this.TxtLugarDestino = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.TxtLongitudDestino = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.TxtLatitudDestino = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.BtnCopiarCDestino = new System.Windows.Forms.Button();
+            this.GbxOrigen = new System.Windows.Forms.GroupBox();
+            this.TxtLugarOrigen = new System.Windows.Forms.TextBox();
+            this.LblLugarOrigen = new System.Windows.Forms.Label();
+            this.TxtLongitudOrigen = new System.Windows.Forms.TextBox();
+            this.LblLongitudOrigen = new System.Windows.Forms.Label();
+            this.TxtLatitudOrigen = new System.Windows.Forms.TextBox();
+            this.LblP8LatitudO = new System.Windows.Forms.Label();
+            this.BtnCopiarCOrigen = new System.Windows.Forms.Button();
             this.TpgPractica9 = new System.Windows.Forms.TabPage();
+            this.PbcDespues = new System.Windows.Forms.PictureBox();
+            this.LblDespues = new System.Windows.Forms.Label();
+            this.PbcAntes = new System.Windows.Forms.PictureBox();
+            this.LblAntes = new System.Windows.Forms.Label();
             this.TpgPractica10 = new System.Windows.Forms.TabPage();
             this.ColVector = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCoordenadaX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtnOpen = new System.Windows.Forms.Button();
+            this.LblInfo = new System.Windows.Forms.Label();
+            this.LblP8Info = new System.Windows.Forms.Label();
             this.MenuStrip.SuspendLayout();
             this.ToolStrip.SuspendLayout();
             this.StatusStrip.SuspendLayout();
@@ -178,6 +224,16 @@
             this.PnlP5Derecho.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvP5DatosEspaciales)).BeginInit();
             this.TpgPractica6.SuspendLayout();
+            this.CbxLugares.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvP7Datos)).BeginInit();
+            this.TpgPractica8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxVistaPrevia)).BeginInit();
+            this.GbxDestino.SuspendLayout();
+            this.GbxOrigen.SuspendLayout();
+            this.TpgPractica9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbcDespues)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbcAntes)).BeginInit();
+            this.TpgPractica10.SuspendLayout();
             this.SuspendLayout();
             // 
             // MenuStrip
@@ -397,7 +453,7 @@
             this.TbcPrincipal.Controls.Add(this.TpgPractica4);
             this.TbcPrincipal.Controls.Add(this.TpgPractica5);
             this.TbcPrincipal.Controls.Add(this.TpgPractica6);
-            this.TbcPrincipal.Controls.Add(this.TpgPractica7);
+            this.TbcPrincipal.Controls.Add(this.CbxLugares);
             this.TbcPrincipal.Controls.Add(this.TpgPractica8);
             this.TbcPrincipal.Controls.Add(this.TpgPractica9);
             this.TbcPrincipal.Controls.Add(this.TpgPractica10);
@@ -1153,7 +1209,7 @@
             this.ScpPractica5.Panel2.Controls.Add(this.DgvP5DatosEspaciales);
             this.ScpPractica5.Panel2MinSize = 150;
             this.ScpPractica5.Size = new System.Drawing.Size(1106, 585);
-            this.ScpPractica5.SplitterDistance = 431;
+            this.ScpPractica5.SplitterDistance = 427;
             this.ScpPractica5.SplitterWidth = 2;
             this.ScpPractica5.TabIndex = 0;
             // 
@@ -1163,7 +1219,7 @@
             this.PnlP5Lienzo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PnlP5Lienzo.Location = new System.Drawing.Point(0, 0);
             this.PnlP5Lienzo.Name = "PnlP5Lienzo";
-            this.PnlP5Lienzo.Size = new System.Drawing.Size(833, 431);
+            this.PnlP5Lienzo.Size = new System.Drawing.Size(833, 427);
             this.PnlP5Lienzo.TabIndex = 1;
             this.PnlP5Lienzo.Resize += new System.EventHandler(this.PnlP5Lienzo_Resize);
             // 
@@ -1184,7 +1240,7 @@
             this.PnlP5Derecho.Dock = System.Windows.Forms.DockStyle.Right;
             this.PnlP5Derecho.Location = new System.Drawing.Point(833, 0);
             this.PnlP5Derecho.Name = "PnlP5Derecho";
-            this.PnlP5Derecho.Size = new System.Drawing.Size(273, 431);
+            this.PnlP5Derecho.Size = new System.Drawing.Size(273, 427);
             this.PnlP5Derecho.TabIndex = 0;
             // 
             // LblP5Ancho
@@ -1345,7 +1401,7 @@
             this.DgvP5DatosEspaciales.Name = "DgvP5DatosEspaciales";
             this.DgvP5DatosEspaciales.RowHeadersWidth = 45;
             this.DgvP5DatosEspaciales.RowTemplate.Height = 25;
-            this.DgvP5DatosEspaciales.Size = new System.Drawing.Size(1106, 152);
+            this.DgvP5DatosEspaciales.Size = new System.Drawing.Size(1106, 156);
             this.DgvP5DatosEspaciales.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn5
@@ -1372,6 +1428,7 @@
             // TpgPractica6
             // 
             this.TpgPractica6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TpgPractica6.Controls.Add(this.RtbxContenidoKML);
             this.TpgPractica6.Controls.Add(this.BtnObtenerCoordenadas);
             this.TpgPractica6.Controls.Add(this.BtnGenerarKML);
             this.TpgPractica6.Controls.Add(this.TxtLongitud);
@@ -1390,6 +1447,18 @@
             this.TpgPractica6.Size = new System.Drawing.Size(1106, 585);
             this.TpgPractica6.TabIndex = 7;
             this.TpgPractica6.Text = "Práctica 6";
+            // 
+            // RtbxContenidoKML
+            // 
+            this.RtbxContenidoKML.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.RtbxContenidoKML.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.RtbxContenidoKML.ForeColor = System.Drawing.Color.White;
+            this.RtbxContenidoKML.Location = new System.Drawing.Point(354, 40);
+            this.RtbxContenidoKML.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.RtbxContenidoKML.Name = "RtbxContenidoKML";
+            this.RtbxContenidoKML.Size = new System.Drawing.Size(663, 294);
+            this.RtbxContenidoKML.TabIndex = 10;
+            this.RtbxContenidoKML.Text = "";
             // 
             // BtnObtenerCoordenadas
             // 
@@ -1417,6 +1486,7 @@
             this.BtnGenerarKML.TabIndex = 8;
             this.BtnGenerarKML.Text = "Generar KML";
             this.BtnGenerarKML.UseVisualStyleBackColor = false;
+            this.BtnGenerarKML.Click += new System.EventHandler(this.BtnGenerarKML_Click);
             // 
             // TxtLongitud
             // 
@@ -1515,18 +1585,302 @@
             this.LblLugar.Text = "Lugar:";
             this.LblLugar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // TpgPractica7
+            // CbxLugares
             // 
-            this.TpgPractica7.Location = new System.Drawing.Point(4, 44);
-            this.TpgPractica7.Name = "TpgPractica7";
-            this.TpgPractica7.Padding = new System.Windows.Forms.Padding(3);
-            this.TpgPractica7.Size = new System.Drawing.Size(1106, 585);
-            this.TpgPractica7.TabIndex = 8;
-            this.TpgPractica7.Text = "Práctica 7";
-            this.TpgPractica7.UseVisualStyleBackColor = true;
+            this.CbxLugares.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.CbxLugares.Controls.Add(this.TxtP7Radio);
+            this.CbxLugares.Controls.Add(this.LblP7Radio);
+            this.CbxLugares.Controls.Add(this.DgvP7Datos);
+            this.CbxLugares.Controls.Add(this.LblP7Buscar);
+            this.CbxLugares.Controls.Add(this.CbxP7Lugares);
+            this.CbxLugares.Controls.Add(this.TxtP7Longitud);
+            this.CbxLugares.Controls.Add(this.TxtP7Latitud);
+            this.CbxLugares.Controls.Add(this.BtnBuscarLugares);
+            this.CbxLugares.Controls.Add(this.BtnP7Coordenadas);
+            this.CbxLugares.Controls.Add(this.LblP7Longitud);
+            this.CbxLugares.Controls.Add(this.LblP7Latitud);
+            this.CbxLugares.Location = new System.Drawing.Point(4, 44);
+            this.CbxLugares.Name = "CbxLugares";
+            this.CbxLugares.Padding = new System.Windows.Forms.Padding(3);
+            this.CbxLugares.Size = new System.Drawing.Size(1106, 585);
+            this.CbxLugares.TabIndex = 8;
+            this.CbxLugares.Text = "Práctica 7";
+            // 
+            // TxtP7Radio
+            // 
+            this.TxtP7Radio.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.TxtP7Radio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtP7Radio.ForeColor = System.Drawing.Color.White;
+            this.TxtP7Radio.Location = new System.Drawing.Point(746, 29);
+            this.TxtP7Radio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtP7Radio.Name = "TxtP7Radio";
+            this.TxtP7Radio.Size = new System.Drawing.Size(357, 23);
+            this.TxtP7Radio.TabIndex = 12;
+            // 
+            // LblP7Radio
+            // 
+            this.LblP7Radio.AutoSize = true;
+            this.LblP7Radio.ForeColor = System.Drawing.Color.White;
+            this.LblP7Radio.Location = new System.Drawing.Point(746, 12);
+            this.LblP7Radio.Name = "LblP7Radio";
+            this.LblP7Radio.Size = new System.Drawing.Size(88, 15);
+            this.LblP7Radio.TabIndex = 11;
+            this.LblP7Radio.Text = "Radio: (metros)";
+            // 
+            // DgvP7Datos
+            // 
+            this.DgvP7Datos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvP7Datos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColNo,
+            this.ColNombre,
+            this.ColDomicilio,
+            this.ColLongitud,
+            this.ColLatitud});
+            this.DgvP7Datos.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.DgvP7Datos.Location = new System.Drawing.Point(3, 108);
+            this.DgvP7Datos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.DgvP7Datos.Name = "DgvP7Datos";
+            this.DgvP7Datos.RowHeadersWidth = 51;
+            this.DgvP7Datos.RowTemplate.Height = 29;
+            this.DgvP7Datos.Size = new System.Drawing.Size(1100, 474);
+            this.DgvP7Datos.TabIndex = 10;
+            // 
+            // ColNo
+            // 
+            this.ColNo.HeaderText = "No";
+            this.ColNo.MinimumWidth = 6;
+            this.ColNo.Name = "ColNo";
+            this.ColNo.Width = 125;
+            // 
+            // ColNombre
+            // 
+            this.ColNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColNombre.HeaderText = "Nombre";
+            this.ColNombre.MinimumWidth = 6;
+            this.ColNombre.Name = "ColNombre";
+            // 
+            // ColDomicilio
+            // 
+            this.ColDomicilio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColDomicilio.HeaderText = "Domicilio";
+            this.ColDomicilio.MinimumWidth = 6;
+            this.ColDomicilio.Name = "ColDomicilio";
+            // 
+            // ColLongitud
+            // 
+            this.ColLongitud.HeaderText = "Longitud";
+            this.ColLongitud.MinimumWidth = 6;
+            this.ColLongitud.Name = "ColLongitud";
+            this.ColLongitud.Width = 125;
+            // 
+            // ColLatitud
+            // 
+            this.ColLatitud.HeaderText = "Latitud";
+            this.ColLatitud.MinimumWidth = 6;
+            this.ColLatitud.Name = "ColLatitud";
+            this.ColLatitud.Width = 125;
+            // 
+            // LblP7Buscar
+            // 
+            this.LblP7Buscar.AutoSize = true;
+            this.LblP7Buscar.ForeColor = System.Drawing.Color.White;
+            this.LblP7Buscar.Location = new System.Drawing.Point(382, 12);
+            this.LblP7Buscar.Name = "LblP7Buscar";
+            this.LblP7Buscar.Size = new System.Drawing.Size(45, 15);
+            this.LblP7Buscar.TabIndex = 9;
+            this.LblP7Buscar.Text = "Buscar:";
+            // 
+            // CbxP7Lugares
+            // 
+            this.CbxP7Lugares.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxP7Lugares.FormattingEnabled = true;
+            this.CbxP7Lugares.Items.AddRange(new object[] {
+            "accounting",
+            "airport",
+            "amusement_park",
+            "aquarium",
+            "art_gallery",
+            "atm",
+            "bakery",
+            "bank",
+            "bar",
+            "beauty_salon",
+            "bicycle_store",
+            "book_store",
+            "bowling_alley",
+            "bus_station",
+            "cafe",
+            "campground",
+            "car_dealer",
+            "car_rental",
+            "car_repair",
+            "car_wash",
+            "casino",
+            "cemetery",
+            "church",
+            "city_hall",
+            "clothing_store",
+            "convenience_store",
+            "courthouse",
+            "dentist",
+            "department_store",
+            "doctor",
+            "drugstore",
+            "electrician",
+            "electronics_store",
+            "embassy",
+            "fire_station",
+            "florist",
+            "funeral_home",
+            "furniture_store",
+            "gas_station",
+            "gym",
+            "hair_care",
+            "hardware_store",
+            "hindu_temple",
+            "home_goods_store",
+            "hospital",
+            "insurance_agency",
+            "jewelry_store",
+            "laundry",
+            "lawyer",
+            "library",
+            "light_rail_station",
+            "liquor_store",
+            "local_government_office",
+            "locksmith",
+            "lodging",
+            "meal_delivery",
+            "meal_takeaway",
+            "mosque",
+            "movie_rental",
+            "movie_theater",
+            "moving_company",
+            "museum",
+            "night_club",
+            "painter",
+            "park",
+            "parking",
+            "pet_store",
+            "pharmacy",
+            "physiotherapist",
+            "plumber",
+            "police",
+            "post_office",
+            "primary_school",
+            "real_estate_agency",
+            "restaurant",
+            "roofing_contractor",
+            "rv_park",
+            "school",
+            "secondary_school",
+            "shoe_store",
+            "shopping_mall",
+            "spa",
+            "stadium",
+            "storage",
+            "store",
+            "subway_station",
+            "supermarket",
+            "synagogue",
+            "taxi_stand",
+            "tourist_attraction",
+            "train_station",
+            "transit_station",
+            "travel_agency",
+            "university",
+            "veterinary_care",
+            "zoo"});
+            this.CbxP7Lugares.Location = new System.Drawing.Point(382, 28);
+            this.CbxP7Lugares.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.CbxP7Lugares.Name = "CbxP7Lugares";
+            this.CbxP7Lugares.Size = new System.Drawing.Size(357, 23);
+            this.CbxP7Lugares.TabIndex = 8;
+            // 
+            // TxtP7Longitud
+            // 
+            this.TxtP7Longitud.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.TxtP7Longitud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtP7Longitud.ForeColor = System.Drawing.Color.White;
+            this.TxtP7Longitud.Location = new System.Drawing.Point(195, 29);
+            this.TxtP7Longitud.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtP7Longitud.Name = "TxtP7Longitud";
+            this.TxtP7Longitud.Size = new System.Drawing.Size(176, 23);
+            this.TxtP7Longitud.TabIndex = 6;
+            // 
+            // TxtP7Latitud
+            // 
+            this.TxtP7Latitud.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.TxtP7Latitud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TxtP7Latitud.ForeColor = System.Drawing.Color.White;
+            this.TxtP7Latitud.Location = new System.Drawing.Point(15, 29);
+            this.TxtP7Latitud.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtP7Latitud.Name = "TxtP7Latitud";
+            this.TxtP7Latitud.Size = new System.Drawing.Size(165, 23);
+            this.TxtP7Latitud.TabIndex = 5;
+            // 
+            // BtnBuscarLugares
+            // 
+            this.BtnBuscarLugares.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(255)))));
+            this.BtnBuscarLugares.FlatAppearance.BorderSize = 0;
+            this.BtnBuscarLugares.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnBuscarLugares.ForeColor = System.Drawing.Color.White;
+            this.BtnBuscarLugares.Location = new System.Drawing.Point(196, 62);
+            this.BtnBuscarLugares.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnBuscarLugares.Name = "BtnBuscarLugares";
+            this.BtnBuscarLugares.Size = new System.Drawing.Size(176, 44);
+            this.BtnBuscarLugares.TabIndex = 4;
+            this.BtnBuscarLugares.Text = "Buscar Lugares";
+            this.BtnBuscarLugares.UseVisualStyleBackColor = false;
+            this.BtnBuscarLugares.Click += new System.EventHandler(this.BtnBuscarLugares_ClickAsync);
+            // 
+            // BtnP7Coordenadas
+            // 
+            this.BtnP7Coordenadas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(86)))), ((int)(((byte)(255)))));
+            this.BtnP7Coordenadas.FlatAppearance.BorderSize = 0;
+            this.BtnP7Coordenadas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnP7Coordenadas.ForeColor = System.Drawing.Color.White;
+            this.BtnP7Coordenadas.Location = new System.Drawing.Point(15, 62);
+            this.BtnP7Coordenadas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnP7Coordenadas.Name = "BtnP7Coordenadas";
+            this.BtnP7Coordenadas.Size = new System.Drawing.Size(176, 44);
+            this.BtnP7Coordenadas.TabIndex = 3;
+            this.BtnP7Coordenadas.Text = "Copiar Coordenadas";
+            this.BtnP7Coordenadas.UseVisualStyleBackColor = false;
+            this.BtnP7Coordenadas.Click += new System.EventHandler(this.BtnP7Coordenadas_Click);
+            // 
+            // LblP7Longitud
+            // 
+            this.LblP7Longitud.AutoSize = true;
+            this.LblP7Longitud.ForeColor = System.Drawing.Color.White;
+            this.LblP7Longitud.Location = new System.Drawing.Point(195, 12);
+            this.LblP7Longitud.Name = "LblP7Longitud";
+            this.LblP7Longitud.Size = new System.Drawing.Size(55, 15);
+            this.LblP7Longitud.TabIndex = 1;
+            this.LblP7Longitud.Text = "Longitud";
+            // 
+            // LblP7Latitud
+            // 
+            this.LblP7Latitud.AutoSize = true;
+            this.LblP7Latitud.ForeColor = System.Drawing.Color.White;
+            this.LblP7Latitud.Location = new System.Drawing.Point(15, 12);
+            this.LblP7Latitud.Name = "LblP7Latitud";
+            this.LblP7Latitud.Size = new System.Drawing.Size(44, 15);
+            this.LblP7Latitud.TabIndex = 0;
+            this.LblP7Latitud.Text = "Latitud";
             // 
             // TpgPractica8
             // 
+            this.TpgPractica8.Controls.Add(this.LblP8Info);
+            this.TpgPractica8.Controls.Add(this.LblSemiversenoInfo);
+            this.TpgPractica8.Controls.Add(this.BtnCalcularDistanciaP8);
+            this.TpgPractica8.Controls.Add(this.TxtResultadoP8);
+            this.TpgPractica8.Controls.Add(this.LblResultadoP8);
+            this.TpgPractica8.Controls.Add(this.PbxVistaPrevia);
+            this.TpgPractica8.Controls.Add(this.GbxDestino);
+            this.TpgPractica8.Controls.Add(this.BtnCopiarCDestino);
+            this.TpgPractica8.Controls.Add(this.GbxOrigen);
+            this.TpgPractica8.Controls.Add(this.BtnCopiarCOrigen);
             this.TpgPractica8.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica8.Name = "TpgPractica8";
             this.TpgPractica8.Padding = new System.Windows.Forms.Padding(3);
@@ -1535,8 +1889,218 @@
             this.TpgPractica8.Text = "Práctica 8";
             this.TpgPractica8.UseVisualStyleBackColor = true;
             // 
+            // LblSemiversenoInfo
+            // 
+            this.LblSemiversenoInfo.AutoSize = true;
+            this.LblSemiversenoInfo.Location = new System.Drawing.Point(551, 250);
+            this.LblSemiversenoInfo.Name = "LblSemiversenoInfo";
+            this.LblSemiversenoInfo.Size = new System.Drawing.Size(139, 15);
+            this.LblSemiversenoInfo.TabIndex = 8;
+            this.LblSemiversenoInfo.Text = "Formula de semiverseno:";
+            // 
+            // BtnCalcularDistanciaP8
+            // 
+            this.BtnCalcularDistanciaP8.Location = new System.Drawing.Point(920, 197);
+            this.BtnCalcularDistanciaP8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnCalcularDistanciaP8.Name = "BtnCalcularDistanciaP8";
+            this.BtnCalcularDistanciaP8.Size = new System.Drawing.Size(172, 27);
+            this.BtnCalcularDistanciaP8.TabIndex = 7;
+            this.BtnCalcularDistanciaP8.Text = "Calcular";
+            this.BtnCalcularDistanciaP8.UseVisualStyleBackColor = true;
+            this.BtnCalcularDistanciaP8.Click += new System.EventHandler(this.BtnCalcularP8_Click);
+            // 
+            // TxtResultadoP8
+            // 
+            this.TxtResultadoP8.Location = new System.Drawing.Point(625, 197);
+            this.TxtResultadoP8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtResultadoP8.Name = "TxtResultadoP8";
+            this.TxtResultadoP8.Size = new System.Drawing.Size(291, 23);
+            this.TxtResultadoP8.TabIndex = 6;
+            // 
+            // LblResultadoP8
+            // 
+            this.LblResultadoP8.AutoSize = true;
+            this.LblResultadoP8.Location = new System.Drawing.Point(551, 200);
+            this.LblResultadoP8.Name = "LblResultadoP8";
+            this.LblResultadoP8.Size = new System.Drawing.Size(62, 15);
+            this.LblResultadoP8.TabIndex = 5;
+            this.LblResultadoP8.Text = "Resultado:";
+            // 
+            // PbxVistaPrevia
+            // 
+            this.PbxVistaPrevia.BackgroundImage = global::PE22A_JAMZ.Properties.Resources.Semiverseno;
+            this.PbxVistaPrevia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbxVistaPrevia.Location = new System.Drawing.Point(17, 200);
+            this.PbxVistaPrevia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PbxVistaPrevia.Name = "PbxVistaPrevia";
+            this.PbxVistaPrevia.Size = new System.Drawing.Size(521, 388);
+            this.PbxVistaPrevia.TabIndex = 4;
+            this.PbxVistaPrevia.TabStop = false;
+            // 
+            // GbxDestino
+            // 
+            this.GbxDestino.Controls.Add(this.TxtLugarDestino);
+            this.GbxDestino.Controls.Add(this.label1);
+            this.GbxDestino.Controls.Add(this.TxtLongitudDestino);
+            this.GbxDestino.Controls.Add(this.label3);
+            this.GbxDestino.Controls.Add(this.TxtLatitudDestino);
+            this.GbxDestino.Controls.Add(this.label4);
+            this.GbxDestino.Location = new System.Drawing.Point(178, 106);
+            this.GbxDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GbxDestino.Name = "GbxDestino";
+            this.GbxDestino.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GbxDestino.Size = new System.Drawing.Size(630, 74);
+            this.GbxDestino.TabIndex = 3;
+            this.GbxDestino.TabStop = false;
+            this.GbxDestino.Text = "Destino:";
+            // 
+            // TxtLugarDestino
+            // 
+            this.TxtLugarDestino.Location = new System.Drawing.Point(431, 40);
+            this.TxtLugarDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtLugarDestino.Name = "TxtLugarDestino";
+            this.TxtLugarDestino.Size = new System.Drawing.Size(191, 23);
+            this.TxtLugarDestino.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(431, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 15);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Lugar:";
+            // 
+            // TxtLongitudDestino
+            // 
+            this.TxtLongitudDestino.Location = new System.Drawing.Point(226, 40);
+            this.TxtLongitudDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtLongitudDestino.Name = "TxtLongitudDestino";
+            this.TxtLongitudDestino.Size = new System.Drawing.Size(191, 23);
+            this.TxtLongitudDestino.TabIndex = 3;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(226, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 15);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Longitud:";
+            // 
+            // TxtLatitudDestino
+            // 
+            this.TxtLatitudDestino.Location = new System.Drawing.Point(15, 40);
+            this.TxtLatitudDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtLatitudDestino.Name = "TxtLatitudDestino";
+            this.TxtLatitudDestino.Size = new System.Drawing.Size(191, 23);
+            this.TxtLatitudDestino.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(15, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Latitud:";
+            // 
+            // BtnCopiarCDestino
+            // 
+            this.BtnCopiarCDestino.Location = new System.Drawing.Point(17, 128);
+            this.BtnCopiarCDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnCopiarCDestino.Name = "BtnCopiarCDestino";
+            this.BtnCopiarCDestino.Size = new System.Drawing.Size(146, 34);
+            this.BtnCopiarCDestino.TabIndex = 2;
+            this.BtnCopiarCDestino.Text = "Copiar coordenadas";
+            this.BtnCopiarCDestino.UseVisualStyleBackColor = true;
+            this.BtnCopiarCDestino.Click += new System.EventHandler(this.BtnCopiarCDestino_Click);
+            // 
+            // GbxOrigen
+            // 
+            this.GbxOrigen.Controls.Add(this.TxtLugarOrigen);
+            this.GbxOrigen.Controls.Add(this.LblLugarOrigen);
+            this.GbxOrigen.Controls.Add(this.TxtLongitudOrigen);
+            this.GbxOrigen.Controls.Add(this.LblLongitudOrigen);
+            this.GbxOrigen.Controls.Add(this.TxtLatitudOrigen);
+            this.GbxOrigen.Controls.Add(this.LblP8LatitudO);
+            this.GbxOrigen.Location = new System.Drawing.Point(178, 15);
+            this.GbxOrigen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GbxOrigen.Name = "GbxOrigen";
+            this.GbxOrigen.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.GbxOrigen.Size = new System.Drawing.Size(630, 74);
+            this.GbxOrigen.TabIndex = 1;
+            this.GbxOrigen.TabStop = false;
+            this.GbxOrigen.Text = "Origen:";
+            // 
+            // TxtLugarOrigen
+            // 
+            this.TxtLugarOrigen.Location = new System.Drawing.Point(431, 40);
+            this.TxtLugarOrigen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtLugarOrigen.Name = "TxtLugarOrigen";
+            this.TxtLugarOrigen.Size = new System.Drawing.Size(191, 23);
+            this.TxtLugarOrigen.TabIndex = 5;
+            // 
+            // LblLugarOrigen
+            // 
+            this.LblLugarOrigen.AutoSize = true;
+            this.LblLugarOrigen.Location = new System.Drawing.Point(431, 23);
+            this.LblLugarOrigen.Name = "LblLugarOrigen";
+            this.LblLugarOrigen.Size = new System.Drawing.Size(40, 15);
+            this.LblLugarOrigen.TabIndex = 4;
+            this.LblLugarOrigen.Text = "Lugar:";
+            // 
+            // TxtLongitudOrigen
+            // 
+            this.TxtLongitudOrigen.Location = new System.Drawing.Point(226, 40);
+            this.TxtLongitudOrigen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtLongitudOrigen.Name = "TxtLongitudOrigen";
+            this.TxtLongitudOrigen.Size = new System.Drawing.Size(191, 23);
+            this.TxtLongitudOrigen.TabIndex = 3;
+            // 
+            // LblLongitudOrigen
+            // 
+            this.LblLongitudOrigen.AutoSize = true;
+            this.LblLongitudOrigen.Location = new System.Drawing.Point(226, 23);
+            this.LblLongitudOrigen.Name = "LblLongitudOrigen";
+            this.LblLongitudOrigen.Size = new System.Drawing.Size(58, 15);
+            this.LblLongitudOrigen.TabIndex = 2;
+            this.LblLongitudOrigen.Text = "Longitud:";
+            // 
+            // TxtLatitudOrigen
+            // 
+            this.TxtLatitudOrigen.Location = new System.Drawing.Point(15, 40);
+            this.TxtLatitudOrigen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.TxtLatitudOrigen.Name = "TxtLatitudOrigen";
+            this.TxtLatitudOrigen.Size = new System.Drawing.Size(191, 23);
+            this.TxtLatitudOrigen.TabIndex = 1;
+            // 
+            // LblP8LatitudO
+            // 
+            this.LblP8LatitudO.AutoSize = true;
+            this.LblP8LatitudO.Location = new System.Drawing.Point(15, 23);
+            this.LblP8LatitudO.Name = "LblP8LatitudO";
+            this.LblP8LatitudO.Size = new System.Drawing.Size(47, 15);
+            this.LblP8LatitudO.TabIndex = 0;
+            this.LblP8LatitudO.Text = "Latitud:";
+            // 
+            // BtnCopiarCOrigen
+            // 
+            this.BtnCopiarCOrigen.Location = new System.Drawing.Point(17, 38);
+            this.BtnCopiarCOrigen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.BtnCopiarCOrigen.Name = "BtnCopiarCOrigen";
+            this.BtnCopiarCOrigen.Size = new System.Drawing.Size(146, 34);
+            this.BtnCopiarCOrigen.TabIndex = 0;
+            this.BtnCopiarCOrigen.Text = "Copiar coordenadas";
+            this.BtnCopiarCOrigen.UseVisualStyleBackColor = true;
+            this.BtnCopiarCOrigen.Click += new System.EventHandler(this.BtnCopiarCOrigen_Click);
+            // 
             // TpgPractica9
             // 
+            this.TpgPractica9.Controls.Add(this.PbcDespues);
+            this.TpgPractica9.Controls.Add(this.LblDespues);
+            this.TpgPractica9.Controls.Add(this.PbcAntes);
+            this.TpgPractica9.Controls.Add(this.LblAntes);
             this.TpgPractica9.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica9.Name = "TpgPractica9";
             this.TpgPractica9.Padding = new System.Windows.Forms.Padding(3);
@@ -1545,15 +2109,57 @@
             this.TpgPractica9.Text = "Práctica 9";
             this.TpgPractica9.UseVisualStyleBackColor = true;
             // 
+            // PbcDespues
+            // 
+            this.PbcDespues.BackgroundImage = global::PE22A_JAMZ.Properties.Resources.despues;
+            this.PbcDespues.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbcDespues.Location = new System.Drawing.Point(532, 40);
+            this.PbcDespues.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PbcDespues.Name = "PbcDespues";
+            this.PbcDespues.Size = new System.Drawing.Size(553, 298);
+            this.PbcDespues.TabIndex = 3;
+            this.PbcDespues.TabStop = false;
+            // 
+            // LblDespues
+            // 
+            this.LblDespues.AutoSize = true;
+            this.LblDespues.Location = new System.Drawing.Point(532, 15);
+            this.LblDespues.Name = "LblDespues";
+            this.LblDespues.Size = new System.Drawing.Size(54, 15);
+            this.LblDespues.TabIndex = 2;
+            this.LblDespues.Text = "Después:";
+            // 
+            // PbcAntes
+            // 
+            this.PbcAntes.BackgroundImage = global::PE22A_JAMZ.Properties.Resources.antes;
+            this.PbcAntes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PbcAntes.Location = new System.Drawing.Point(18, 40);
+            this.PbcAntes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.PbcAntes.Name = "PbcAntes";
+            this.PbcAntes.Size = new System.Drawing.Size(493, 298);
+            this.PbcAntes.TabIndex = 1;
+            this.PbcAntes.TabStop = false;
+            // 
+            // LblAntes
+            // 
+            this.LblAntes.AutoSize = true;
+            this.LblAntes.Location = new System.Drawing.Point(18, 15);
+            this.LblAntes.Name = "LblAntes";
+            this.LblAntes.Size = new System.Drawing.Size(40, 15);
+            this.LblAntes.TabIndex = 0;
+            this.LblAntes.Text = "Antes:";
+            // 
             // TpgPractica10
             // 
+            this.TpgPractica10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            this.TpgPractica10.Controls.Add(this.LblInfo);
+            this.TpgPractica10.Controls.Add(this.BtnOpen);
             this.TpgPractica10.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica10.Name = "TpgPractica10";
             this.TpgPractica10.Padding = new System.Windows.Forms.Padding(3);
             this.TpgPractica10.Size = new System.Drawing.Size(1106, 585);
             this.TpgPractica10.TabIndex = 11;
             this.TpgPractica10.Text = "Práctica 10";
-            this.TpgPractica10.UseVisualStyleBackColor = true;
             // 
             // ColVector
             // 
@@ -1582,6 +2188,41 @@
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // BtnOpen
+            // 
+            this.BtnOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.BtnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOpen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnOpen.ForeColor = System.Drawing.Color.White;
+            this.BtnOpen.Location = new System.Drawing.Point(38, 77);
+            this.BtnOpen.Name = "BtnOpen";
+            this.BtnOpen.Size = new System.Drawing.Size(167, 35);
+            this.BtnOpen.TabIndex = 0;
+            this.BtnOpen.Text = "Abrir practica final";
+            this.BtnOpen.UseVisualStyleBackColor = false;
+            this.BtnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
+            // 
+            // LblInfo
+            // 
+            this.LblInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LblInfo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblInfo.ForeColor = System.Drawing.Color.White;
+            this.LblInfo.Location = new System.Drawing.Point(3, 3);
+            this.LblInfo.Name = "LblInfo";
+            this.LblInfo.Size = new System.Drawing.Size(1100, 56);
+            this.LblInfo.TabIndex = 1;
+            this.LblInfo.Text = "Redimensionador de imagenes";
+            this.LblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LblP8Info
+            // 
+            this.LblP8Info.Location = new System.Drawing.Point(551, 277);
+            this.LblP8Info.Name = "LblP8Info";
+            this.LblP8Info.Size = new System.Drawing.Size(527, 75);
+            this.LblP8Info.TabIndex = 9;
+            this.LblP8Info.Text = resources.GetString("LblP8Info.Text");
+            this.LblP8Info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DlgProyecto
             // 
@@ -1634,6 +2275,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.DgvP5DatosEspaciales)).EndInit();
             this.TpgPractica6.ResumeLayout(false);
             this.TpgPractica6.PerformLayout();
+            this.CbxLugares.ResumeLayout(false);
+            this.CbxLugares.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvP7Datos)).EndInit();
+            this.TpgPractica8.ResumeLayout(false);
+            this.TpgPractica8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbxVistaPrevia)).EndInit();
+            this.GbxDestino.ResumeLayout(false);
+            this.GbxDestino.PerformLayout();
+            this.GbxOrigen.ResumeLayout(false);
+            this.GbxOrigen.PerformLayout();
+            this.TpgPractica9.ResumeLayout(false);
+            this.TpgPractica9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PbcDespues)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PbcAntes)).EndInit();
+            this.TpgPractica10.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1755,9 +2411,54 @@
         private System.Windows.Forms.Button BtnGenerarKML;
         private System.Windows.Forms.TextBox TxtLongitud;
         private System.Windows.Forms.Label LblLongitud;
-        private System.Windows.Forms.TabPage TpgPractica7;
+        private System.Windows.Forms.TabPage CbxLugares;
         private System.Windows.Forms.TabPage TpgPractica8;
         private System.Windows.Forms.TabPage TpgPractica9;
         private System.Windows.Forms.TabPage TpgPractica10;
+        private System.Windows.Forms.RichTextBox RtbxContenidoKML;
+        private System.Windows.Forms.Label LblP7Longitud;
+        private System.Windows.Forms.Label LblP7Latitud;
+        private System.Windows.Forms.Button BtnBuscarLugares;
+        private System.Windows.Forms.Button BtnP7Coordenadas;
+        private System.Windows.Forms.TextBox TxtP7Longitud;
+        private System.Windows.Forms.TextBox TxtP7Latitud;
+        private System.Windows.Forms.Label LblAntes;
+        private System.Windows.Forms.PictureBox PbcAntes;
+        private System.Windows.Forms.PictureBox PbcDespues;
+        private System.Windows.Forms.Label LblDespues;
+        private System.Windows.Forms.ComboBox CbxP7Lugares;
+        private System.Windows.Forms.Label LblP7Buscar;
+        private System.Windows.Forms.DataGridView DgvP7Datos;
+        private System.Windows.Forms.Label LblP7Radio;
+        private System.Windows.Forms.TextBox TxtP7Radio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColDomicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColLongitud;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColLatitud;
+        private System.Windows.Forms.Button BtnCopiarCOrigen;
+        private System.Windows.Forms.GroupBox GbxOrigen;
+        private System.Windows.Forms.Label LblP8LatitudO;
+        private System.Windows.Forms.TextBox TxtLatitudOrigen;
+        private System.Windows.Forms.TextBox TxtLongitudOrigen;
+        private System.Windows.Forms.Label LblLongitudOrigen;
+        private System.Windows.Forms.TextBox TxtLugarOrigen;
+        private System.Windows.Forms.Label LblLugarOrigen;
+        private System.Windows.Forms.GroupBox GbxDestino;
+        private System.Windows.Forms.TextBox TxtLugarDestino;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox TxtLongitudDestino;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox TxtLatitudDestino;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button BtnCopiarCDestino;
+        private System.Windows.Forms.PictureBox PbxVistaPrevia;
+        private System.Windows.Forms.Label LblResultadoP8;
+        private System.Windows.Forms.TextBox TxtResultadoP8;
+        private System.Windows.Forms.Button BtnCalcularDistanciaP8;
+        private System.Windows.Forms.Label LblSemiversenoInfo;
+        private System.Windows.Forms.Button BtnOpen;
+        private System.Windows.Forms.Label LblInfo;
+        private System.Windows.Forms.Label LblP8Info;
     }
 }
