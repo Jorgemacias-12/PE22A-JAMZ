@@ -113,15 +113,17 @@
             // 
             // LbFIlesInfo
             // 
+            this.LbFIlesInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.LbFIlesInfo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.LbFIlesInfo.FormattingEnabled = true;
             this.LbFIlesInfo.HorizontalScrollbar = true;
-            this.LbFIlesInfo.ItemHeight = 15;
+            this.LbFIlesInfo.ItemHeight = 21;
             this.LbFIlesInfo.Items.AddRange(new object[] {
             ""});
-            this.LbFIlesInfo.Location = new System.Drawing.Point(13, 379);
+            this.LbFIlesInfo.Location = new System.Drawing.Point(10, 324);
             this.LbFIlesInfo.Name = "LbFIlesInfo";
             this.LbFIlesInfo.ScrollAlwaysVisible = true;
-            this.LbFIlesInfo.Size = new System.Drawing.Size(277, 229);
+            this.LbFIlesInfo.Size = new System.Drawing.Size(277, 254);
             this.LbFIlesInfo.TabIndex = 15;
             // 
             // LblAspectRatio
@@ -194,8 +196,10 @@
             // 
             // CbxFormat
             // 
+            this.CbxFormat.BackColor = System.Drawing.SystemColors.Control;
             this.CbxFormat.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CbxFormat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CbxFormat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CbxFormat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CbxFormat.FormattingEnabled = true;
             this.CbxFormat.ItemHeight = 20;
@@ -210,9 +214,11 @@
             // 
             // CmbAspectRatio
             // 
+            this.CmbAspectRatio.BackColor = System.Drawing.SystemColors.Control;
             this.CmbAspectRatio.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.CmbAspectRatio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CmbAspectRatio.Enabled = false;
+            this.CmbAspectRatio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CmbAspectRatio.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.CmbAspectRatio.FormattingEnabled = true;
             this.CmbAspectRatio.ItemHeight = 20;

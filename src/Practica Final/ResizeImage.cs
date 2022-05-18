@@ -167,7 +167,7 @@ namespace PE22A_JAMZ.src.TabRenderer
 
         private async Task ValidateInput()
         {
-            IsAspectRatioEnabled = CbxAspectRatio.Checked;
+            IsAspectRatioEnabled = CbxAspectRatio.Checked; // Saber si esta marcada la opcion de aspect ratio
 
             if (TxtWidth.Text.Equals(""))
             {
@@ -431,6 +431,9 @@ namespace PE22A_JAMZ.src.TabRenderer
 
         private void TsCmbTheme_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+            // REFACTORIZAR ESTE EVENTO, vaya porqueria estoy escribiendoa aquí.
+            // Jorge del futuro perdona :C
 
             int SelectedTheme = TsCmbTheme.SelectedIndex;
 
@@ -449,12 +452,21 @@ namespace PE22A_JAMZ.src.TabRenderer
                     MsApp.BackColor = UiUtils.GetColor("#151515");
                     MsApp.ForeColor = UiUtils.GetColor("#FFF");
 
-                    UiUtils.StyleLabel(DARK_FIRST_BG, DARK_FG, LblInfo);
 
                     ScpResizer.BackColor = UiUtils.GetColor("#303030");
 
+                    UiUtils.StyleLabel(DARK_FIRST_BG, DARK_FG, LblInfo);
                     UiUtils.StyleContainer(DARK_FIRST_BG, DARK_FG, PnlSideBar);
                     UiUtils.StyleContainer(DARK_FIRST_BG, DARK_FG, FlpImages);
+
+                    TxtWidth.BackColor = UiUtils.GetColor("#303030");
+                    TxtWidth.ForeColor = UiUtils.GetColor("#FFF");
+
+                    TxtHeight.BackColor = UiUtils.GetColor("#303030");
+                    TxtHeight.ForeColor = UiUtils.GetColor("#FFF");
+
+                    LbFIlesInfo.BackColor = UiUtils.GetColor("#303030");
+                    LbFIlesInfo.ForeColor = UiUtils.GetColor("#FFF");
 
                     break;
                 case 1:
@@ -462,12 +474,22 @@ namespace PE22A_JAMZ.src.TabRenderer
                     MsApp.BackColor = UiUtils.GetColor("#FFF");
                     MsApp.ForeColor = UiUtils.GetColor("#000");
 
-                    UiUtils.StyleLabel(LIGHT_FIRST_BG, LIGHT_FG, LblInfo);
 
                     ScpResizer.BackColor = UiUtils.GetColor("#FFF");
 
+                    UiUtils.StyleLabel(LIGHT_FIRST_BG, LIGHT_FG, LblInfo);
                     UiUtils.StyleContainer(LIGHT_FIRST_BG, LIGHT_FG, PnlSideBar);
                     UiUtils.StyleContainer(LIGHT_FIRST_BG, LIGHT_FG, FlpImages);
+
+
+                    TxtWidth.BackColor = UiUtils.GetColor("#F5F5F5");
+                    TxtWidth.ForeColor = UiUtils.GetColor("#000");
+
+                    TxtHeight.BackColor = UiUtils.GetColor("#F5F5F5");
+                    TxtHeight.ForeColor = UiUtils.GetColor("#000");
+
+                    LbFIlesInfo.BackColor = UiUtils.GetColor("#F5F5F5");
+                    LbFIlesInfo.ForeColor = UiUtils.GetColor("#000");
 
                     break;
             }
