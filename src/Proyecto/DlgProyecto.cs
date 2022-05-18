@@ -1660,7 +1660,9 @@ namespace PE22A_JAMZ
 
         }
 
-
+        // +-------------------------------------------------------------------------+
+        // |                       Copia coordenadas de origen                       |
+        // +-------------------------------------------------------------------------+
         private void BtnP7Coordenadas_Click(object sender, EventArgs e)
         {
             TxtP7Latitud.Text = TxtLatitud.Text;
@@ -1668,8 +1670,89 @@ namespace PE22A_JAMZ
         }
 
         #endregion
+        
+        #region PRACTICA 8
 
-        #region PRACTICA FINAL 
+        // +--------------------------------------------------------------------------+
+        // |                    Convertir grados decimales a radianes                 |
+        // +--------------------------------------------------------------------------+
+        private float EnRadianes(float GradosDecimales)
+        {
+            return (float)(Math.PI / 180) * GradosDecimales; 
+        }
+
+        // +--------------------------------------------------------------------------+
+        // |   Calcula la distancia entre dos coordenaadas con base en la formula     |
+        // |   de semiverseno                                                         |
+        // +--------------------------------------------------------------------------+
+        private float CalcularDistancia(float PosOrigenLatitud,
+                                        float PosDestinoLatitud,
+                                        float PosOrigenLongitud,
+                                        float PosDestinoLongitud)
+        {
+            var DifLatitud = EnRadianes(PosDestinoLatitud - PosOrigenLatitud);
+            var DifLongitud = EnRadianes(PosDestinoLongitud - PosOrigenLongitud);
+
+            var a = Math.Pow(Math.Sin(DifLatitud / 2), 2) +
+                Math.Cos(EnRadianes(PosOrigenLatitud)) *
+                Math.Cos(EnRadianes(PosDestinoLatitud)) *
+                Math.Pow(Math.Sin(DifLongitud / 2), 2);
+
+            var c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+
+            return 6378.0F * Convert.ToSingle(c);
+
+        }
+
+
+        private void BtnCalcularP8_Click(object sender, EventArgs e)
+        {
+            // Declaración de variables
+            float PosOrigenLatitud;
+            float PosOrigenLongitud;
+            float PosDestinoLatitud;
+            float PosDestinoLongitud;
+
+            float Resultado;
+
+            // Inicialización de datos de trabajo
+            PosOrigenLatitud = (float)Convert.ToDouble(TxtLatitudOrigen.Text);
+            PosOrigenLongitud = (float)Convert.ToDouble(TxtLongitudOrigen.Text);
+            PosDestinoLatitud = (float)Convert.ToDouble(TxtLatitudDestino.Text);
+            PosDestinoLongitud = (float)Convert.ToDouble(TxtLongitudDestino.Text);
+
+            // Calcula la distancia en kilómetros
+            Resultado = CalcularDistancia(PosOrigenLatitud,
+                                          PosDestinoLatitud,
+                                          PosOrigenLongitud,
+                                          PosDestinoLongitud);
+
+            // Mostrar Resultado
+
+            TxtResultadoP8.Text = Resultado.ToString() + "Kms";
+        }
+
+        // +-------------------------------------------------------------------------+
+        // |                       Copia coordenadas de origen                       |
+        // +-------------------------------------------------------------------------+
+        private void BtnCopiarCOrigen_Click(object sender, EventArgs e)
+        {
+            TxtLatitudOrigen.Text = TxtLatitud.Text;
+            TxtLongitudOrigen.Text = TxtLongitud.Text;
+            TxtLugarOrigen.Text = TxtLugar.Text;
+        }
+
+        // +-------------------------------------------------------------------------+
+        // |                        Copia coordenadas de destino                     |
+        // +-------------------------------------------------------------------------+
+        private void BtnCopiarCDestino_Click(object sender, EventArgs e)
+        {
+            TxtLatitudDestino.Text = TxtLatitud.Text;
+            TxtLongitudDestino.Text = TxtLongitud.Text;
+            TxtLugarDestino.Text = TxtLugar.Text;
+        }
+
+        #endregion
 
         private void BtnOpen_Click(object sender, EventArgs e)
         {
