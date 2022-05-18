@@ -19,7 +19,7 @@ namespace PE22A_JAMZ.src.Utils
         {
 
             // Propiedades del borde
-            Color BorderColor = GetColor("#2667FF");
+            Color BorderColor = GetColor("#06f");
             int BorderSize = 4;
             ButtonBorderStyle BorderStyle = ButtonBorderStyle.Solid;
 
@@ -42,6 +42,8 @@ namespace PE22A_JAMZ.src.Utils
                                     BorderColor,
                                     BorderSize,
                                     BorderStyle);
+            
+            component.Update();
         }
 
         public static void RemoveBorder(object sender, EventArgs e)
@@ -50,6 +52,81 @@ namespace PE22A_JAMZ.src.Utils
             Rectangle componentRec = new Rectangle(new Point(0, 0), component.Size);
             ControlPaint.DrawBorder(component.CreateGraphics(), componentRec, GetColor("#fff"), ButtonBorderStyle.None);
             component.Refresh();
+        }
+
+        public static void StyleContainer(string BgColor, string FgColor ,Panel container)
+        {
+            container.BackColor = GetColor(BgColor);
+            container.ForeColor = GetColor(FgColor);
+
+            foreach(Control UiElement in container.Controls)
+            {
+
+                if (UiElement is TextBox)
+                {
+
+                    UiElement.BackColor = GetColor(BgColor);
+                    UiElement.ForeColor = GetColor(FgColor);
+
+                }
+
+                if (UiElement is ComboBox)
+                {
+                    UiElement.BackColor = GetColor(BgColor);
+                    UiElement.ForeColor = GetColor(FgColor);
+                }
+
+                if (UiElement is RichTextBox)
+                {
+                    UiElement.BackColor = GetColor(BgColor);
+                    UiElement.ForeColor = GetColor(FgColor);
+                }
+
+            }
+
+        } 
+
+        public static void StyleLabel(string BgColor, string FgColor, Label label)
+        {
+            label.BackColor = GetColor(BgColor);
+            label.ForeColor = GetColor(FgColor);
+        }
+
+        public static void DrawItem(object sender, DrawItemEventArgs e, int SelectedTheme)
+        {
+
+            ComboBox comboBox = sender as ComboBox;
+
+            int Index = e.Index;
+
+            Brush ItemBrush;
+
+            ItemBrush = new SolidBrush(Color.Black); // Fallback
+
+
+            if (SelectedTheme == 0)
+            {
+                ItemBrush = new SolidBrush(Color.White);
+                comboBox.BackColor = GetColor("#303030");
+            }
+            
+            if (SelectedTheme == 1)
+            {
+                ItemBrush = new SolidBrush(Color.Black);
+                comboBox.BackColor = GetColor("#F5F5F5");
+            }
+
+            e.DrawBackground();
+            
+            if (Index > -1 )
+            {
+                e.Graphics.DrawString(comboBox.Items[Index].ToString(),
+                                  e.Font,
+                                  ItemBrush,
+                                  e.Bounds,
+                                  StringFormat.GenericDefault);
+            }
+
         }
 
     }
