@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DlgProyecto));
             this.MenuStrip = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,6 +165,7 @@
             this.LblP7Longitud = new System.Windows.Forms.Label();
             this.LblP7Latitud = new System.Windows.Forms.Label();
             this.TpgPractica8 = new System.Windows.Forms.TabPage();
+            this.LblP8Info = new System.Windows.Forms.Label();
             this.LblSemiversenoInfo = new System.Windows.Forms.Label();
             this.BtnCalcularDistanciaP8 = new System.Windows.Forms.Button();
             this.TxtResultadoP8 = new System.Windows.Forms.TextBox();
@@ -192,13 +193,12 @@
             this.PbcAntes = new System.Windows.Forms.PictureBox();
             this.LblAntes = new System.Windows.Forms.Label();
             this.TpgPractica10 = new System.Windows.Forms.TabPage();
+            this.LblInfo = new System.Windows.Forms.Label();
+            this.BtnOpen = new System.Windows.Forms.Button();
             this.ColVector = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCoordenadaX = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BtnOpen = new System.Windows.Forms.Button();
-            this.LblInfo = new System.Windows.Forms.Label();
-            this.LblP8Info = new System.Windows.Forms.Label();
             this.MenuStrip.SuspendLayout();
             this.ToolStrip.SuspendLayout();
             this.StatusStrip.SuspendLayout();
@@ -832,53 +832,53 @@
             // 
             // DgvP3FlujosNetos
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvP3FlujosNetos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvP3FlujosNetos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DgvP3FlujosNetos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.DgvP3FlujosNetos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvP3FlujosNetos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvP3FlujosNetos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.DgvP3FlujosNetos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvP3FlujosNetos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColAño,
             this.ColFNE});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvP3FlujosNetos.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvP3FlujosNetos.DefaultCellStyle = dataGridViewCellStyle3;
             this.DgvP3FlujosNetos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvP3FlujosNetos.Location = new System.Drawing.Point(318, 0);
             this.DgvP3FlujosNetos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DgvP3FlujosNetos.Name = "DgvP3FlujosNetos";
             this.DgvP3FlujosNetos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvP3FlujosNetos.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvP3FlujosNetos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.DgvP3FlujosNetos.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            this.DgvP3FlujosNetos.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            this.DgvP3FlujosNetos.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.DgvP3FlujosNetos.RowTemplate.Height = 29;
             this.DgvP3FlujosNetos.Size = new System.Drawing.Size(788, 585);
             this.DgvP3FlujosNetos.TabIndex = 1;
@@ -1374,27 +1374,27 @@
             // DgvP5DatosEspaciales
             // 
             this.DgvP5DatosEspaciales.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgvP5DatosEspaciales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgvP5DatosEspaciales.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.DgvP5DatosEspaciales.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvP5DatosEspaciales.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn5,
             this.ColCoordX,
             this.ColCoordY});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.DgvP5DatosEspaciales.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.DgvP5DatosEspaciales.DefaultCellStyle = dataGridViewCellStyle7;
             this.DgvP5DatosEspaciales.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvP5DatosEspaciales.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.DgvP5DatosEspaciales.Location = new System.Drawing.Point(0, 0);
@@ -1492,7 +1492,6 @@
             // 
             this.TxtLongitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.TxtLongitud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtLongitud.Enabled = false;
             this.TxtLongitud.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtLongitud.ForeColor = System.Drawing.Color.White;
             this.TxtLongitud.Location = new System.Drawing.Point(174, 200);
@@ -1516,7 +1515,6 @@
             // 
             this.TxtLatitud.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.TxtLatitud.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtLatitud.Enabled = false;
             this.TxtLatitud.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtLatitud.ForeColor = System.Drawing.Color.White;
             this.TxtLatitud.Location = new System.Drawing.Point(18, 200);
@@ -1541,7 +1539,6 @@
             // 
             this.TxtDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.TxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.TxtDescripcion.Enabled = false;
             this.TxtDescripcion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TxtDescripcion.ForeColor = System.Drawing.Color.White;
             this.TxtDescripcion.Location = new System.Drawing.Point(18, 112);
@@ -1871,6 +1868,7 @@
             // 
             // TpgPractica8
             // 
+            this.TpgPractica8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TpgPractica8.Controls.Add(this.LblP8Info);
             this.TpgPractica8.Controls.Add(this.LblSemiversenoInfo);
             this.TpgPractica8.Controls.Add(this.BtnCalcularDistanciaP8);
@@ -1881,13 +1879,22 @@
             this.TpgPractica8.Controls.Add(this.BtnCopiarCDestino);
             this.TpgPractica8.Controls.Add(this.GbxOrigen);
             this.TpgPractica8.Controls.Add(this.BtnCopiarCOrigen);
+            this.TpgPractica8.ForeColor = System.Drawing.Color.White;
             this.TpgPractica8.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica8.Name = "TpgPractica8";
             this.TpgPractica8.Padding = new System.Windows.Forms.Padding(3);
             this.TpgPractica8.Size = new System.Drawing.Size(1106, 585);
             this.TpgPractica8.TabIndex = 9;
             this.TpgPractica8.Text = "Práctica 8";
-            this.TpgPractica8.UseVisualStyleBackColor = true;
+            // 
+            // LblP8Info
+            // 
+            this.LblP8Info.Location = new System.Drawing.Point(551, 277);
+            this.LblP8Info.Name = "LblP8Info";
+            this.LblP8Info.Size = new System.Drawing.Size(527, 75);
+            this.LblP8Info.TabIndex = 9;
+            this.LblP8Info.Text = resources.GetString("LblP8Info.Text");
+            this.LblP8Info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LblSemiversenoInfo
             // 
@@ -1928,12 +1935,13 @@
             // 
             // PbxVistaPrevia
             // 
+            this.PbxVistaPrevia.BackColor = System.Drawing.Color.White;
             this.PbxVistaPrevia.BackgroundImage = global::PE22A_JAMZ.Properties.Resources.Semiverseno;
             this.PbxVistaPrevia.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PbxVistaPrevia.Location = new System.Drawing.Point(17, 200);
             this.PbxVistaPrevia.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PbxVistaPrevia.Name = "PbxVistaPrevia";
-            this.PbxVistaPrevia.Size = new System.Drawing.Size(521, 388);
+            this.PbxVistaPrevia.Size = new System.Drawing.Size(528, 364);
             this.PbxVistaPrevia.TabIndex = 4;
             this.PbxVistaPrevia.TabStop = false;
             // 
@@ -1956,9 +1964,11 @@
             // 
             // TxtLugarDestino
             // 
+            this.TxtLugarDestino.BackColor = System.Drawing.Color.White;
             this.TxtLugarDestino.Location = new System.Drawing.Point(431, 40);
             this.TxtLugarDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtLugarDestino.Name = "TxtLugarDestino";
+            this.TxtLugarDestino.ReadOnly = true;
             this.TxtLugarDestino.Size = new System.Drawing.Size(191, 23);
             this.TxtLugarDestino.TabIndex = 5;
             // 
@@ -1973,9 +1983,11 @@
             // 
             // TxtLongitudDestino
             // 
+            this.TxtLongitudDestino.BackColor = System.Drawing.Color.White;
             this.TxtLongitudDestino.Location = new System.Drawing.Point(226, 40);
             this.TxtLongitudDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtLongitudDestino.Name = "TxtLongitudDestino";
+            this.TxtLongitudDestino.ReadOnly = true;
             this.TxtLongitudDestino.Size = new System.Drawing.Size(191, 23);
             this.TxtLongitudDestino.TabIndex = 3;
             // 
@@ -1990,9 +2002,11 @@
             // 
             // TxtLatitudDestino
             // 
+            this.TxtLatitudDestino.BackColor = System.Drawing.Color.White;
             this.TxtLatitudDestino.Location = new System.Drawing.Point(15, 40);
             this.TxtLatitudDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtLatitudDestino.Name = "TxtLatitudDestino";
+            this.TxtLatitudDestino.ReadOnly = true;
             this.TxtLatitudDestino.Size = new System.Drawing.Size(191, 23);
             this.TxtLatitudDestino.TabIndex = 1;
             // 
@@ -2007,13 +2021,17 @@
             // 
             // BtnCopiarCDestino
             // 
+            this.BtnCopiarCDestino.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(215)))), ((int)(((byte)(96)))));
+            this.BtnCopiarCDestino.FlatAppearance.BorderSize = 0;
+            this.BtnCopiarCDestino.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCopiarCDestino.ForeColor = System.Drawing.Color.Black;
             this.BtnCopiarCDestino.Location = new System.Drawing.Point(17, 128);
             this.BtnCopiarCDestino.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnCopiarCDestino.Name = "BtnCopiarCDestino";
             this.BtnCopiarCDestino.Size = new System.Drawing.Size(146, 34);
             this.BtnCopiarCDestino.TabIndex = 2;
             this.BtnCopiarCDestino.Text = "Copiar coordenadas";
-            this.BtnCopiarCDestino.UseVisualStyleBackColor = true;
+            this.BtnCopiarCDestino.UseVisualStyleBackColor = false;
             this.BtnCopiarCDestino.Click += new System.EventHandler(this.BtnCopiarCDestino_Click);
             // 
             // GbxOrigen
@@ -2035,9 +2053,11 @@
             // 
             // TxtLugarOrigen
             // 
+            this.TxtLugarOrigen.BackColor = System.Drawing.Color.White;
             this.TxtLugarOrigen.Location = new System.Drawing.Point(431, 40);
             this.TxtLugarOrigen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtLugarOrigen.Name = "TxtLugarOrigen";
+            this.TxtLugarOrigen.ReadOnly = true;
             this.TxtLugarOrigen.Size = new System.Drawing.Size(191, 23);
             this.TxtLugarOrigen.TabIndex = 5;
             // 
@@ -2052,9 +2072,11 @@
             // 
             // TxtLongitudOrigen
             // 
+            this.TxtLongitudOrigen.BackColor = System.Drawing.Color.White;
             this.TxtLongitudOrigen.Location = new System.Drawing.Point(226, 40);
             this.TxtLongitudOrigen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtLongitudOrigen.Name = "TxtLongitudOrigen";
+            this.TxtLongitudOrigen.ReadOnly = true;
             this.TxtLongitudOrigen.Size = new System.Drawing.Size(191, 23);
             this.TxtLongitudOrigen.TabIndex = 3;
             // 
@@ -2069,9 +2091,11 @@
             // 
             // TxtLatitudOrigen
             // 
+            this.TxtLatitudOrigen.BackColor = System.Drawing.Color.White;
             this.TxtLatitudOrigen.Location = new System.Drawing.Point(15, 40);
             this.TxtLatitudOrigen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TxtLatitudOrigen.Name = "TxtLatitudOrigen";
+            this.TxtLatitudOrigen.ReadOnly = true;
             this.TxtLatitudOrigen.Size = new System.Drawing.Size(191, 23);
             this.TxtLatitudOrigen.TabIndex = 1;
             // 
@@ -2086,28 +2110,33 @@
             // 
             // BtnCopiarCOrigen
             // 
+            this.BtnCopiarCOrigen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(215)))), ((int)(((byte)(96)))));
+            this.BtnCopiarCOrigen.FlatAppearance.BorderSize = 0;
+            this.BtnCopiarCOrigen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCopiarCOrigen.ForeColor = System.Drawing.Color.Black;
             this.BtnCopiarCOrigen.Location = new System.Drawing.Point(17, 38);
             this.BtnCopiarCOrigen.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BtnCopiarCOrigen.Name = "BtnCopiarCOrigen";
             this.BtnCopiarCOrigen.Size = new System.Drawing.Size(146, 34);
             this.BtnCopiarCOrigen.TabIndex = 0;
             this.BtnCopiarCOrigen.Text = "Copiar coordenadas";
-            this.BtnCopiarCOrigen.UseVisualStyleBackColor = true;
+            this.BtnCopiarCOrigen.UseVisualStyleBackColor = false;
             this.BtnCopiarCOrigen.Click += new System.EventHandler(this.BtnCopiarCOrigen_Click);
             // 
             // TpgPractica9
             // 
+            this.TpgPractica9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.TpgPractica9.Controls.Add(this.PbcDespues);
             this.TpgPractica9.Controls.Add(this.LblDespues);
             this.TpgPractica9.Controls.Add(this.PbcAntes);
             this.TpgPractica9.Controls.Add(this.LblAntes);
+            this.TpgPractica9.ForeColor = System.Drawing.Color.White;
             this.TpgPractica9.Location = new System.Drawing.Point(4, 44);
             this.TpgPractica9.Name = "TpgPractica9";
             this.TpgPractica9.Padding = new System.Windows.Forms.Padding(3);
             this.TpgPractica9.Size = new System.Drawing.Size(1106, 585);
             this.TpgPractica9.TabIndex = 10;
             this.TpgPractica9.Text = "Práctica 9";
-            this.TpgPractica9.UseVisualStyleBackColor = true;
             // 
             // PbcDespues
             // 
@@ -2161,6 +2190,32 @@
             this.TpgPractica10.TabIndex = 11;
             this.TpgPractica10.Text = "Práctica 10";
             // 
+            // LblInfo
+            // 
+            this.LblInfo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.LblInfo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.LblInfo.ForeColor = System.Drawing.Color.White;
+            this.LblInfo.Location = new System.Drawing.Point(3, 3);
+            this.LblInfo.Name = "LblInfo";
+            this.LblInfo.Size = new System.Drawing.Size(1100, 56);
+            this.LblInfo.TabIndex = 1;
+            this.LblInfo.Text = "Redimensionador de imagenes";
+            this.LblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // BtnOpen
+            // 
+            this.BtnOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
+            this.BtnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnOpen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.BtnOpen.ForeColor = System.Drawing.Color.White;
+            this.BtnOpen.Location = new System.Drawing.Point(38, 77);
+            this.BtnOpen.Name = "BtnOpen";
+            this.BtnOpen.Size = new System.Drawing.Size(167, 35);
+            this.BtnOpen.TabIndex = 0;
+            this.BtnOpen.Text = "Abrir practica final";
+            this.BtnOpen.UseVisualStyleBackColor = false;
+            this.BtnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
+            // 
             // ColVector
             // 
             this.ColVector.HeaderText = "Vector";
@@ -2188,41 +2243,6 @@
             this.dataGridViewTextBoxColumn2.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.Width = 125;
-            // 
-            // BtnOpen
-            // 
-            this.BtnOpen.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(86)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))));
-            this.BtnOpen.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnOpen.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.BtnOpen.ForeColor = System.Drawing.Color.White;
-            this.BtnOpen.Location = new System.Drawing.Point(38, 77);
-            this.BtnOpen.Name = "BtnOpen";
-            this.BtnOpen.Size = new System.Drawing.Size(167, 35);
-            this.BtnOpen.TabIndex = 0;
-            this.BtnOpen.Text = "Abrir practica final";
-            this.BtnOpen.UseVisualStyleBackColor = false;
-            this.BtnOpen.Click += new System.EventHandler(this.BtnOpen_Click);
-            // 
-            // LblInfo
-            // 
-            this.LblInfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LblInfo.Font = new System.Drawing.Font("Roboto", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.LblInfo.ForeColor = System.Drawing.Color.White;
-            this.LblInfo.Location = new System.Drawing.Point(3, 3);
-            this.LblInfo.Name = "LblInfo";
-            this.LblInfo.Size = new System.Drawing.Size(1100, 56);
-            this.LblInfo.TabIndex = 1;
-            this.LblInfo.Text = "Redimensionador de imagenes";
-            this.LblInfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // LblP8Info
-            // 
-            this.LblP8Info.Location = new System.Drawing.Point(551, 277);
-            this.LblP8Info.Name = "LblP8Info";
-            this.LblP8Info.Size = new System.Drawing.Size(527, 75);
-            this.LblP8Info.TabIndex = 9;
-            this.LblP8Info.Text = resources.GetString("LblP8Info.Text");
-            this.LblP8Info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // DlgProyecto
             // 

@@ -1422,7 +1422,19 @@ namespace PE22A_JAMZ
 
         private void LoadEnv()
         {
-            string ENV_PATH = Directory.GetCurrentDirectory() + "\\.env";
+            string ENV_PATH;
+
+            ENV_PATH = String.Empty;
+
+            if (Debugger.IsAttached)
+            {
+                ENV_PATH = Directory.GetCurrentDirectory() + "\\.env";
+            }
+
+            if (!Debugger.IsAttached)
+            {
+                ENV_PATH = Application.StartupPath + "\\.env";
+            }
 
             foreach (var line in File.ReadAllLines(ENV_PATH))
             {

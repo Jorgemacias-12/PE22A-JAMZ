@@ -91,6 +91,7 @@
             // 
             // PnlSideBar
             // 
+            this.PnlSideBar.AutoScroll = true;
             this.PnlSideBar.BackColor = System.Drawing.Color.White;
             this.PnlSideBar.Controls.Add(this.LbFIlesInfo);
             this.PnlSideBar.Controls.Add(this.LblAspectRatio);
